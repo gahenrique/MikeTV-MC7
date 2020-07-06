@@ -31,5 +31,13 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
         }
     }
+    
+//    override var preferredFocusEnvironments: [UIFocusEnvironment] {
+//        if let view = self.view as! SKView? {
+//            return view.preferredFocusEnvironments
+//        }
+//        
+//        return []
+//    }
 
 }
