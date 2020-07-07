@@ -17,7 +17,6 @@ class SelectionableNode: SKSpriteNode {
         
         self.normalColor = self.color
         self.isUserInteractionEnabled = true
-        self.focusBehavior = .focusable
     }
     
     override var canBecomeFocused: Bool {
@@ -27,7 +26,7 @@ class SelectionableNode: SKSpriteNode {
     }
     
     func buttonDidGetFocus() {
-        self.color = .blue
+        self.color = .systemGreen
         self.setScale(1.5)
     }
     

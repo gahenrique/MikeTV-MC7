@@ -16,6 +16,8 @@
 		C0E53DD824B39B9600DEE127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DD724B39B9600DEE127 /* Assets.xcassets */; };
 		C0E53DDB24B39B9600DEE127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DD924B39B9600DEE127 /* LaunchScreen.storyboard */; };
 		C0E53DE324B3A30400DEE127 /* SelectionableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DE224B3A30400DEE127 /* SelectionableNode.swift */; };
+		C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DE524B4EC7600DEE127 /* Scene1.sks */; };
+		C0E53DEA24B4EEE500DEE127 /* Scene1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DE924B4EEE500DEE127 /* Scene1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		C0E53DDA24B39B9600DEE127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0E53DDC24B39B9600DEE127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E53DE224B3A30400DEE127 /* SelectionableNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionableNode.swift; sourceTree = "<group>"; };
+		C0E53DE524B4EC7600DEE127 /* Scene1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene1.sks; sourceTree = "<group>"; };
+		C0E53DE924B4EEE500DEE127 /* Scene1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +66,9 @@
 		C0E53DC924B39B9500DEE127 /* miketv-mc7 */ = {
 			isa = PBXGroup;
 			children = (
+				C0E53DE424B4EBFB00DEE127 /* Scenes */,
 				C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */,
-				C0E53DCC24B39B9500DEE127 /* GameScene.sks */,
 				C0E53DCE24B39B9500DEE127 /* Actions.sks */,
-				C0E53DD024B39B9500DEE127 /* GameScene.swift */,
 				C0E53DD224B39B9500DEE127 /* GameViewController.swift */,
 				C0E53DD424B39B9500DEE127 /* Main.storyboard */,
 				C0E53DD724B39B9600DEE127 /* Assets.xcassets */,
@@ -74,6 +77,33 @@
 				C0E53DE224B3A30400DEE127 /* SelectionableNode.swift */,
 			);
 			path = "miketv-mc7";
+			sourceTree = "<group>";
+		};
+		C0E53DE424B4EBFB00DEE127 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C0E53DE824B4EED500DEE127 /* Scene1 */,
+				C0E53DE724B4EEC900DEE127 /* GameScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C0E53DE724B4EEC900DEE127 /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				C0E53DD024B39B9500DEE127 /* GameScene.swift */,
+				C0E53DCC24B39B9500DEE127 /* GameScene.sks */,
+			);
+			path = GameScene;
+			sourceTree = "<group>";
+		};
+		C0E53DE824B4EED500DEE127 /* Scene1 */ = {
+			isa = PBXGroup;
+			children = (
+				C0E53DE524B4EC7600DEE127 /* Scene1.sks */,
+				C0E53DE924B4EEE500DEE127 /* Scene1.swift */,
+			);
+			path = Scene1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +168,7 @@
 				C0E53DCD24B39B9500DEE127 /* GameScene.sks in Resources */,
 				C0E53DD824B39B9600DEE127 /* Assets.xcassets in Resources */,
 				C0E53DDB24B39B9600DEE127 /* LaunchScreen.storyboard in Resources */,
+				C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */,
 				C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +182,7 @@
 			files = (
 				C0E53DD124B39B9500DEE127 /* GameScene.swift in Sources */,
 				C0E53DD324B39B9500DEE127 /* GameViewController.swift in Sources */,
+				C0E53DEA24B4EEE500DEE127 /* Scene1.swift in Sources */,
 				C0E53DE324B3A30400DEE127 /* SelectionableNode.swift in Sources */,
 				C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */,
 			);
