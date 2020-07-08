@@ -8,14 +8,53 @@
 
 import UIKit
 import SpriteKit
-import GameplayKit
+import GameController
+
+protocol GameSceneProtocol {
+    func didSwipe(direction: UISwipeGestureRecognizer.Direction)
+    func didTap()
+}
 
 class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupGestures()
         setupScene1()
+    }
+    
+    private func setupGestures() {
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler(_:)))
+        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureHandler(_:)))
+        swipeLeftGesture.direction = .left
+        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureHandler(_:)))
+        swipeRightGesture.direction = .right
+        
+//        view.addGestureRecognizer(tapGesture)
+        view.addGestureRecognizer(swipeLeftGesture)
+        view.addGestureRecognizer(swipeRightGesture)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        
+        let normalizedForce = touch.force/touch.maximumPossibleForce
+        print("Touch force = \(normalizedForce)")
+    }
+    
+    @objc private func tapGestureHandler(_ sender: UITapGestureRecognizer) {
+        if let view = self.view as! SKView?,
+            let scene = view.scene as? GameSceneProtocol {
+            scene.didTap()
+        }
+    }
+    
+    @objc private func swipeGestureHandler(_ sender: UISwipeGestureRecognizer) {
+        if let view = self.view as! SKView?,
+            let scene = view.scene as? GameSceneProtocol {
+            scene.didSwipe(direction: sender.direction)
+        }
     }
     
     private func setupScene1() {

@@ -21,7 +21,7 @@ class SelectionableNode: SKSpriteNode {
     
     override var canBecomeFocused: Bool {
         get {
-            return true
+            return false
         }
     }
     

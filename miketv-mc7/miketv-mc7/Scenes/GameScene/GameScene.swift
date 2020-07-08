@@ -31,78 +31,42 @@ class GameScene: SKScene {
         buttons.append(button3)
         buttons.append(button4)
         
+        self.currentFocused = button1
+        self.currentFocused?.buttonDidGetFocus()
     }
-    
-    
-    func touchDown(atPoint pos : CGPoint) {
-//        print("Touch Down")
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
-        }
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-//        print("Touch Moved")
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.blue
-            self.addChild(n)
-        }
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-//        print("Touch Up")
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.red
-            self.addChild(n)
-        }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("Touches Began")
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-        }
-        
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("Touches Moved")
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("Touches Ended")
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("Touches Cancelled")
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    override func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
-        print("Pressed Ended: ", presses.first?.type.rawValue)
-    }
-    
+
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
-    
-    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        let prevItem = context.previouslyFocusedItem
-        let nextItem = context.nextFocusedItem
+}
+
+extension GameScene: GameSceneProtocol {
+    func didTap() {
         
-        if let prevButton = prevItem as? SelectionableNode {
-            prevButton.buttonDidLoseFocus()
+    }
+    
+    func didSwipe(direction: UISwipeGestureRecognizer.Direction) {
+        guard
+            let currentFocused = self.currentFocused,
+            let currentFocusedIndex = buttons.firstIndex(of: currentFocused)
+        else { return }
+        
+        currentFocused.buttonDidLoseFocus()
+        
+        var nextFocusIndex: Int = currentFocusedIndex
+        
+        switch direction {
+        case .left:
+            nextFocusIndex = currentFocusedIndex > 0 ? currentFocusedIndex - 1 : 0
+        case .right:
+            let lastIndex = buttons.count - 1
+            nextFocusIndex = currentFocusedIndex < lastIndex ? currentFocusedIndex + 1 : lastIndex
+            break
+        default:
+            break
         }
-        if let nextButton = nextItem as? SelectionableNode {
-            nextButton.buttonDidGetFocus()
-            currentFocused = nextButton
-        }
+        
+        self.currentFocused = buttons[nextFocusIndex]
+        self.currentFocused?.buttonDidGetFocus()
     }
 }

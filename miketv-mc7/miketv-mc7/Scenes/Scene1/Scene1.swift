@@ -22,47 +22,67 @@ class Scene1: SKScene {
     override func didMove(to view: SKView) {
         
         guard
-            let button1 = self.childNode(withName: "RightButton") as? SelectionableNode,
-            let button2 = self.childNode(withName: "LeftButton") as? SelectionableNode
+            let buttonLeft = self.childNode(withName: "LeftButton") as? SelectionableNode,
+            let buttonRight = self.childNode(withName: "RightButton") as? SelectionableNode
             else { return }
         
-        buttons.append(button1)
-        buttons.append(button2)
+        buttons.append(buttonLeft)
+        buttons.append(buttonRight)
         
+        self.currentFocused = buttonLeft
+        self.currentFocused?.buttonDidGetFocus()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else { return }
-                
-        // Test if event is a tap
-        if let currentFocused = self.currentFocused,
-            touch.previousLocation(in: self.view) == touch.location(in: self.view) {
-            
-            if currentFocused == buttons[0] {
-                sceneDelegate?.changeScene(sceneName: "GameScene")
-            }
-        }
-    }
-    
-    override func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
-        print("Pressed Ended: ", presses.first?.type.rawValue)
+//        guard let touch = touches.first else { return }
+//
+//        // Test if event is a tap
+//        if let currentFocused = self.currentFocused,
+//            touch.previousLocation(in: self.view) == touch.location(in: self.view) {
+//
+//            if currentFocused == buttons[1] {
+//                sceneDelegate?.changeScene(sceneName: "GameScene")
+//            }
+//        }
     }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
+}
+
+extension Scene1: GameSceneProtocol {
+    func didTap() {
+        if let currentFocused = self.currentFocused {
+            if currentFocused == buttons[1] {
+                sceneDelegate?.changeScene(sceneName: "GameScene")
+            }
+        }
+    }
     
-    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        let prevItem = context.previouslyFocusedItem
-        let nextItem = context.nextFocusedItem
+    func didSwipe(direction: UISwipeGestureRecognizer.Direction) {
+        guard
+            let currentFocused = self.currentFocused,
+            let currentFocusedIndex = buttons.firstIndex(of: currentFocused)
+        else { return }
         
-        if let prevButton = prevItem as? SelectionableNode {
-            prevButton.buttonDidLoseFocus()
+        currentFocused.buttonDidLoseFocus()
+        
+        var nextFocusIndex: Int = currentFocusedIndex
+        
+        switch direction {
+        case .left:
+            nextFocusIndex = currentFocusedIndex > 0 ? currentFocusedIndex - 1 : 0
+        case .right:
+            let lastIndex = buttons.count - 1
+            nextFocusIndex = currentFocusedIndex < lastIndex ? currentFocusedIndex + 1 : lastIndex
+            break
+        default:
+            break
         }
-        if let nextButton = nextItem as? SelectionableNode {
-            nextButton.buttonDidGetFocus()
-            currentFocused = nextButton
-        }
+        
+        self.currentFocused = buttons[nextFocusIndex]
+        self.currentFocused?.buttonDidGetFocus()
     }
 }
 
