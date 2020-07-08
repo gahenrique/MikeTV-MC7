@@ -86,7 +86,7 @@ class GameScene: SKScene {
     }
     
     override func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
-        print("Presses Ended")
+        print("Pressed Ended: ", presses.first?.type.rawValue)
     }
     
     override func update(_ currentTime: TimeInterval) {
