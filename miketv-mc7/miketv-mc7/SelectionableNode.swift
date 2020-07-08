@@ -16,13 +16,6 @@ class SelectionableNode: SKSpriteNode {
         super.init(coder: aDecoder)
         
         self.normalColor = self.color
-        self.isUserInteractionEnabled = true
-    }
-    
-    override var canBecomeFocused: Bool {
-        get {
-            return false
-        }
     }
     
     func buttonDidGetFocus() {

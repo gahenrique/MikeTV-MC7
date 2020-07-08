@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class Scene2: BaseGameScene {
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
@@ -38,14 +38,8 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
-}
-
-extension GameScene: GameSceneProtocol {
-    func didTap() {
-        
-    }
     
-    func didSwipe(direction: UISwipeGestureRecognizer.Direction) {
+    override func didSwipe(direction: UISwipeGestureRecognizer.Direction) {
         guard
             let currentFocused = self.currentFocused,
             let currentFocusedIndex = buttons.firstIndex(of: currentFocused)

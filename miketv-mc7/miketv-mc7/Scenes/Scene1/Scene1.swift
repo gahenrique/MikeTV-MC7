@@ -9,12 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-protocol GameSceneDelegate: NSObject {
-    func changeScene(sceneName: String)
-}
-
-class Scene1: SKScene {
-    weak var sceneDelegate: GameSceneDelegate?
+class Scene1: BaseGameScene {
     
     private var buttons: [SelectionableNode] = []
     private var currentFocused: SelectionableNode?
@@ -33,43 +28,28 @@ class Scene1: SKScene {
         self.currentFocused?.buttonDidGetFocus()
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        guard let touch = touches.first else { return }
-//
-//        // Test if event is a tap
-//        if let currentFocused = self.currentFocused,
-//            touch.previousLocation(in: self.view) == touch.location(in: self.view) {
-//
-//            if currentFocused == buttons[1] {
-//                sceneDelegate?.changeScene(sceneName: "GameScene")
-//            }
-//        }
-    }
-    
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
-}
-
-extension Scene1: GameSceneProtocol {
-    func didTap() {
+    
+    override func didTap() {
         if let currentFocused = self.currentFocused {
             if currentFocused == buttons[1] {
-                sceneDelegate?.changeScene(sceneName: "GameScene")
+                sceneDelegate?.changeScene(sceneName: "Scene2")
             }
         }
     }
     
-    func didSwipe(direction: UISwipeGestureRecognizer.Direction) {
+    override func didSwipe(direction: UISwipeGestureRecognizer.Direction) {
         guard
             let currentFocused = self.currentFocused,
             let currentFocusedIndex = buttons.firstIndex(of: currentFocused)
         else { return }
-        
+
         currentFocused.buttonDidLoseFocus()
-        
+
         var nextFocusIndex: Int = currentFocusedIndex
-        
+
         switch direction {
         case .left:
             nextFocusIndex = currentFocusedIndex > 0 ? currentFocusedIndex - 1 : 0
@@ -80,9 +60,8 @@ extension Scene1: GameSceneProtocol {
         default:
             break
         }
-        
+
         self.currentFocused = buttons[nextFocusIndex]
         self.currentFocused?.buttonDidGetFocus()
     }
 }
-

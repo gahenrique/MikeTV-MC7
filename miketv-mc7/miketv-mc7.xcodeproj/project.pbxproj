@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */; };
+		C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045F0F724B6629500D75E6F /* BaseGameScene.swift */; };
 		C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */; };
-		C0E53DCD24B39B9500DEE127 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DCC24B39B9500DEE127 /* GameScene.sks */; };
+		C0E53DCD24B39B9500DEE127 /* Scene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DCC24B39B9500DEE127 /* Scene2.sks */; };
 		C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DCE24B39B9500DEE127 /* Actions.sks */; };
-		C0E53DD124B39B9500DEE127 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DD024B39B9500DEE127 /* GameScene.swift */; };
+		C0E53DD124B39B9500DEE127 /* Scene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DD024B39B9500DEE127 /* Scene2.swift */; };
 		C0E53DD324B39B9500DEE127 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DD224B39B9500DEE127 /* GameViewController.swift */; };
 		C0E53DD624B39B9500DEE127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DD424B39B9500DEE127 /* Main.storyboard */; };
 		C0E53DD824B39B9600DEE127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DD724B39B9600DEE127 /* Assets.xcassets */; };
@@ -21,11 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneDelegate.swift; sourceTree = "<group>"; };
+		C045F0F724B6629500D75E6F /* BaseGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGameScene.swift; sourceTree = "<group>"; };
 		C0E53DC724B39B9500DEE127 /* miketv-mc7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "miketv-mc7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C0E53DCC24B39B9500DEE127 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		C0E53DCC24B39B9500DEE127 /* Scene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene2.sks; sourceTree = "<group>"; };
 		C0E53DCE24B39B9500DEE127 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		C0E53DD024B39B9500DEE127 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		C0E53DD024B39B9500DEE127 /* Scene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene2.swift; sourceTree = "<group>"; };
 		C0E53DD224B39B9500DEE127 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		C0E53DD524B39B9500DEE127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0E53DD724B39B9600DEE127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C045F0F424B6623600D75E6F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		C0E53DBE24B39B9500DEE127 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +78,7 @@
 		C0E53DC924B39B9500DEE127 /* miketv-mc7 */ = {
 			isa = PBXGroup;
 			children = (
+				C045F0F424B6623600D75E6F /* Protocols */,
 				C0E53DE424B4EBFB00DEE127 /* Scenes */,
 				C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */,
 				C0E53DCE24B39B9500DEE127 /* Actions.sks */,
@@ -82,19 +95,20 @@
 		C0E53DE424B4EBFB00DEE127 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C045F0F724B6629500D75E6F /* BaseGameScene.swift */,
 				C0E53DE824B4EED500DEE127 /* Scene1 */,
-				C0E53DE724B4EEC900DEE127 /* GameScene */,
+				C0E53DE724B4EEC900DEE127 /* Scene2 */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		C0E53DE724B4EEC900DEE127 /* GameScene */ = {
+		C0E53DE724B4EEC900DEE127 /* Scene2 */ = {
 			isa = PBXGroup;
 			children = (
-				C0E53DD024B39B9500DEE127 /* GameScene.swift */,
-				C0E53DCC24B39B9500DEE127 /* GameScene.sks */,
+				C0E53DD024B39B9500DEE127 /* Scene2.swift */,
+				C0E53DCC24B39B9500DEE127 /* Scene2.sks */,
 			);
-			path = GameScene;
+			path = Scene2;
 			sourceTree = "<group>";
 		};
 		C0E53DE824B4EED500DEE127 /* Scene1 */ = {
@@ -165,7 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E53DD624B39B9500DEE127 /* Main.storyboard in Resources */,
-				C0E53DCD24B39B9500DEE127 /* GameScene.sks in Resources */,
+				C0E53DCD24B39B9500DEE127 /* Scene2.sks in Resources */,
 				C0E53DD824B39B9600DEE127 /* Assets.xcassets in Resources */,
 				C0E53DDB24B39B9600DEE127 /* LaunchScreen.storyboard in Resources */,
 				C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */,
@@ -180,8 +194,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0E53DD124B39B9500DEE127 /* GameScene.swift in Sources */,
+				C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */,
+				C0E53DD124B39B9500DEE127 /* Scene2.swift in Sources */,
 				C0E53DD324B39B9500DEE127 /* GameViewController.swift in Sources */,
+				C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */,
 				C0E53DEA24B4EEE500DEE127 /* Scene1.swift in Sources */,
 				C0E53DE324B3A30400DEE127 /* SelectionableNode.swift in Sources */,
 				C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */,
