@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F45176B24B64A4200E22C40 /* BoxPasswordScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F45176A24B64A4200E22C40 /* BoxPasswordScene.sks */; };
+		0F45176D24B64B4300E22C40 /* BoxPasswordScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F45176C24B64B4300E22C40 /* BoxPasswordScene.swift */; };
 		C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */; };
 		C0E53DCD24B39B9500DEE127 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DCC24B39B9500DEE127 /* GameScene.sks */; };
 		C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DCE24B39B9500DEE127 /* Actions.sks */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F45176A24B64A4200E22C40 /* BoxPasswordScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BoxPasswordScene.sks; sourceTree = "<group>"; };
+		0F45176C24B64B4300E22C40 /* BoxPasswordScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxPasswordScene.swift; sourceTree = "<group>"; };
 		C0E53DC724B39B9500DEE127 /* miketv-mc7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "miketv-mc7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E53DCC24B39B9500DEE127 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -41,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F45176924B64A2300E22C40 /* CaixaScene */ = {
+			isa = PBXGroup;
+			children = (
+				0F45176A24B64A4200E22C40 /* BoxPasswordScene.sks */,
+				0F45176C24B64B4300E22C40 /* BoxPasswordScene.swift */,
+			);
+			path = CaixaScene;
+			sourceTree = "<group>";
+		};
 		C0E53DBE24B39B9500DEE127 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +73,7 @@
 		C0E53DC924B39B9500DEE127 /* miketv-mc7 */ = {
 			isa = PBXGroup;
 			children = (
+				0F45176924B64A2300E22C40 /* CaixaScene */,
 				C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */,
 				C0E53DCC24B39B9500DEE127 /* GameScene.sks */,
 				C0E53DCE24B39B9500DEE127 /* Actions.sks */,
@@ -132,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E53DD624B39B9500DEE127 /* Main.storyboard in Resources */,
+				0F45176B24B64A4200E22C40 /* BoxPasswordScene.sks in Resources */,
 				C0E53DCD24B39B9500DEE127 /* GameScene.sks in Resources */,
 				C0E53DD824B39B9600DEE127 /* Assets.xcassets in Resources */,
 				C0E53DDB24B39B9600DEE127 /* LaunchScreen.storyboard in Resources */,
@@ -149,6 +164,7 @@
 				C0E53DD124B39B9500DEE127 /* GameScene.swift in Sources */,
 				C0E53DD324B39B9500DEE127 /* GameViewController.swift in Sources */,
 				C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */,
+				0F45176D24B64B4300E22C40 /* BoxPasswordScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
