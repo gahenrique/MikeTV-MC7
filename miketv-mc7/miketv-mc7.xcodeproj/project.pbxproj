@@ -116,8 +116,8 @@
 		C0E53DE724B4EEC900DEE127 /* Scene2 */ = {
 			isa = PBXGroup;
 			children = (
-				C0E53DD024B39B9500DEE127 /* Scene2.swift */,
 				C0E53DCC24B39B9500DEE127 /* Scene2.sks */,
+				C0E53DD024B39B9500DEE127 /* Scene2.swift */,
 			);
 			path = Scene2;
 			sourceTree = "<group>";
