@@ -8,7 +8,15 @@
 
 import SpriteKit
 
+protocol SelectionableNodeDelegate: AnyObject {
+    func setLines(line: String)
+    func changeScene(sceneName: String)
+    func collectItem(itemName: String) //Enum?
+}
+
 class SelectionableNode: SKSpriteNode {
+    
+    weak var delegate: SelectionableNodeDelegate?
     
     var normalColor: UIColor?
     var highlightNode: SKSpriteNode?
@@ -32,4 +40,5 @@ class SelectionableNode: SKSpriteNode {
         self.highlightNode?.alpha = 0
     }
     
+    func didTap() { }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8DE4B24B7938D000284AF /* BedNode.swift */; };
 		C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */; };
 		C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045F0F724B6629500D75E6F /* BaseGameScene.swift */; };
 		C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FD8DE4B24B7938D000284AF /* BedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedNode.swift; sourceTree = "<group>"; };
 		C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneDelegate.swift; sourceTree = "<group>"; };
 		C045F0F724B6629500D75E6F /* BaseGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGameScene.swift; sourceTree = "<group>"; };
 		C0E53DC724B39B9500DEE127 /* miketv-mc7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "miketv-mc7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FD8DE4A24B79377000284AF /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				0FD8DE4B24B7938D000284AF /* BedNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
 		C045F0F424B6623600D75E6F /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,16 +88,17 @@
 		C0E53DC924B39B9500DEE127 /* miketv-mc7 */ = {
 			isa = PBXGroup;
 			children = (
+				0FD8DE4A24B79377000284AF /* Nodes */,
 				C045F0F424B6623600D75E6F /* Protocols */,
 				C0E53DE424B4EBFB00DEE127 /* Scenes */,
 				C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */,
 				C0E53DCE24B39B9500DEE127 /* Actions.sks */,
 				C0E53DD224B39B9500DEE127 /* GameViewController.swift */,
+				C0E53DE224B3A30400DEE127 /* SelectionableNode.swift */,
 				C0E53DD424B39B9500DEE127 /* Main.storyboard */,
 				C0E53DD724B39B9600DEE127 /* Assets.xcassets */,
 				C0E53DD924B39B9600DEE127 /* LaunchScreen.storyboard */,
 				C0E53DDC24B39B9600DEE127 /* Info.plist */,
-				C0E53DE224B3A30400DEE127 /* SelectionableNode.swift */,
 			);
 			path = "miketv-mc7";
 			sourceTree = "<group>";
@@ -201,6 +212,7 @@
 				C0E53DEA24B4EEE500DEE127 /* Scene1.swift in Sources */,
 				C0E53DE324B3A30400DEE127 /* SelectionableNode.swift in Sources */,
 				C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */,
+				0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

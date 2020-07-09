@@ -37,6 +37,7 @@ class Scene1: BaseGameScene {
         self.rightArrowNode = rightArrow
         
         self.bedNode = bedNode
+        bedNode.delegate = self
         self.bearNode = bearNode
         self.booksNode = booksNode
         self.boxNode = boxNode
@@ -62,6 +63,7 @@ class Scene1: BaseGameScene {
                 sceneDelegate?.changeScene(sceneName: "Scene2")
             }
         }
+        currentFocused?.didTap()
     }
     
     override func didSwipe(direction: UISwipeGestureRecognizer.Direction) {
@@ -87,5 +89,22 @@ class Scene1: BaseGameScene {
 
         self.currentFocused = buttons[nextFocusIndex]
         self.currentFocused?.buttonDidGetFocus()
+    }
+}
+
+extension Scene1: SelectionableNodeDelegate {
+    func setLines(line: String) {
+        let node = SKLabelNode(text: line)
+        node.fontColor = .black
+        node.position = CGPoint(x: 0, y: 0)
+        addChild(node)
+    }
+    
+    func changeScene(sceneName: String) {
+        //lala
+    }
+    
+    func collectItem(itemName: String) {
+        //jaja
     }
 }
