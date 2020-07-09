@@ -32,12 +32,14 @@ class SelectionableNode: SKSpriteNode {
         self.color = .systemGreen
         self.setScale(1.2)
         self.highlightNode?.alpha = 1
+//        self.highlightNode?.setScale(1.2)
     }
     
     func buttonDidLoseFocus() {
         self.color = normalColor ?? UIColor.black
         self.setScale(1.0)
         self.highlightNode?.alpha = 0
+//        self.highlightNode?.setScale(1.0)
     }
     
     func didTap() { }
