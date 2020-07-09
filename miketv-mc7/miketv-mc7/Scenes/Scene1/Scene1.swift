@@ -14,17 +14,41 @@ class Scene1: BaseGameScene {
     private var buttons: [SelectionableNode] = []
     private var currentFocused: SelectionableNode?
     
+    private var leftArrowNode: SelectionableNode?
+    private var rightArrowNode: SelectionableNode?
+    
+    private var bedNode: SelectionableNode?
+    private var bearNode: SelectionableNode?
+    private var booksNode: SelectionableNode?
+    private var boxNode: SelectionableNode?
+    
     override func didMove(to view: SKView) {
         
         guard
-            let buttonLeft = self.childNode(withName: "LeftButton") as? SelectionableNode,
-            let buttonRight = self.childNode(withName: "RightButton") as? SelectionableNode
+            let leftArrow = self.childNode(withName: "LeftArrow") as? SelectionableNode,
+            let rightArrow = self.childNode(withName: "RightArrow") as? SelectionableNode,
+            let bedNode = self.childNode(withName: "Bed") as? SelectionableNode,
+            let bearNode = self.childNode(withName: "Bear") as? SelectionableNode,
+            let booksNode = self.childNode(withName: "Books") as? SelectionableNode,
+            let boxNode = self.childNode(withName: "Box") as? SelectionableNode
             else { return }
         
-        buttons.append(buttonLeft)
-        buttons.append(buttonRight)
+        self.leftArrowNode = leftArrow
+        self.rightArrowNode = rightArrow
         
-        self.currentFocused = buttonLeft
+        self.bedNode = bedNode
+        self.bearNode = bearNode
+        self.booksNode = booksNode
+        self.boxNode = boxNode
+        
+        buttons.append(leftArrow)
+        buttons.append(bedNode)
+        buttons.append(boxNode)
+        buttons.append(booksNode)
+        buttons.append(bearNode)
+        buttons.append(rightArrow)
+        
+        self.currentFocused = bedNode
         self.currentFocused?.buttonDidGetFocus()
     }
     
@@ -34,7 +58,7 @@ class Scene1: BaseGameScene {
     
     override func didTap() {
         if let currentFocused = self.currentFocused {
-            if currentFocused == buttons[1] {
+            if currentFocused == rightArrowNode {
                 sceneDelegate?.changeScene(sceneName: "Scene2")
             }
         }
