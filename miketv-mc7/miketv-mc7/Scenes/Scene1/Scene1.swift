@@ -16,11 +16,14 @@ class Scene1: BaseGameScene {
     
     private var leftArrowNode: SelectionableNode?
     private var rightArrowNode: SelectionableNode?
+    private var storyLine: SKLabelNode?
     
     private var bedNode: SelectionableNode?
     private var bearNode: SelectionableNode?
     private var booksNode: SelectionableNode?
     private var boxNode: SelectionableNode?
+    private var timer: Timer?
+    
     
     override func didMove(to view: SKView) {
         
@@ -30,11 +33,13 @@ class Scene1: BaseGameScene {
             let bedNode = self.childNode(withName: "Bed") as? SelectionableNode,
             let bearNode = self.childNode(withName: "Bear") as? SelectionableNode,
             let booksNode = self.childNode(withName: "Books") as? SelectionableNode,
-            let boxNode = self.childNode(withName: "Box") as? SelectionableNode
+            let boxNode = self.childNode(withName: "Box") as? SelectionableNode,
+            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
             else { return }
         
         self.leftArrowNode = leftArrow
         self.rightArrowNode = rightArrow
+        self.storyLine = storyLine
         
         self.bedNode = bedNode
         bedNode.delegate = self
@@ -94,10 +99,9 @@ class Scene1: BaseGameScene {
 
 extension Scene1: SelectionableNodeDelegate {
     func setLines(line: String) {
-        let node = SKLabelNode(text: line)
-        node.fontColor = .black
-        node.position = CGPoint(x: 0, y: 0)
-        addChild(node)
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
+        storyLine?.text = line
     }
     
     func changeScene(sceneName: String) {
@@ -106,5 +110,9 @@ extension Scene1: SelectionableNodeDelegate {
     
     func collectItem(itemName: String) {
         //jaja
+    }
+    
+    @objc func disableLine() {
+        storyLine?.text = " "
     }
 }
