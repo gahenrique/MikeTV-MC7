@@ -11,27 +11,38 @@ import GameplayKit
 
 class Scene2: BaseGameScene {
     
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
     private var buttons: [SelectionableNode] = []
-    
     private var currentFocused: SelectionableNode?
+    
+    private var leftArrowNode: SelectionableNode?
+    private var rightArrowNode: SelectionableNode?
+    private var storyLine: SKLabelNode?
+    
+    private var coatNode: SelectionableNode?
+    private var plantNode: SelectionableNode?
+    private var timer: Timer?
+
     
     override func didMove(to view: SKView) {
         
         guard
-            let button1 = self.childNode(withName: "Button1") as? SelectionableNode,
-            let button2 = self.childNode(withName: "Button2") as? SelectionableNode,
-            let button3 = self.childNode(withName: "Button3") as? SelectionableNode,
-            let button4 = self.childNode(withName: "Button4") as? SelectionableNode
+            let leftArrow = self.childNode(withName: "LeftArrow") as? SelectionableNode,
+            let rightArrow = self.childNode(withName: "RightArrow") as? SelectionableNode,
+            let coatNode = self.childNode(withName: "Coat") as? SelectionableNode,
+            let plantNode = self.childNode(withName: "Plant") as? SelectionableNode,
+            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
         else { return }
         
-        buttons.append(button1)
-        buttons.append(button2)
-        buttons.append(button3)
-        buttons.append(button4)
+        self.leftArrowNode = leftArrow
+        self.rightArrowNode = rightArrow
+        self.storyLine = storyLine
         
-        self.currentFocused = button1
+        buttons.append(leftArrow)
+        buttons.append(coatNode)
+        buttons.append(plantNode)
+        buttons.append(rightArrow)
+        
+        self.currentFocused = coatNode
         self.currentFocused?.buttonDidGetFocus()
     }
 
@@ -39,6 +50,16 @@ class Scene2: BaseGameScene {
         // Called before each frame is rendered
     }
     
+    override func didTap() {
+        if let currentFocused = self.currentFocused {
+            if currentFocused == rightArrowNode {
+                sceneDelegate?.changeScene(sceneName: "Scene2")
+            }
+        }
+        currentFocused?.didTap()
+    }
+    
+    // MARK: Mudar funcao para game scene
     override func didSwipe(direction: UISwipeGestureRecognizer.Direction) {
         guard
             let currentFocused = self.currentFocused,
