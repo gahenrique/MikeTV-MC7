@@ -14,17 +14,47 @@ class Scene1: BaseGameScene {
     private var buttons: [SelectionableNode] = []
     private var currentFocused: SelectionableNode?
     
+    private var leftArrowNode: SelectionableNode?
+    private var rightArrowNode: SelectionableNode?
+    private var storyLine: SKLabelNode?
+    
+    private var bedNode: SelectionableNode?
+    private var bearNode: SelectionableNode?
+    private var booksNode: SelectionableNode?
+    private var boxNode: SelectionableNode?
+    private var timer: Timer?
+    
+    
     override func didMove(to view: SKView) {
         
         guard
-            let buttonLeft = self.childNode(withName: "LeftButton") as? SelectionableNode,
-            let buttonRight = self.childNode(withName: "RightButton") as? SelectionableNode
+            let leftArrow = self.childNode(withName: "LeftArrow") as? SelectionableNode,
+            let rightArrow = self.childNode(withName: "RightArrow") as? SelectionableNode,
+            let bedNode = self.childNode(withName: "Bed") as? SelectionableNode,
+            let bearNode = self.childNode(withName: "Bear") as? SelectionableNode,
+            let booksNode = self.childNode(withName: "Books") as? SelectionableNode,
+            let boxNode = self.childNode(withName: "Box") as? SelectionableNode,
+            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
             else { return }
         
-        buttons.append(buttonLeft)
-        buttons.append(buttonRight)
+        self.leftArrowNode = leftArrow
+        self.rightArrowNode = rightArrow
+        self.storyLine = storyLine
         
-        self.currentFocused = buttonLeft
+        self.bedNode = bedNode
+        bedNode.delegate = self
+        self.bearNode = bearNode
+        self.booksNode = booksNode
+        self.boxNode = boxNode
+        
+        buttons.append(leftArrow)
+        buttons.append(bedNode)
+        buttons.append(boxNode)
+        buttons.append(booksNode)
+        buttons.append(bearNode)
+        buttons.append(rightArrow)
+        
+        self.currentFocused = bedNode
         self.currentFocused?.buttonDidGetFocus()
     }
     
@@ -34,10 +64,11 @@ class Scene1: BaseGameScene {
     
     override func didTap() {
         if let currentFocused = self.currentFocused {
-            if currentFocused == buttons[1] {
+            if currentFocused == rightArrowNode {
                 sceneDelegate?.changeScene(sceneName: "Scene2")
             }
         }
+        currentFocused?.didTap()
     }
     
     override func didSwipe(direction: UISwipeGestureRecognizer.Direction) {
@@ -63,5 +94,25 @@ class Scene1: BaseGameScene {
 
         self.currentFocused = buttons[nextFocusIndex]
         self.currentFocused?.buttonDidGetFocus()
+    }
+}
+
+extension Scene1: SelectionableNodeDelegate {
+    func setLines(line: String) {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
+        storyLine?.text = line
+    }
+    
+    func changeScene(sceneName: String) {
+        //lala
+    }
+    
+    func collectItem(itemName: String) {
+        //jaja
+    }
+    
+    @objc func disableLine() {
+        storyLine?.text = " "
     }
 }
