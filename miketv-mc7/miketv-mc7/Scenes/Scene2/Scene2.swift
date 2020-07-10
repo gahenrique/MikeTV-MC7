@@ -52,8 +52,8 @@ class Scene2: BaseGameScene {
     
     override func didTap() {
         if let currentFocused = self.currentFocused {
-            if currentFocused == rightArrowNode {
-                sceneDelegate?.changeScene(sceneName: "Scene2")
+            if currentFocused == leftArrowNode {
+                sceneDelegate?.changeScene(sceneName: "Scene1")
             }
         }
         currentFocused?.didTap()
