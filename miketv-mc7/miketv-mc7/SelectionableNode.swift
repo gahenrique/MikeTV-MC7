@@ -12,6 +12,7 @@ protocol SelectionableNodeDelegate: AnyObject {
     func setLines(line: String)
     func changeScene(sceneName: String)
     func collectItem(itemName: String) //Enum?
+    func changeState(_ node: SelectionableNode, to newState: State)
 }
 
 class SelectionableNode: SKSpriteNode {

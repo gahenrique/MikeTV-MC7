@@ -12,6 +12,8 @@
 		0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8DE4B24B7938D000284AF /* BedNode.swift */; };
 		C03ABC5924B9013000B9D4CB /* Scene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5824B9013000B9D4CB /* Scene4.swift */; };
 		C03ABC5B24B901D400B9D4CB /* Scene4.sks in Resources */ = {isa = PBXBuildFile; fileRef = C03ABC5A24B901D400B9D4CB /* Scene4.sks */; };
+		C03ABC5424B8D62700B9D4CB /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5324B8D62700B9D4CB /* GameModel.swift */; };
+		C03ABC5624B8E33E00B9D4CB /* BearNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5524B8E33E00B9D4CB /* BearNode.swift */; };
 		C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */; };
 		C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045F0F724B6629500D75E6F /* BaseGameScene.swift */; };
 		C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */; };
@@ -33,6 +35,8 @@
 		0FD8DE4B24B7938D000284AF /* BedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedNode.swift; sourceTree = "<group>"; };
 		C03ABC5824B9013000B9D4CB /* Scene4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene4.swift; sourceTree = "<group>"; };
 		C03ABC5A24B901D400B9D4CB /* Scene4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene4.sks; sourceTree = "<group>"; };
+		C03ABC5324B8D62700B9D4CB /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		C03ABC5524B8E33E00B9D4CB /* BearNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearNode.swift; sourceTree = "<group>"; };
 		C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneDelegate.swift; sourceTree = "<group>"; };
 		C045F0F724B6629500D75E6F /* BaseGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGameScene.swift; sourceTree = "<group>"; };
 		C0E53DC724B39B9500DEE127 /* miketv-mc7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "miketv-mc7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				0FD8DE4B24B7938D000284AF /* BedNode.swift */,
+				C03ABC5524B8E33E00B9D4CB /* BearNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -85,6 +90,12 @@
 				C03ABC5824B9013000B9D4CB /* Scene4.swift */,
 			);
 			path = Scene4;
+		C03ABC5224B8D60A00B9D4CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C03ABC5324B8D62700B9D4CB /* GameModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C045F0F424B6623600D75E6F /* Protocols */ = {
@@ -116,6 +127,7 @@
 			children = (
 				0FD8DE4A24B79377000284AF /* Nodes */,
 				C045F0F424B6623600D75E6F /* Protocols */,
+				C03ABC5224B8D60A00B9D4CB /* Models */,
 				C0E53DE424B4EBFB00DEE127 /* Scenes */,
 				C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */,
 				C0E53DCE24B39B9500DEE127 /* Actions.sks */,
@@ -239,6 +251,8 @@
 				C0E53DD124B39B9500DEE127 /* Scene2.swift in Sources */,
 				C03ABC5924B9013000B9D4CB /* Scene4.swift in Sources */,
 				0F3782C724B90103006F90C1 /* Scene3.swift in Sources */,
+				C03ABC5424B8D62700B9D4CB /* GameModel.swift in Sources */,
+				C03ABC5624B8E33E00B9D4CB /* BearNode.swift in Sources */,
 				C0E53DD324B39B9500DEE127 /* GameViewController.swift in Sources */,
 				C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */,
 				C0E53DEA24B4EEE500DEE127 /* Scene1.swift in Sources */,

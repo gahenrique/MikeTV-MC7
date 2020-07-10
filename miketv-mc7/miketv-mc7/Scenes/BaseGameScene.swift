@@ -9,9 +9,17 @@
 import SpriteKit
 
 class BaseGameScene: SKScene {
+    
     weak var sceneDelegate: GameSceneDelegate?
+    
+    private(set) var model: SceneModel?
     
     func didSwipe(direction: UISwipeGestureRecognizer.Direction) {}
     
     func didTap() {}
+    
+    func setupModel(model: SceneModel) {
+        self.model = model
+    }
+    
 }

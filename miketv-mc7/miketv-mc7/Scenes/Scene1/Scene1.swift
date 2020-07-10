@@ -24,7 +24,6 @@ class Scene1: BaseGameScene {
     private var boxNode: SelectionableNode?
     private var timer: Timer?
     
-    
     override func didMove(to view: SKView) {
         
         guard
@@ -44,6 +43,7 @@ class Scene1: BaseGameScene {
         self.bedNode = bedNode
         bedNode.delegate = self
         self.bearNode = bearNode
+        bearNode.delegate = self
         self.booksNode = booksNode
         self.boxNode = boxNode
         
@@ -58,6 +58,16 @@ class Scene1: BaseGameScene {
         self.currentFocused?.buttonDidGetFocus()
     }
     
+    override func setupModel(model: SceneModel) {
+        super.setupModel(model: model)
+        
+        guard let model = model as? Scene1Model,
+            let bearTexture = model.bearTextures[model.bearState]
+            else { return }
+        
+        bearNode?.texture = SKTexture(imageNamed: bearTexture)
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
@@ -65,7 +75,7 @@ class Scene1: BaseGameScene {
     override func didTap() {
         if let currentFocused = self.currentFocused {
             if currentFocused == rightArrowNode {
-                sceneDelegate?.changeScene(sceneName: "Scene2")
+                sceneDelegate?.changeScene(to: .Scene2)
             }
         }
         currentFocused?.didTap()
@@ -75,12 +85,12 @@ class Scene1: BaseGameScene {
         guard
             let currentFocused = self.currentFocused,
             let currentFocusedIndex = buttons.firstIndex(of: currentFocused)
-        else { return }
-
+            else { return }
+        
         currentFocused.buttonDidLoseFocus()
-
+        
         var nextFocusIndex: Int = currentFocusedIndex
-
+        
         switch direction {
         case .left:
             nextFocusIndex = currentFocusedIndex > 0 ? currentFocusedIndex - 1 : 0
@@ -91,13 +101,23 @@ class Scene1: BaseGameScene {
         default:
             break
         }
-
+        
         self.currentFocused = buttons[nextFocusIndex]
         self.currentFocused?.buttonDidGetFocus()
     }
 }
 
 extension Scene1: SelectionableNodeDelegate {
+    func changeState(_ node: SelectionableNode, to newState: State) {
+        guard let model = self.model as? Scene1Model else { return }
+        
+        if node == bearNode,
+            let newTexture = model.bearTextures[newState] {
+            model.bearState = newState
+            bearNode?.texture = SKTexture(imageNamed: newTexture)
+        }
+    }
+    
     func setLines(line: String) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
