@@ -31,21 +31,27 @@ class GameModel {
     
 }
 
-class SceneModel {
-    let sceneName: String
-    
-    init(sceneName: String) {
-        self.sceneName = sceneName
-    }
+protocol SceneModel {
+    var sceneName: SceneName { get set }
 }
 
 class Scene1Model: SceneModel {
+    var sceneName: SceneName = .Scene1
     
     var bearTextures: [State: String] = [.normal: "Ursinho", .destroyed: "UrsinhoDestruido"]
     
-    init() {
-        super.init(sceneName: "Scene1")
-    }
-    
     var bearState: State = .normal
 }
+
+class Scene2Model: SceneModel {
+    var sceneName : SceneName = .Scene2
+}
+
+class Scene3Model: SceneModel {
+    var sceneName : SceneName = .Scene3
+}
+
+class Scene4Model: SceneModel {
+    var sceneName : SceneName = .Scene4
+}
+
