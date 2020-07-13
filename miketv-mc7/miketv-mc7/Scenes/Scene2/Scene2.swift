@@ -54,6 +54,8 @@ class Scene2: BaseGameScene {
         if let currentFocused = self.currentFocused {
             if currentFocused == leftArrowNode {
                 sceneDelegate?.changeScene(sceneName: "Scene1")
+            } else if currentFocused == rightArrowNode {
+                sceneDelegate?.changeScene(sceneName: "Scene3")
             }
         }
         currentFocused?.didTap()

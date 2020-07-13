@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F3782C424B900EE006F90C1 /* Scene3.sks */; };
+		0F3782C724B90103006F90C1 /* Scene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3782C624B90103006F90C1 /* Scene3.swift */; };
 		0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8DE4B24B7938D000284AF /* BedNode.swift */; };
 		C03ABC5924B9013000B9D4CB /* Scene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5824B9013000B9D4CB /* Scene4.swift */; };
 		C03ABC5B24B901D400B9D4CB /* Scene4.sks in Resources */ = {isa = PBXBuildFile; fileRef = C03ABC5A24B901D400B9D4CB /* Scene4.sks */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F3782C424B900EE006F90C1 /* Scene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene3.sks; sourceTree = "<group>"; };
+		0F3782C624B90103006F90C1 /* Scene3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene3.swift; sourceTree = "<group>"; };
 		0FD8DE4B24B7938D000284AF /* BedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedNode.swift; sourceTree = "<group>"; };
 		C03ABC5824B9013000B9D4CB /* Scene4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene4.swift; sourceTree = "<group>"; };
 		C03ABC5A24B901D400B9D4CB /* Scene4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene4.sks; sourceTree = "<group>"; };
@@ -57,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F3782C324B90083006F90C1 /* Scene3 */ = {
+			isa = PBXGroup;
+			children = (
+				0F3782C424B900EE006F90C1 /* Scene3.sks */,
+				0F3782C624B90103006F90C1 /* Scene3.swift */,
+			);
+			path = Scene3;
+			sourceTree = "<group>";
+		};
 		0FD8DE4A24B79377000284AF /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +136,7 @@
 				C0E53DE824B4EED500DEE127 /* Scene1 */,
 				C0E53DE724B4EEC900DEE127 /* Scene2 */,
 				C03ABC5724B9010000B9D4CB /* Scene4 */,
+				0F3782C324B90083006F90C1 /* Scene3 */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -209,6 +223,7 @@
 				C0E53DDB24B39B9600DEE127 /* LaunchScreen.storyboard in Resources */,
 				C03ABC5B24B901D400B9D4CB /* Scene4.sks in Resources */,
 				C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */,
+				0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */,
 				C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +238,7 @@
 				C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */,
 				C0E53DD124B39B9500DEE127 /* Scene2.swift in Sources */,
 				C03ABC5924B9013000B9D4CB /* Scene4.swift in Sources */,
+				0F3782C724B90103006F90C1 /* Scene3.swift in Sources */,
 				C0E53DD324B39B9500DEE127 /* GameViewController.swift in Sources */,
 				C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */,
 				C0E53DEA24B4EEE500DEE127 /* Scene1.swift in Sources */,
