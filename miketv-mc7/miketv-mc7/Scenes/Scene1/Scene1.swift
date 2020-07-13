@@ -126,7 +126,7 @@ extension Scene1: SelectionableNodeDelegate {
         storyLine?.text = line
     }
     
-    func changeScene(sceneName: String) {
+    func changeScene(to scene: SceneName) {
         //lala
     }
     

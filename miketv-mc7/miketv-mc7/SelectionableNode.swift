@@ -10,7 +10,7 @@ import SpriteKit
 
 protocol SelectionableNodeDelegate: AnyObject {
     func setLines(line: String)
-    func changeScene(sceneName: String)
+    func changeScene(to scene: SceneName)
     func collectItem(itemName: String) //Enum?
     func changeState(_ node: SelectionableNode, to newState: State)
 }
