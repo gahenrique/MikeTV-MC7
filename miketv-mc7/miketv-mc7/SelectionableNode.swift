@@ -13,6 +13,7 @@ protocol SelectionableNodeDelegate: AnyObject {
     func changeScene(to scene: SceneName)
     func collectItem(itemName: String) //Enum?
     func changeState(_ node: SelectionableNode, to newState: State)
+    func getModel() -> GameModel?
 }
 
 class SelectionableNode: SKSpriteNode {

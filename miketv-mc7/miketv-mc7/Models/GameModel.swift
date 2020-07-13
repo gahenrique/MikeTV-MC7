@@ -13,6 +13,13 @@ enum State {
     case destroyed
 }
 
+enum BearState {
+    case normal
+    case openedWithFragment
+    case openedWithoutFragment
+    case destroyed
+}
+
 class GameModel {
     
     enum CollectionableItems {
@@ -38,9 +45,9 @@ protocol SceneModel {
 class Scene1Model: SceneModel {
     var sceneName: SceneName = .Scene1
     
-    var bearTextures: [State: String] = [.normal: "Ursinho", .destroyed: "UrsinhoDestruido"]
+    var bearTextures: [BearState: String] = [.normal: "Ursinho", .openedWithFragment: "UrsinhoAbertoFragmento", .openedWithoutFragment: "UrsinhoAberto", .destroyed: "UrsinhoDestruido"]
     
-    var bearState: State = .normal
+    var bearState: BearState = .normal
 }
 
 class Scene2Model: SceneModel {

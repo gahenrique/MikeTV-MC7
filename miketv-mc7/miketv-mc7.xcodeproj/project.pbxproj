@@ -16,6 +16,9 @@
 		C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045F0F724B6629500D75E6F /* BaseGameScene.swift */; };
 		C0CCA2C424BCD438009CA446 /* Scene4.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0CCA2C224BCD438009CA446 /* Scene4.sks */; };
 		C0CCA2C524BCD438009CA446 /* Scene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CCA2C324BCD438009CA446 /* Scene4.swift */; };
+		C0CCA2C924BCEC8E009CA446 /* BearFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0CCA2C824BCEC8E009CA446 /* BearFocus.sks */; };
+		C0CCA2CB24BCF175009CA446 /* BearFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CCA2CA24BCF175009CA446 /* BearFocus.swift */; };
+		C0CCA2CD24BCF460009CA446 /* BearFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CCA2CC24BCF460009CA446 /* BearFocusNode.swift */; };
 		C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */; };
 		C0E53DCD24B39B9500DEE127 /* Scene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DCC24B39B9500DEE127 /* Scene2.sks */; };
 		C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DCE24B39B9500DEE127 /* Actions.sks */; };
@@ -39,6 +42,9 @@
 		C045F0F724B6629500D75E6F /* BaseGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGameScene.swift; sourceTree = "<group>"; };
 		C0CCA2C224BCD438009CA446 /* Scene4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene4.sks; sourceTree = "<group>"; };
 		C0CCA2C324BCD438009CA446 /* Scene4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene4.swift; sourceTree = "<group>"; };
+		C0CCA2C824BCEC8E009CA446 /* BearFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BearFocus.sks; sourceTree = "<group>"; };
+		C0CCA2CA24BCF175009CA446 /* BearFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearFocus.swift; sourceTree = "<group>"; };
+		C0CCA2CC24BCF460009CA446 /* BearFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearFocusNode.swift; sourceTree = "<group>"; };
 		C0E53DC724B39B9500DEE127 /* miketv-mc7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "miketv-mc7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E53DCC24B39B9500DEE127 /* Scene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene2.sks; sourceTree = "<group>"; };
@@ -79,6 +85,7 @@
 			children = (
 				0FD8DE4B24B7938D000284AF /* BedNode.swift */,
 				C03ABC5524B8E33E00B9D4CB /* BearNode.swift */,
+				C0CCA2CC24BCF460009CA446 /* BearFocusNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -106,6 +113,23 @@
 				C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C0CCA2C624BCEC25009CA446 /* FocusScenes */ = {
+			isa = PBXGroup;
+			children = (
+				C0CCA2C724BCEC3E009CA446 /* Bear */,
+			);
+			path = FocusScenes;
+			sourceTree = "<group>";
+		};
+		C0CCA2C724BCEC3E009CA446 /* Bear */ = {
+			isa = PBXGroup;
+			children = (
+				C0CCA2C824BCEC8E009CA446 /* BearFocus.sks */,
+				C0CCA2CA24BCF175009CA446 /* BearFocus.swift */,
+			);
+			path = Bear;
 			sourceTree = "<group>";
 		};
 		C0E53DBE24B39B9500DEE127 = {
@@ -151,6 +175,7 @@
 				C0E53DE724B4EEC900DEE127 /* Scene2 */,
 				0F3782C324B90083006F90C1 /* Scene3 */,
 				C037CC8B24BCD3880014AA16 /* Scene4 */,
+				C0CCA2C624BCEC25009CA446 /* FocusScenes */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -238,6 +263,7 @@
 				C0E53DDB24B39B9600DEE127 /* LaunchScreen.storyboard in Resources */,
 				C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */,
 				0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */,
+				C0CCA2C924BCEC8E009CA446 /* BearFocus.sks in Resources */,
 				C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,10 +276,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */,
+				C0CCA2CD24BCF460009CA446 /* BearFocusNode.swift in Sources */,
 				C0E53DD124B39B9500DEE127 /* Scene2.swift in Sources */,
 				0F3782C724B90103006F90C1 /* Scene3.swift in Sources */,
 				C03ABC5424B8D62700B9D4CB /* GameModel.swift in Sources */,
 				C03ABC5624B8E33E00B9D4CB /* BearNode.swift in Sources */,
+				C0CCA2CB24BCF175009CA446 /* BearFocus.swift in Sources */,
 				C0CCA2C524BCD438009CA446 /* Scene4.swift in Sources */,
 				C0E53DD324B39B9500DEE127 /* GameViewController.swift in Sources */,
 				C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */,

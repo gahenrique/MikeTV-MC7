@@ -9,6 +9,6 @@
 class BearNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.changeState(self, to: .destroyed)
+        delegate?.changeScene(to: .BearFocus)
     }
 }

@@ -12,13 +12,13 @@ class BaseGameScene: SKScene {
     
     weak var sceneDelegate: GameSceneDelegate?
     
-    private(set) var model: SceneModel?
+    private(set) var model: GameModel?
     
     func didSwipe(direction: UISwipeGestureRecognizer.Direction) {}
     
     func didTap() {}
     
-    func setupModel(model: SceneModel) {
+    func setupModel(model: GameModel) {
         self.model = model
     }
     
