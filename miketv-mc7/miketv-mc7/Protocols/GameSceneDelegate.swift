@@ -9,5 +9,5 @@
 import Foundation
 
 protocol GameSceneDelegate: NSObject {
-    func changeScene(sceneName: String)
+    func changeScene(to sceneName: SceneName)
 }

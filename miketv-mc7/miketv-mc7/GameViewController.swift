@@ -12,6 +12,8 @@ import GameController
 
 class GameViewController: UIViewController {
     
+    let gameModel = GameModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +52,7 @@ class GameViewController: UIViewController {
             // Load the SKScene from .sks
             if let scene = SKScene(fileNamed: "Scene1") as? Scene1 {
                 scene.sceneDelegate = self
+                scene.setupModel(model: self.gameModel)
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
             }
@@ -61,13 +64,25 @@ class GameViewController: UIViewController {
     }
 }
 
+enum SceneName: String {
+    case Scene1 = "Scene1"
+    case Scene2 = "Scene2"
+    case Scene3 = "Scene3"
+    case Scene4 = "Scene4"
+    case BearFocus = "BearFocus"
+}
+
 extension GameViewController: GameSceneDelegate {
-    func changeScene(sceneName: String) {
+    func changeScene(to sceneName: SceneName) {
         if let view = self.view as! SKView?,
-            let scene = BaseGameScene(fileNamed: sceneName) {
-                scene.sceneDelegate = self
-                scene.scaleMode = .aspectFit
-                view.presentScene(scene)
+            let scene = BaseGameScene(fileNamed: sceneName.rawValue) {
+            
+            scene.sceneDelegate = self
+            scene.scaleMode = .aspectFit
+            view.presentScene(scene)
+            
+            scene.setupModel(model: self.gameModel)
+            
         }
     }
 }

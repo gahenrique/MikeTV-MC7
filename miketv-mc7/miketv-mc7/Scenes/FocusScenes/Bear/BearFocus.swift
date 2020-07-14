@@ -1,60 +1,38 @@
 //
-//  Scene1.swif.swift
+//  BearFocus.swift
 //  miketv-mc7
 //
-//  Created by gabriel on 07/07/20.
+//  Created by gabriel on 13/07/20.
 //  Copyright © 2020 gabriel. All rights reserved.
 //
 
 import SpriteKit
-import GameplayKit
 
-class Scene1: BaseGameScene {
+class BearFocus: BaseGameScene {
     
     private var buttons: [SelectionableNode] = []
     private var currentFocused: SelectionableNode?
     
-    private var leftArrowNode: SelectionableNode?
-    private var rightArrowNode: SelectionableNode?
-    private var storyLine: SKLabelNode?
+    private var backArrowNode: SelectionableNode?
     
-    private var bedNode: SelectionableNode?
     private var bearNode: SelectionableNode?
-    private var booksNode: SelectionableNode?
-    private var boxNode: SelectionableNode?
-    private var timer: Timer?
-    
+        
     override func didMove(to view: SKView) {
         
         guard
-            let leftArrow = self.childNode(withName: "LeftArrow") as? SelectionableNode,
-            let rightArrow = self.childNode(withName: "RightArrow") as? SelectionableNode,
-            let bedNode = self.childNode(withName: "Bed") as? SelectionableNode,
-            let bearNode = self.childNode(withName: "Bear") as? SelectionableNode,
-            let booksNode = self.childNode(withName: "Books") as? SelectionableNode,
-            let boxNode = self.childNode(withName: "Box") as? SelectionableNode,
-            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
+            let backArrowNode = self.childNode(withName: "BackArrow") as? SelectionableNode,
+            let bearNode = self.childNode(withName: "Bear") as? SelectionableNode
             else { return }
         
-        self.leftArrowNode = leftArrow
-        self.rightArrowNode = rightArrow
-        self.storyLine = storyLine
-        
-        self.bedNode = bedNode
-        bedNode.delegate = self
+        self.backArrowNode = backArrowNode
         self.bearNode = bearNode
+        
         bearNode.delegate = self
-        self.booksNode = booksNode
-        self.boxNode = boxNode
         
-        buttons.append(leftArrow)
-        buttons.append(bedNode)
-        buttons.append(boxNode)
-        buttons.append(booksNode)
+        buttons.append(backArrowNode)
         buttons.append(bearNode)
-        buttons.append(rightArrow)
         
-        self.currentFocused = bedNode
+        self.currentFocused = backArrowNode
         self.currentFocused?.buttonDidGetFocus()
     }
     
@@ -74,10 +52,8 @@ class Scene1: BaseGameScene {
     
     override func didTap() {
         if let currentFocused = self.currentFocused {
-            if currentFocused == leftArrowNode {
-                sceneDelegate?.changeScene(to: .Scene4)
-            } else if currentFocused == rightArrowNode {
-                sceneDelegate?.changeScene(to: .Scene2)
+            if currentFocused == backArrowNode {
+                sceneDelegate?.changeScene(to: .Scene1)
             }
         }
         currentFocused?.didTap()
@@ -109,13 +85,14 @@ class Scene1: BaseGameScene {
     }
 }
 
-extension Scene1: SelectionableNodeDelegate {
+extension BearFocus: SelectionableNodeDelegate {
     func getModel() -> GameModel? {
         return self.model
     }
     
     func changeState(_ node: SelectionableNode, to newState: State) {
-        
+//        guard let model = self.model as? Scene1Model else { return }
+//
 //        if node == bearNode,
 //            let newTexture = model.bearTextures[newState] {
 //            model.bearState = newState
@@ -124,16 +101,12 @@ extension Scene1: SelectionableNodeDelegate {
     }
     
     func setLines(line: String) {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
-        storyLine?.text = line
     }
     
     func changeScene(to scene: SceneName) {
-        sceneDelegate?.changeScene(to: scene)
+        //lala
     }
     
     @objc func disableLine() {
-        storyLine?.text = " "
     }
 }

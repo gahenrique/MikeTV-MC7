@@ -6,8 +6,6 @@
 //  Copyright © 2020 gabriel. All rights reserved.
 //
 
-import Foundation
-
 class BedNode: SelectionableNode {
     
     override func didTap() {
