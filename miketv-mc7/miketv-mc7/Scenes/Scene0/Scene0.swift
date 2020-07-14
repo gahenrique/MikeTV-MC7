@@ -23,7 +23,7 @@ class Scene0: BaseGameScene {
     private var audioPlayer = AVAudioPlayer()
     
     // MARK: colocar falas no model
-    let arrayLines: [String] = ["O que é isso?", "Fogos de artificio? Aqui no palácio?", "Ah! Como pude esquecer?"]
+    let arrayLines: [String] = ["O que é isso?", "Fogos de artificio? Aqui no palácio?", "Ah! Como pude esquecer?", "O tempo passou tão rápido que nem me dei conta que hoje já é meu aniversário!", "E o reino inteiro já está comemorando!", "Será que já chegou algum presente para mim???"]
 
     
     override func didMove(to view: SKView) {
