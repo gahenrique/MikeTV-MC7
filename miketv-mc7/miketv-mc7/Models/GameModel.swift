@@ -20,6 +20,11 @@ enum BearState {
     case destroyed
 }
 
+enum PlantState {
+    case withKey
+    case withoutKey
+}
+
 enum CollectionableItems {
     case photoFragment1
     case photoFragment2
@@ -35,11 +40,17 @@ class GameModel {
     // Game State Models
     var backgroundState: State = .normal
     let scene1 = Scene1Model()
+    let scene2 = Scene2Model()
+    let scene3 = Scene3Model()
+    let scene4 = Scene4Model()
     
     func collectItem(_ item: CollectionableItems) {
         inventory.append(item)
     }
     
+    func hasItem(_ item: CollectionableItems) -> Bool {
+        inventory.contains(item)
+    }
 }
 
 protocol SceneModel {
@@ -56,6 +67,10 @@ class Scene1Model: SceneModel {
 
 class Scene2Model: SceneModel {
     var sceneName : SceneName = .Scene2
+    
+    var plantTextures: [PlantState: String] = [.withKey: "PlantaChave", .withoutKey: "Planta"]
+    
+    var plantState: PlantState = .withKey
 }
 
 class Scene3Model: SceneModel {

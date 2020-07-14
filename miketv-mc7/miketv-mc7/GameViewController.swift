@@ -70,6 +70,7 @@ enum SceneName: String {
     case Scene3 = "Scene3"
     case Scene4 = "Scene4"
     case BearFocus = "BearFocus"
+    case PlantFocus = "PlantFocus"
 }
 
 extension GameViewController: GameSceneDelegate {
