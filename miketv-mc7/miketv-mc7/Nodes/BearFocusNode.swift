@@ -27,6 +27,8 @@ class BearFocusNode: SelectionableNode {
         
         if nextState == .openedWithoutFragment {
             model.scene1.bearState = .destroyed
+            
+            model.collectItem(.photoFragment2)
         }
     }
     

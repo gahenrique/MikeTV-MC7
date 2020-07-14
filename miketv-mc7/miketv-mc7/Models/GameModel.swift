@@ -20,21 +20,25 @@ enum BearState {
     case destroyed
 }
 
+enum CollectionableItems {
+    case photoFragment1
+    case photoFragment2
+    case photoFragment3
+    case key
+    case courtainStuff
+}
+
 class GameModel {
     
-    enum CollectionableItems {
-        case photoFragment1
-        case photoFragment2
-        case photoFragment3
-        case key
-        case courtainStuff
-    }
-    
-    var inventory: [CollectionableItems] = []
+    private(set) var inventory: [CollectionableItems] = []
     
     // Game State Models
     var backgroundState: State = .normal
     let scene1 = Scene1Model()
+    
+    func collectItem(_ item: CollectionableItems) {
+        inventory.append(item)
+    }
     
 }
 

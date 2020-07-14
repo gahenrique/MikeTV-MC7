@@ -133,10 +133,6 @@ extension Scene1: SelectionableNodeDelegate {
         sceneDelegate?.changeScene(to: scene)
     }
     
-    func collectItem(itemName: String) {
-        //jaja
-    }
-    
     @objc func disableLine() {
         storyLine?.text = " "
     }

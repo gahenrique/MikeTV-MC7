@@ -107,10 +107,6 @@ extension BearFocus: SelectionableNodeDelegate {
         //lala
     }
     
-    func collectItem(itemName: String) {
-        //jaja
-    }
-    
     @objc func disableLine() {
     }
 }
