@@ -19,14 +19,24 @@ class Scene0: BaseGameScene {
     private var canTap: Bool = false
     private var countLines: Int = 0
     
-    let url = Bundle.main.url(forResource: "level", withExtension: "mp3")
-    private var audioPlayer = AVAudioPlayer()
+    private let soundNode = SKNode()
+    
+//    let url = Bundle.main.url(forResource: "firework", withExtension: "mp3")
+//    private var audioPlayer = AVAudioPlayer()
     
     // MARK: colocar falas no model
     let arrayLines: [String] = ["O que é isso?", "Fogos de artificio? Aqui no palácio?", "Ah! Como pude esquecer?", "O tempo passou tão rápido que nem me dei conta que hoje já é meu aniversário!", "E o reino inteiro já está comemorando!", "Será que já chegou algum presente para mim???"]
 
     
     override func didMove(to view: SKView) {
+        //MARK: Vamos adicionar um som de fundo?
+//        audioPlayer.play()
+        
+        addChild(soundNode)
+        
+        //MARK: Vai ter repeat?
+        let soundAction = SKAction.playSoundFileNamed("firework.mp3", waitForCompletion: false)
+        soundNode.run(soundAction)
         
         guard
             let backgroundImg = self.childNode(withName: "background") as? SKSpriteNode,
@@ -62,6 +72,7 @@ class Scene0: BaseGameScene {
     }
     
     func animateBackground() {
+        
         backgroundImg?.run(SKAction.animate(with: backgroundFrames,
                          timePerFrame: 0.8,
                          resize: false,

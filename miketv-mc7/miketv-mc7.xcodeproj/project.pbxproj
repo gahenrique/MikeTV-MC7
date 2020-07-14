@@ -12,7 +12,7 @@
 		0F41BF9524BE1E3B00FE83FC /* Scene0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F41BF9424BE1E3B00FE83FC /* Scene0.swift */; };
 		0F41BF9724BE1E4B00FE83FC /* Scene0.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BF9624BE1E4B00FE83FC /* Scene0.sks */; };
 		0F41BFB224BE2BFB00FE83FC /* ZeroSceneAtlas.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BFB124BE2BFA00FE83FC /* ZeroSceneAtlas.atlas */; };
-		0F41BFB424BE52C400FE83FC /* felix_blume_fireworks_distant_new_years_eve_mexico.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BFB324BE52C400FE83FC /* felix_blume_fireworks_distant_new_years_eve_mexico.mp3 */; };
+		0F41BFB424BE52C400FE83FC /* firework.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BFB324BE52C400FE83FC /* firework.mp3 */; };
 		0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8DE4B24B7938D000284AF /* BedNode.swift */; };
 		C03ABC5424B8D62700B9D4CB /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5324B8D62700B9D4CB /* GameModel.swift */; };
 		C03ABC5624B8E33E00B9D4CB /* BearNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5524B8E33E00B9D4CB /* BearNode.swift */; };
@@ -42,7 +42,7 @@
 		0F41BF9424BE1E3B00FE83FC /* Scene0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0.swift; sourceTree = "<group>"; };
 		0F41BF9624BE1E4B00FE83FC /* Scene0.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene0.sks; sourceTree = "<group>"; };
 		0F41BFB124BE2BFA00FE83FC /* ZeroSceneAtlas.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ZeroSceneAtlas.atlas; sourceTree = "<group>"; };
-		0F41BFB324BE52C400FE83FC /* felix_blume_fireworks_distant_new_years_eve_mexico.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = felix_blume_fireworks_distant_new_years_eve_mexico.mp3; sourceTree = "<group>"; };
+		0F41BFB324BE52C400FE83FC /* firework.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = firework.mp3; sourceTree = "<group>"; };
 		0FD8DE4B24B7938D000284AF /* BedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedNode.swift; sourceTree = "<group>"; };
 		C03ABC5324B8D62700B9D4CB /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		C03ABC5524B8E33E00B9D4CB /* BearNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearNode.swift; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 				0FD8DE4A24B79377000284AF /* Nodes */,
 				C045F0F424B6623600D75E6F /* Protocols */,
 				C03ABC5224B8D60A00B9D4CB /* Models */,
-				0F41BFB324BE52C400FE83FC /* felix_blume_fireworks_distant_new_years_eve_mexico.mp3 */,
+				0F41BFB324BE52C400FE83FC /* firework.mp3 */,
 				C0E53DE424B4EBFB00DEE127 /* Scenes */,
 				C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */,
 				C0E53DCE24B39B9500DEE127 /* Actions.sks */,
@@ -284,7 +284,7 @@
 				C0CCA2C424BCD438009CA446 /* Scene4.sks in Resources */,
 				C0E53DDB24B39B9600DEE127 /* LaunchScreen.storyboard in Resources */,
 				C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */,
-				0F41BFB424BE52C400FE83FC /* felix_blume_fireworks_distant_new_years_eve_mexico.mp3 in Resources */,
+				0F41BFB424BE52C400FE83FC /* firework.mp3 in Resources */,
 				0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */,
 				C0CCA2C924BCEC8E009CA446 /* BearFocus.sks in Resources */,
 				C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */,
