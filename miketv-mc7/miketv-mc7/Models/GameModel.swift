@@ -25,10 +25,17 @@ enum PlantState {
     case withoutKey
 }
 
+enum DresserState {
+    case closed
+    case openedWithFragment
+    case openedWithoutFragment
+}
+
 enum CollectionableItems {
     case photoFragment1
     case photoFragment2
     case photoFragment3
+    case photoFragment4
     case key
     case courtainStuff
 }
@@ -61,7 +68,6 @@ class Scene1Model: SceneModel {
     var sceneName: SceneName = .Scene1
     
     var bearTextures: [BearState: String] = [.normal: "Ursinho", .openedWithFragment: "UrsinhoAbertoFragmento", .openedWithoutFragment: "UrsinhoAberto", .destroyed: "UrsinhoDestruido"]
-    
     var bearState: BearState = .normal
 }
 
@@ -69,7 +75,6 @@ class Scene2Model: SceneModel {
     var sceneName : SceneName = .Scene2
     
     var plantTextures: [PlantState: String] = [.withKey: "PlantaChave", .withoutKey: "Planta"]
-    
     var plantState: PlantState = .withKey
 }
 
@@ -79,5 +84,9 @@ class Scene3Model: SceneModel {
 
 class Scene4Model: SceneModel {
     var sceneName : SceneName = .Scene4
+    
+    // Only for focused
+    var dresserTextures: [DresserState: String] = [.closed: "Comoda",.openedWithFragment: "ComodaAbertaFragmento", .openedWithoutFragment: "ComodaAberta"]
+    var dresserState: DresserState = .closed
 }
 

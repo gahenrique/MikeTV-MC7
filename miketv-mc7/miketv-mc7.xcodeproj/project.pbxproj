@@ -18,6 +18,10 @@
 		C0B2DDF924BE1FC700277841 /* PlantFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0B2DDF824BE1FC700277841 /* PlantFocus.sks */; };
 		C0B2DDFB24BE1FCF00277841 /* PlantFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2DDFA24BE1FCF00277841 /* PlantFocus.swift */; };
 		C0B2DDFD24BE235C00277841 /* PlantFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2DDFC24BE235C00277841 /* PlantFocusNode.swift */; };
+		C0B2DE0024BE2C1500277841 /* DresserFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0B2DDFF24BE2C1500277841 /* DresserFocus.sks */; };
+		C0B2DE0224BE2C1D00277841 /* DresserFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2DE0124BE2C1D00277841 /* DresserFocus.swift */; };
+		C0B2DE0424BE3E2500277841 /* DresserNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2DE0324BE3E2500277841 /* DresserNode.swift */; };
+		C0B2DE0624BE435900277841 /* DresserFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2DE0524BE435900277841 /* DresserFocusNode.swift */; };
 		C0CCA2C424BCD438009CA446 /* Scene4.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0CCA2C224BCD438009CA446 /* Scene4.sks */; };
 		C0CCA2C524BCD438009CA446 /* Scene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CCA2C324BCD438009CA446 /* Scene4.swift */; };
 		C0CCA2C924BCEC8E009CA446 /* BearFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0CCA2C824BCEC8E009CA446 /* BearFocus.sks */; };
@@ -48,6 +52,10 @@
 		C0B2DDF824BE1FC700277841 /* PlantFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlantFocus.sks; sourceTree = "<group>"; };
 		C0B2DDFA24BE1FCF00277841 /* PlantFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantFocus.swift; sourceTree = "<group>"; };
 		C0B2DDFC24BE235C00277841 /* PlantFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantFocusNode.swift; sourceTree = "<group>"; };
+		C0B2DDFF24BE2C1500277841 /* DresserFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DresserFocus.sks; sourceTree = "<group>"; };
+		C0B2DE0124BE2C1D00277841 /* DresserFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DresserFocus.swift; sourceTree = "<group>"; };
+		C0B2DE0324BE3E2500277841 /* DresserNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DresserNode.swift; sourceTree = "<group>"; };
+		C0B2DE0524BE435900277841 /* DresserFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DresserFocusNode.swift; sourceTree = "<group>"; };
 		C0CCA2C224BCD438009CA446 /* Scene4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene4.sks; sourceTree = "<group>"; };
 		C0CCA2C324BCD438009CA446 /* Scene4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene4.swift; sourceTree = "<group>"; };
 		C0CCA2C824BCEC8E009CA446 /* BearFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BearFocus.sks; sourceTree = "<group>"; };
@@ -96,6 +104,8 @@
 				C0CCA2CC24BCF460009CA446 /* BearFocusNode.swift */,
 				C0B2DDF524BE1F3F00277841 /* PlantNode.swift */,
 				C0B2DDFC24BE235C00277841 /* PlantFocusNode.swift */,
+				C0B2DE0324BE3E2500277841 /* DresserNode.swift */,
+				C0B2DE0524BE435900277841 /* DresserFocusNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -134,9 +144,19 @@
 			path = Plant;
 			sourceTree = "<group>";
 		};
+		C0B2DDFE24BE2BD100277841 /* Dresser */ = {
+			isa = PBXGroup;
+			children = (
+				C0B2DDFF24BE2C1500277841 /* DresserFocus.sks */,
+				C0B2DE0124BE2C1D00277841 /* DresserFocus.swift */,
+			);
+			path = Dresser;
+			sourceTree = "<group>";
+		};
 		C0CCA2C624BCEC25009CA446 /* FocusScenes */ = {
 			isa = PBXGroup;
 			children = (
+				C0B2DDFE24BE2BD100277841 /* Dresser */,
 				C0B2DDF724BE1FA200277841 /* Plant */,
 				C0CCA2C724BCEC3E009CA446 /* Bear */,
 			);
@@ -282,6 +302,7 @@
 				C0E53DD824B39B9600DEE127 /* Assets.xcassets in Resources */,
 				C0CCA2C424BCD438009CA446 /* Scene4.sks in Resources */,
 				C0E53DDB24B39B9600DEE127 /* LaunchScreen.storyboard in Resources */,
+				C0B2DE0024BE2C1500277841 /* DresserFocus.sks in Resources */,
 				C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */,
 				0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */,
 				C0CCA2C924BCEC8E009CA446 /* BearFocus.sks in Resources */,
@@ -297,17 +318,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */,
+				C0B2DE0224BE2C1D00277841 /* DresserFocus.swift in Sources */,
 				C0CCA2CD24BCF460009CA446 /* BearFocusNode.swift in Sources */,
 				C0E53DD124B39B9500DEE127 /* Scene2.swift in Sources */,
 				0F3782C724B90103006F90C1 /* Scene3.swift in Sources */,
 				C03ABC5424B8D62700B9D4CB /* GameModel.swift in Sources */,
 				C03ABC5624B8E33E00B9D4CB /* BearNode.swift in Sources */,
+				C0B2DE0624BE435900277841 /* DresserFocusNode.swift in Sources */,
 				C0CCA2CB24BCF175009CA446 /* BearFocus.swift in Sources */,
 				C0CCA2C524BCD438009CA446 /* Scene4.swift in Sources */,
 				C0E53DD324B39B9500DEE127 /* GameViewController.swift in Sources */,
 				C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */,
 				C0B2DDFB24BE1FCF00277841 /* PlantFocus.swift in Sources */,
 				C0B2DDFD24BE235C00277841 /* PlantFocusNode.swift in Sources */,
+				C0B2DE0424BE3E2500277841 /* DresserNode.swift in Sources */,
 				C0E53DEA24B4EEE500DEE127 /* Scene1.swift in Sources */,
 				C0E53DE324B3A30400DEE127 /* SelectionableNode.swift in Sources */,
 				C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */,

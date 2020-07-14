@@ -71,6 +71,7 @@ enum SceneName: String {
     case Scene4 = "Scene4"
     case BearFocus = "BearFocus"
     case PlantFocus = "PlantFocus"
+    case DresserFocus = "DresserFocus"
 }
 
 extension GameViewController: GameSceneDelegate {
@@ -83,7 +84,6 @@ extension GameViewController: GameSceneDelegate {
             view.presentScene(scene)
             
             scene.setupModel(model: self.gameModel)
-            
         }
     }
 }

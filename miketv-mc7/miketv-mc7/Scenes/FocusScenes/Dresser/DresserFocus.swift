@@ -1,69 +1,63 @@
 //
-//  Scene4.swift
+//  DresserFocus.swift
 //  miketv-mc7
 //
-//  Created by gabriel on 10/07/20.
+//  Created by gabriel on 14/07/20.
 //  Copyright © 2020 gabriel. All rights reserved.
 //
 
 import SpriteKit
 
-class Scene4: BaseGameScene {
+class DresserFocus: BaseGameScene {
     
     private var buttons: [SelectionableNode] = []
     private var currentFocused: SelectionableNode?
     
-    private var leftArrowNode: SelectionableNode?
-    private var rightArrowNode: SelectionableNode?
+    private var backArrowNode: SelectionableNode?
     private var storyLine: SKLabelNode?
     
     private var dresserNode: SelectionableNode?
-    private var clockNode: SelectionableNode?
-    private var courtainNode: SelectionableNode?
     private var timer: Timer?
-
-    
+        
     override func didMove(to view: SKView) {
         
         guard
-            let leftArrow = self.childNode(withName: "LeftArrow") as? SelectionableNode,
-            let rightArrow = self.childNode(withName: "RightArrow") as? SelectionableNode,
+            let backArrowNode = self.childNode(withName: "BackArrow") as? SelectionableNode,
             let dresserNode = self.childNode(withName: "Dresser") as? SelectionableNode,
-            let clockNode = self.childNode(withName: "Clock") as? SelectionableNode,
-            let courtainNode = self.childNode(withName: "Courtain") as? SelectionableNode,
             let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
-        else { return }
+            else { return }
         
-        self.leftArrowNode = leftArrow
-        self.rightArrowNode = rightArrow
-        self.storyLine = storyLine
-        
+        self.backArrowNode = backArrowNode
         self.dresserNode = dresserNode
-        self.clockNode = clockNode
-        self.courtainNode = courtainNode
+        self.storyLine = storyLine
         
         dresserNode.delegate = self
         
-        buttons.append(leftArrow)
+        buttons.append(backArrowNode)
         buttons.append(dresserNode)
-        buttons.append(clockNode)
-        buttons.append(courtainNode)
-        buttons.append(rightArrow)
         
-        self.currentFocused = dresserNode
+        self.currentFocused = backArrowNode
         self.currentFocused?.buttonDidGetFocus()
     }
+    
+    override func setupModel(model: GameModel) {
+        super.setupModel(model: model)
 
+        guard
+            let dresserTexture = model.scene4.dresserTextures[model.scene4.dresserState]
+        else { return }
+
+        dresserNode?.texture = SKTexture(imageNamed: dresserTexture)
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
     
     override func didTap() {
         if let currentFocused = self.currentFocused {
-            if currentFocused == leftArrowNode {
-                sceneDelegate?.changeScene(to: .Scene3)
-            } else if currentFocused == rightArrowNode {
-                sceneDelegate?.changeScene(to: .Scene1)
+            if currentFocused == backArrowNode {
+                sceneDelegate?.changeScene(to: .Scene4)
             }
         }
         currentFocused?.didTap()
@@ -73,7 +67,7 @@ class Scene4: BaseGameScene {
         guard
             let currentFocused = self.currentFocused,
             let currentFocusedIndex = buttons.firstIndex(of: currentFocused)
-        else { return }
+            else { return }
         
         currentFocused.buttonDidLoseFocus()
         
@@ -95,7 +89,7 @@ class Scene4: BaseGameScene {
     }
 }
 
-extension Scene4: SelectionableNodeDelegate {
+extension DresserFocus: SelectionableNodeDelegate {
     func setLines(line: String) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
