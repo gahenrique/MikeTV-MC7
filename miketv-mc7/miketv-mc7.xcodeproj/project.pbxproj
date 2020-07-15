@@ -94,6 +94,7 @@
 				0F41BFB124BE2BFA00FE83FC /* ZeroSceneAtlas.atlas */,
 				0F41BF9624BE1E4B00FE83FC /* Scene0.sks */,
 				0F41BF9424BE1E3B00FE83FC /* Scene0.swift */,
+				0F41BFB324BE52C400FE83FC /* firework.mp3 */,
 			);
 			path = Scene0;
 			sourceTree = "<group>";
@@ -172,7 +173,6 @@
 				0FD8DE4A24B79377000284AF /* Nodes */,
 				C045F0F424B6623600D75E6F /* Protocols */,
 				C03ABC5224B8D60A00B9D4CB /* Models */,
-				0F41BFB324BE52C400FE83FC /* firework.mp3 */,
 				C0E53DE424B4EBFB00DEE127 /* Scenes */,
 				C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */,
 				C0E53DCE24B39B9500DEE127 /* Actions.sks */,
