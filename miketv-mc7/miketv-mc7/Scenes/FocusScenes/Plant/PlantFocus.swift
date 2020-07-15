@@ -1,53 +1,38 @@
 //
-//  GameScene.swift
+//  PlantFocus.swift
 //  miketv-mc7
 //
-//  Created by gabriel on 06/07/20.
+//  Created by gabriel on 14/07/20.
 //  Copyright © 2020 gabriel. All rights reserved.
 //
 
 import SpriteKit
-import GameplayKit
 
-class Scene2: BaseGameScene {
+class PlantFocus: BaseGameScene {
     
     private var buttons: [SelectionableNode] = []
     private var currentFocused: SelectionableNode?
     
-    private var leftArrowNode: SelectionableNode?
-    private var rightArrowNode: SelectionableNode?
-    private var storyLine: SKLabelNode?
+    private var backArrowNode: SelectionableNode?
     
-    private var coatNode: SelectionableNode?
     private var plantNode: SelectionableNode?
-    private var timer: Timer?
-    
-    
+        
     override func didMove(to view: SKView) {
         
         guard
-            let leftArrow = self.childNode(withName: "LeftArrow") as? SelectionableNode,
-            let rightArrow = self.childNode(withName: "RightArrow") as? SelectionableNode,
-            let coatNode = self.childNode(withName: "Coat") as? SelectionableNode,
-            let plantNode = self.childNode(withName: "Plant") as? SelectionableNode,
-            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
+            let backArrowNode = self.childNode(withName: "BackArrow") as? SelectionableNode,
+            let plantNode = self.childNode(withName: "Plant") as? SelectionableNode
             else { return }
         
-        self.leftArrowNode = leftArrow
-        self.rightArrowNode = rightArrow
-        self.storyLine = storyLine
-        
+        self.backArrowNode = backArrowNode
         self.plantNode = plantNode
-        self.coatNode = coatNode
         
         plantNode.delegate = self
         
-        buttons.append(leftArrow)
-        buttons.append(coatNode)
+        buttons.append(backArrowNode)
         buttons.append(plantNode)
-        buttons.append(rightArrow)
         
-        self.currentFocused = coatNode
+        self.currentFocused = backArrowNode
         self.currentFocused?.buttonDidGetFocus()
     }
     
@@ -67,16 +52,13 @@ class Scene2: BaseGameScene {
     
     override func didTap() {
         if let currentFocused = self.currentFocused {
-            if currentFocused == leftArrowNode {
-                sceneDelegate?.changeScene(to: .Scene1)
-            } else if currentFocused == rightArrowNode {
-                sceneDelegate?.changeScene(to: .Scene3)
+            if currentFocused == backArrowNode {
+                sceneDelegate?.changeScene(to: .Scene2)
             }
         }
         currentFocused?.didTap()
     }
     
-    // MARK: Mudar funcao para game scene
     override func didSwipe(direction: UISwipeGestureRecognizer.Direction) {
         guard
             let currentFocused = self.currentFocused,
@@ -103,26 +85,21 @@ class Scene2: BaseGameScene {
     }
 }
 
-extension Scene2: SelectionableNodeDelegate {
-    func setLines(line: String) {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
-        storyLine?.text = line
-    }
-    
-    func changeScene(to scene: SceneName) {
-        sceneDelegate?.changeScene(to: scene)
-    }
-    
-    func changeState(_ node: SelectionableNode, to newState: State) {
-        
-    }
-    
+extension PlantFocus: SelectionableNodeDelegate {
     func getModel() -> GameModel? {
         return self.model
     }
     
+    func changeState(_ node: SelectionableNode, to newState: State) {
+    }
+    
+    func setLines(line: String) {
+    }
+    
+    func changeScene(to scene: SceneName) {
+        //lala
+    }
+    
     @objc func disableLine() {
-        storyLine?.text = " "
     }
 }
