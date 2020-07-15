@@ -95,17 +95,9 @@ extension Scene0: SelectionableNodeDelegate {
     }
     
     func changeState(_ node: SelectionableNode, to newState: State) {
-        
-//        if node == bearNode,
-//            let newTexture = model.bearTextures[newState] {
-//            model.bearState = newState
-//            bearNode?.texture = SKTexture(imageNamed: newTexture)
-//        }
     }
     
     func setLines(line: String) {
-//        timer?.invalidate()
-//        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
         storyLine?.text = line
     }
     
