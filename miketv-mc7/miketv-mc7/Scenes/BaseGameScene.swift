@@ -59,6 +59,14 @@ class InventoryNode: SKSpriteNode {
         
         self.zPosition = 10
         
+        // Bag Node
+        let bagNode = SKSpriteNode(imageNamed: "InventoryBag")
+        addChild(bagNode)
+        bagNode.zPosition = 1
+        bagNode.position = CGPoint(x: -width/2 + 50, y: -25)
+        bagNode.size = CGSize(width: 200, height: 158)
+        
+        
         self.setupNodesItems()
     }
     
