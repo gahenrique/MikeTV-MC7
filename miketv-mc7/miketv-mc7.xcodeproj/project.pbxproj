@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F3782C424B900EE006F90C1 /* Scene3.sks */; };
 		0F3782C724B90103006F90C1 /* Scene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3782C624B90103006F90C1 /* Scene3.swift */; };
+		0F41BF9524BE1E3B00FE83FC /* Scene0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F41BF9424BE1E3B00FE83FC /* Scene0.swift */; };
+		0F41BF9724BE1E4B00FE83FC /* Scene0.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BF9624BE1E4B00FE83FC /* Scene0.sks */; };
+		0F41BFB224BE2BFB00FE83FC /* ZeroSceneAtlas.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BFB124BE2BFA00FE83FC /* ZeroSceneAtlas.atlas */; };
+		0F41BFB424BE52C400FE83FC /* firework.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BFB324BE52C400FE83FC /* firework.mp3 */; };
 		0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8DE4B24B7938D000284AF /* BedNode.swift */; };
 		C03ABC5424B8D62700B9D4CB /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5324B8D62700B9D4CB /* GameModel.swift */; };
 		C03ABC5624B8E33E00B9D4CB /* BearNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5524B8E33E00B9D4CB /* BearNode.swift */; };
@@ -43,6 +47,10 @@
 /* Begin PBXFileReference section */
 		0F3782C424B900EE006F90C1 /* Scene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene3.sks; sourceTree = "<group>"; };
 		0F3782C624B90103006F90C1 /* Scene3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene3.swift; sourceTree = "<group>"; };
+		0F41BF9424BE1E3B00FE83FC /* Scene0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0.swift; sourceTree = "<group>"; };
+		0F41BF9624BE1E4B00FE83FC /* Scene0.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene0.sks; sourceTree = "<group>"; };
+		0F41BFB124BE2BFA00FE83FC /* ZeroSceneAtlas.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ZeroSceneAtlas.atlas; sourceTree = "<group>"; };
+		0F41BFB324BE52C400FE83FC /* firework.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = firework.mp3; sourceTree = "<group>"; };
 		0FD8DE4B24B7938D000284AF /* BedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedNode.swift; sourceTree = "<group>"; };
 		C03ABC5324B8D62700B9D4CB /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		C03ABC5524B8E33E00B9D4CB /* BearNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearNode.swift; sourceTree = "<group>"; };
@@ -94,6 +102,17 @@
 				0F3782C624B90103006F90C1 /* Scene3.swift */,
 			);
 			path = Scene3;
+			sourceTree = "<group>";
+		};
+		0F41BF9324BE1DF400FE83FC /* Scene0 */ = {
+			isa = PBXGroup;
+			children = (
+				0F41BFB124BE2BFA00FE83FC /* ZeroSceneAtlas.atlas */,
+				0F41BF9624BE1E4B00FE83FC /* Scene0.sks */,
+				0F41BF9424BE1E3B00FE83FC /* Scene0.swift */,
+				0F41BFB324BE52C400FE83FC /* firework.mp3 */,
+			);
+			path = Scene0;
 			sourceTree = "<group>";
 		};
 		0FD8DE4A24B79377000284AF /* Nodes */ = {
@@ -210,6 +229,7 @@
 		C0E53DE424B4EBFB00DEE127 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0F41BF9324BE1DF400FE83FC /* Scene0 */,
 				C045F0F724B6629500D75E6F /* BaseGameScene.swift */,
 				C0E53DE824B4EED500DEE127 /* Scene1 */,
 				C0E53DE724B4EEC900DEE127 /* Scene2 */,
@@ -297,6 +317,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E53DD624B39B9500DEE127 /* Main.storyboard in Resources */,
+				0F41BFB224BE2BFB00FE83FC /* ZeroSceneAtlas.atlas in Resources */,
+				0F41BF9724BE1E4B00FE83FC /* Scene0.sks in Resources */,
 				C0E53DCD24B39B9500DEE127 /* Scene2.sks in Resources */,
 				C0B2DDF924BE1FC700277841 /* PlantFocus.sks in Resources */,
 				C0E53DD824B39B9600DEE127 /* Assets.xcassets in Resources */,
@@ -304,6 +326,7 @@
 				C0E53DDB24B39B9600DEE127 /* LaunchScreen.storyboard in Resources */,
 				C0B2DE0024BE2C1500277841 /* DresserFocus.sks in Resources */,
 				C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */,
+				0F41BFB424BE52C400FE83FC /* firework.mp3 in Resources */,
 				0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */,
 				C0CCA2C924BCEC8E009CA446 /* BearFocus.sks in Resources */,
 				C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */,
@@ -320,6 +343,7 @@
 				C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */,
 				C0B2DE0224BE2C1D00277841 /* DresserFocus.swift in Sources */,
 				C0CCA2CD24BCF460009CA446 /* BearFocusNode.swift in Sources */,
+				0F41BF9524BE1E3B00FE83FC /* Scene0.swift in Sources */,
 				C0E53DD124B39B9500DEE127 /* Scene2.swift in Sources */,
 				0F3782C724B90103006F90C1 /* Scene3.swift in Sources */,
 				C03ABC5424B8D62700B9D4CB /* GameModel.swift in Sources */,

@@ -50,7 +50,7 @@ class GameViewController: UIViewController {
     private func setupScene1() {
         if let view = self.view as! SKView? {
             // Load the SKScene from .sks
-            if let scene = SKScene(fileNamed: "Scene1") as? Scene1 {
+            if let scene = SKScene(fileNamed: "Scene0") as? Scene0 {
                 scene.sceneDelegate = self
                 scene.setupModel(model: self.gameModel)
                 scene.scaleMode = .aspectFit
