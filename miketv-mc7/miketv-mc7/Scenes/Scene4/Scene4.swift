@@ -20,6 +20,8 @@ class Scene4: BaseGameScene {
     private var dresserNode: SelectionableNode?
     private var clockNode: SelectionableNode?
     private var courtainNode: SelectionableNode?
+    private var tRexNode: SelectionableNode?
+    private var pegasusNode: SelectionableNode?
     private var timer: Timer?
 
     
@@ -31,6 +33,8 @@ class Scene4: BaseGameScene {
             let dresserNode = self.childNode(withName: "Dresser") as? SelectionableNode,
             let clockNode = self.childNode(withName: "Clock") as? SelectionableNode,
             let courtainNode = self.childNode(withName: "Courtain") as? SelectionableNode,
+            let tRexNode = self.childNode(withName: "TRex") as? SelectionableNode,
+            let pegasusNode = self.childNode(withName: "Pegasus") as? SelectionableNode,
             let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
         else { return }
         
@@ -41,6 +45,8 @@ class Scene4: BaseGameScene {
         self.dresserNode = dresserNode
         self.clockNode = clockNode
         self.courtainNode = courtainNode
+        self.tRexNode = tRexNode
+        self.pegasusNode = pegasusNode
         
         dresserNode.delegate = self
         
@@ -48,6 +54,8 @@ class Scene4: BaseGameScene {
         buttons.append(dresserNode)
         buttons.append(clockNode)
         buttons.append(courtainNode)
+        buttons.append(tRexNode)
+        buttons.append(pegasusNode)
         buttons.append(rightArrow)
         
         self.currentFocused = dresserNode
