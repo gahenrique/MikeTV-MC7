@@ -61,6 +61,12 @@ class Scene4: BaseGameScene {
         self.currentFocused = dresserNode
         self.currentFocused?.buttonDidGetFocus()
     }
+    
+    override func setupModel(model: GameModel) {
+        super.setupModel(model: model)
+        
+        self.setupInventory(items: model.inventory)
+    }
 
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered

@@ -31,13 +31,13 @@ enum DresserState {
     case openedWithoutFragment
 }
 
-enum CollectionableItems {
-    case photoFragment1
-    case photoFragment2
-    case photoFragment3
-    case photoFragment4
-    case key
-    case courtainStuff
+enum CollectionableItems: String {
+    case photoFragment1 = "Parte1Inventario"
+    case photoFragment2 = "Parte2Inventario"
+    case photoFragment3 = "Parte3Inventario"
+    case photoFragment4 = "Parte4Inventario"
+    case key = "ChaveInventario"
+    case courtainStuff = ""
 }
 
 class GameModel {

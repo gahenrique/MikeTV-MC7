@@ -61,6 +61,8 @@ class Scene1: BaseGameScene {
     override func setupModel(model: GameModel) {
         super.setupModel(model: model)
         
+        self.setupInventory(items: model.inventory)
+        
         guard
             let bearTexture = model.scene1.bearTextures[model.scene1.bearState]
         else { return }
