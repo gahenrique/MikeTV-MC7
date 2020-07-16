@@ -27,10 +27,13 @@ class GameViewController: UIViewController {
         swipeLeftGesture.direction = .left
         let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureHandler(_:)))
         swipeRightGesture.direction = .right
+        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureHandler(_:)))
+        swipeUpGesture.direction = .up
         
         view.addGestureRecognizer(tapGesture)
         view.addGestureRecognizer(swipeLeftGesture)
         view.addGestureRecognizer(swipeRightGesture)
+        view.addGestureRecognizer(swipeUpGesture)
     }
     
     @objc private func tapGestureHandler(_ sender: UITapGestureRecognizer) {
@@ -72,6 +75,7 @@ enum SceneName: String {
     case BearFocus = "BearFocus"
     case PlantFocus = "PlantFocus"
     case DresserFocus = "DresserFocus"
+    case BoxFocus = "BoxFocus"
 }
 
 extension GameViewController: GameSceneDelegate {

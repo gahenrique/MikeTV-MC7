@@ -46,6 +46,7 @@ class Scene1: BaseGameScene {
         bearNode.delegate = self
         self.booksNode = booksNode
         self.boxNode = boxNode
+        boxNode.delegate = self
         
         buttons.append(leftArrow)
         buttons.append(bedNode)
