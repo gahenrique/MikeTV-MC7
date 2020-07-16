@@ -66,6 +66,12 @@ class Scene4: BaseGameScene {
         super.setupModel(model: model)
         
         self.setupInventory(items: model.inventory)
+        
+        guard
+            let dresserTexture = model.scene4.dresserTextures[model.scene4.dresserState]
+        else { return }
+        
+        dresserNode?.texture = SKTexture(imageNamed: dresserTexture)
     }
 
     override func update(_ currentTime: TimeInterval) {
