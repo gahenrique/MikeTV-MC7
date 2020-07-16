@@ -31,6 +31,12 @@ enum DresserState {
     case openedWithoutFragment
 }
 
+enum BoxState {
+    case closed
+    case open
+    case destroyed
+}
+
 enum CollectionableItems: String {
     case photoFragment1 = "Parte1Inventario"
     case photoFragment2 = "Parte2Inventario"
@@ -65,10 +71,24 @@ protocol SceneModel {
 }
 
 class Scene1Model: SceneModel {
+    
+    let randomPassword: String
+    private let possiblePasswords: [String] = ["921", "803", "547"]
+    
+    init() {
+        randomPassword = possiblePasswords.randomElement() ?? "921"
+    }
+    
+    var currentPassword: [String] = ["0","0","0"]
+    
     var sceneName: SceneName = .Scene1
     
     var bearTextures: [BearState: String] = [.normal: "Ursinho", .openedWithFragment: "UrsinhoAbertoFragmento", .openedWithoutFragment: "UrsinhoAberto", .destroyed: "UrsinhoDestruido"]
     var bearState: BearState = .normal
+    
+    //MARK: Add asset
+    var boxTextures: [BoxState: String] = [.closed: "Caixa", .open: "CaixaAberta", .destroyed: ""]
+    var boxState: BoxState = .closed
 }
 
 class Scene2Model: SceneModel {

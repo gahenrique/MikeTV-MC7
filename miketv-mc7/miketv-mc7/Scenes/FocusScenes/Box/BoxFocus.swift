@@ -28,13 +28,11 @@ class BoxFocus: BaseGameScene {
     private var timer: Timer?
     
     private let arrayNumbers = ["0","1","2","3","4","5","6","7","8","9"]
-    private let possiblePasswords: [String] = ["921", "803", "547"]
+    
     private var digits: [Int]?
     private var rightPassword: String?
     
     override func didMove(to view: SKView) {
-        
-        generatePassword()
         
         guard
             let backArrowNode = self.childNode(withName: "BackArrow") as? SelectionableNode,
@@ -68,7 +66,14 @@ class BoxFocus: BaseGameScene {
     //MARK: Mudar a textura da caixa
     override func setupModel(model: GameModel) {
         super.setupModel(model: model)
-
+        
+        digits = model.scene1.randomPassword.digits
+        
+        
+        firstDigit?.text = model.scene1.currentPassword[0]
+        secondDigit?.text = model.scene1.currentPassword[1]
+        thirdDigit?.text = model.scene1.currentPassword[2]
+        
 //        guard
 //            let dresserTexture = model.scene4.dresserTextures[model.scene4.dresserState]
 //        else { return }
@@ -76,24 +81,19 @@ class BoxFocus: BaseGameScene {
 //        firstDigitNode?.texture = SKTexture(imageNamed: dresserTexture)
     }
     
-    func generatePassword() {
-        if let randomPassword = possiblePasswords.randomElement() {
-            rightPassword = randomPassword
-            print(randomPassword)
-        }
-        digits = rightPassword?.digits
-    }
-    
     override func didTap() {
-        if let currentFocused = self.currentFocused {
+        if let currentFocused = self.currentFocused, let model = model, let firstDigit = firstDigit, let secondDigit = secondDigit, let thirdDigit = thirdDigit {
             if currentFocused == backArrowNode {
                 sceneDelegate?.changeScene(to: .Scene1)
             } else if currentFocused == firstDigitNode {
-                changeDigit(currentFocusedLabel: firstDigit ?? SKLabelNode.init(text: "0"))
+                changeDigit(currentFocusedLabel: firstDigit)
+                model.scene1.currentPassword[0] = firstDigit.text ?? "9"
             } else if currentFocused == secondDigitNode {
-                changeDigit(currentFocusedLabel: secondDigit ?? SKLabelNode.init(text: "0"))
+                changeDigit(currentFocusedLabel: secondDigit)
+                model.scene1.currentPassword[1] = secondDigit.text ?? "2"
             } else if currentFocused == thirdDigitNode {
-                changeDigit(currentFocusedLabel: thirdDigit ?? SKLabelNode.init(text: "0"))
+                changeDigit(currentFocusedLabel: thirdDigit)
+                model.scene1.currentPassword[2] = thirdDigit.text ?? "1"
             }
         }
         currentFocused?.didTap()
