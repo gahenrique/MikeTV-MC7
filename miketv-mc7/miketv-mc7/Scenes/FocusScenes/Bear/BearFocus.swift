@@ -13,7 +13,10 @@ class BearFocus: BaseGameScene {
     private var buttons: [SelectionableNode] = []
     private var currentFocused: SelectionableNode?
     
+    private var storyLine: SKLabelNode?
     private var backArrowNode: SelectionableNode?
+    
+    private var timer: Timer?
     
     private var bearNode: SelectionableNode?
         
@@ -21,11 +24,13 @@ class BearFocus: BaseGameScene {
         
         guard
             let backArrowNode = self.childNode(withName: "BackArrow") as? SelectionableNode,
-            let bearNode = self.childNode(withName: "Bear") as? SelectionableNode
+            let bearNode = self.childNode(withName: "Bear") as? SelectionableNode,
+            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
             else { return }
         
         self.backArrowNode = backArrowNode
         self.bearNode = bearNode
+        self.storyLine = storyLine
         
         bearNode.delegate = self
         
@@ -38,6 +43,15 @@ class BearFocus: BaseGameScene {
     
     override func setupModel(model: GameModel) {
         super.setupModel(model: model)
+        
+        switch model.scene1.bearState {
+        case .normal:
+            setLines(line: "Esse é senhor Catatau, meu melhor amigo!")
+        case .destroyed:
+            setLines(line: "Ah não! O que aconteceu com você senhor Catatau?!")
+        default:
+            setLines(line: "Esse é senhor Catatau, meu melhor amigo!")
+        }
         
         guard
             let bearTexture = model.scene1.bearTextures[model.scene1.bearState]
@@ -101,6 +115,9 @@ extension BearFocus: SelectionableNodeDelegate {
     }
     
     func setLines(line: String) {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
+        storyLine?.text = line
     }
     
     func changeScene(to scene: SceneName) {
@@ -108,5 +125,6 @@ extension BearFocus: SelectionableNodeDelegate {
     }
     
     @objc func disableLine() {
+        storyLine?.text = " "
     }
 }
