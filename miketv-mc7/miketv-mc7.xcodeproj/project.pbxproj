@@ -13,6 +13,9 @@
 		0F41BF9724BE1E4B00FE83FC /* Scene0.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BF9624BE1E4B00FE83FC /* Scene0.sks */; };
 		0F41BFB224BE2BFB00FE83FC /* ZeroSceneAtlas.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BFB124BE2BFA00FE83FC /* ZeroSceneAtlas.atlas */; };
 		0F41BFB424BE52C400FE83FC /* firework.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BFB324BE52C400FE83FC /* firework.mp3 */; };
+		0F41BFB724BF82E500FE83FC /* BoxFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F41BFB624BF82E500FE83FC /* BoxFocus.swift */; };
+		0F41BFB924BF8D8900FE83FC /* BoxFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BFB824BF8D8900FE83FC /* BoxFocus.sks */; };
+		0F41BFBB24BF981200FE83FC /* BoxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F41BFBA24BF981200FE83FC /* BoxNode.swift */; };
 		0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8DE4B24B7938D000284AF /* BedNode.swift */; };
 		C03ABC5424B8D62700B9D4CB /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5324B8D62700B9D4CB /* GameModel.swift */; };
 		C03ABC5624B8E33E00B9D4CB /* BearNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5524B8E33E00B9D4CB /* BearNode.swift */; };
@@ -51,6 +54,9 @@
 		0F41BF9624BE1E4B00FE83FC /* Scene0.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene0.sks; sourceTree = "<group>"; };
 		0F41BFB124BE2BFA00FE83FC /* ZeroSceneAtlas.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ZeroSceneAtlas.atlas; sourceTree = "<group>"; };
 		0F41BFB324BE52C400FE83FC /* firework.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = firework.mp3; sourceTree = "<group>"; };
+		0F41BFB624BF82E500FE83FC /* BoxFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxFocus.swift; sourceTree = "<group>"; };
+		0F41BFB824BF8D8900FE83FC /* BoxFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BoxFocus.sks; sourceTree = "<group>"; };
+		0F41BFBA24BF981200FE83FC /* BoxNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxNode.swift; sourceTree = "<group>"; };
 		0FD8DE4B24B7938D000284AF /* BedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedNode.swift; sourceTree = "<group>"; };
 		C03ABC5324B8D62700B9D4CB /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		C03ABC5524B8E33E00B9D4CB /* BearNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearNode.swift; sourceTree = "<group>"; };
@@ -115,6 +121,15 @@
 			path = Scene0;
 			sourceTree = "<group>";
 		};
+		0F41BFB524BF82CE00FE83FC /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				0F41BFB824BF8D8900FE83FC /* BoxFocus.sks */,
+				0F41BFB624BF82E500FE83FC /* BoxFocus.swift */,
+			);
+			path = Box;
+			sourceTree = "<group>";
+		};
 		0FD8DE4A24B79377000284AF /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +140,7 @@
 				C0B2DDFC24BE235C00277841 /* PlantFocusNode.swift */,
 				C0B2DE0324BE3E2500277841 /* DresserNode.swift */,
 				C0B2DE0524BE435900277841 /* DresserFocusNode.swift */,
+				0F41BFBA24BF981200FE83FC /* BoxNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -175,6 +191,7 @@
 		C0CCA2C624BCEC25009CA446 /* FocusScenes */ = {
 			isa = PBXGroup;
 			children = (
+				0F41BFB524BF82CE00FE83FC /* Box */,
 				C0B2DDFE24BE2BD100277841 /* Dresser */,
 				C0B2DDF724BE1FA200277841 /* Plant */,
 				C0CCA2C724BCEC3E009CA446 /* Bear */,
@@ -324,6 +341,7 @@
 				C0E53DD824B39B9600DEE127 /* Assets.xcassets in Resources */,
 				C0CCA2C424BCD438009CA446 /* Scene4.sks in Resources */,
 				C0E53DDB24B39B9600DEE127 /* LaunchScreen.storyboard in Resources */,
+				0F41BFB924BF8D8900FE83FC /* BoxFocus.sks in Resources */,
 				C0B2DE0024BE2C1500277841 /* DresserFocus.sks in Resources */,
 				C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */,
 				0F41BFB424BE52C400FE83FC /* firework.mp3 in Resources */,
@@ -358,8 +376,10 @@
 				C0B2DE0424BE3E2500277841 /* DresserNode.swift in Sources */,
 				C0E53DEA24B4EEE500DEE127 /* Scene1.swift in Sources */,
 				C0E53DE324B3A30400DEE127 /* SelectionableNode.swift in Sources */,
+				0F41BFBB24BF981200FE83FC /* BoxNode.swift in Sources */,
 				C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */,
 				C0B2DDF624BE1F3F00277841 /* PlantNode.swift in Sources */,
+				0F41BFB724BF82E500FE83FC /* BoxFocus.swift in Sources */,
 				0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
