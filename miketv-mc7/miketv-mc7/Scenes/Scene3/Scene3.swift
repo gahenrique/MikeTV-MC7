@@ -46,6 +46,12 @@ class Scene3: BaseGameScene {
         self.currentFocused?.buttonDidGetFocus()
     }
     
+    override func setupModel(model: GameModel) {
+        super.setupModel(model: model)
+        
+        self.setupInventory(items: model.inventory)
+    }
+    
     override func didTap() {
         if let currentFocused = self.currentFocused {
             if currentFocused == leftArrowNode {

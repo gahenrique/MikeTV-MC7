@@ -54,6 +54,8 @@ class Scene2: BaseGameScene {
     override func setupModel(model: GameModel) {
         super.setupModel(model: model)
         
+        self.setupInventory(items: model.inventory)
+        
         guard
             let plantTexture = model.scene2.plantTextures[model.scene2.plantState]
         else { return }
