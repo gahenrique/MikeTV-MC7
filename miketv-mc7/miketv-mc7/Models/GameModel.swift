@@ -44,6 +44,7 @@ enum CollectionableItems: String {
     case photoFragment4 = "Parte4Inventario"
     case key = "ChaveInventario"
     case courtainStuff = ""
+    case gift = "gift"
 }
 
 class GameModel {
@@ -87,7 +88,7 @@ class Scene1Model: SceneModel {
     var bearState: BearState = .normal
     
     //MARK: Add asset
-    var boxTextures: [BoxState: String] = [.closed: "Caixa", .open: "CaixaAberta", .destroyed: ""]
+    var boxTextures: [BoxState: String] = [.closed: "Caixa", .open: "CaixaAberta", .destroyed: "CaixaDestruida"]
     var boxState: BoxState = .closed
 }
 

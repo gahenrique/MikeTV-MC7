@@ -65,10 +65,20 @@ class Scene1: BaseGameScene {
         self.setupInventory(items: model.inventory)
         
         guard
-            let bearTexture = model.scene1.bearTextures[model.scene1.bearState]
+            let bearTexture = model.scene1.bearTextures[model.scene1.bearState],
+            let boxTexture = model.scene1.boxTextures[model.scene1.boxState]
         else { return }
         
         bearNode?.texture = SKTexture(imageNamed: bearTexture)
+        boxNode?.texture = SKTexture(imageNamed: boxTexture)
+        
+        if model.scene1.boxState == .destroyed, let highlight = boxNode?.childNode(withName: "Highlight") as? SKSpriteNode {
+            boxNode?.size = CGSize(width: 217.143, height: 117.655)
+            boxNode?.position = CGPoint(x: 84.287, y: 162.793)
+            highlight.size = CGSize(width: 248.325, height: 139.743)
+            highlight.position = CGPoint(x: 3.162, y: 0.531)
+            highlight.texture = SKTexture(imageNamed: "HighlightCaixaDestruida")
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
