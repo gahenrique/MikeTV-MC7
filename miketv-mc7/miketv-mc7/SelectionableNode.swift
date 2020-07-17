@@ -30,7 +30,7 @@ class SelectionableNode: SKSpriteNode {
     }
     
     func buttonDidGetFocus() {
-        self.color = .systemGreen
+        self.color = .clear
         self.setScale(1.2)
         self.highlightNode?.alpha = 1
 //        self.highlightNode?.setScale(1.2)

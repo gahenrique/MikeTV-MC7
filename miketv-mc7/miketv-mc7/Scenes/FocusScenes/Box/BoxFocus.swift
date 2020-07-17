@@ -16,7 +16,7 @@ class BoxFocus: BaseGameScene {
     private var backArrowNode: SelectionableNode?
     private var storyLine: SKLabelNode?
 
-//    private var boxNode: SelectionableNode?
+    private var boxNode: SKSpriteNode?
     private var firstDigitNode: SelectionableNode?
     private var secondDigitNode: SelectionableNode?
     private var thirdDigitNode: SelectionableNode?
@@ -41,8 +41,9 @@ class BoxFocus: BaseGameScene {
             let thirdDigitNode = self.childNode(withName: "thirdDigitNode") as? SelectionableNode,
             let firstDigit = firstDigitNode.childNode(withName: "firstDigit") as? SKLabelNode,
             let secondDigit = secondDigitNode.childNode(withName: "secondDigit") as? SKLabelNode,
-            let thirdDigit = thirdDigitNode.childNode(withName: "thirdDigit") as? SKLabelNode
-//            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
+            let thirdDigit = thirdDigitNode.childNode(withName: "thirdDigit") as? SKLabelNode,
+            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode,
+            let boxNode = self.childNode(withName: "Box") as? SKSpriteNode
             else { return }
         
         self.backArrowNode = backArrowNode
@@ -52,7 +53,10 @@ class BoxFocus: BaseGameScene {
         self.firstDigit = firstDigit
         self.secondDigit = secondDigit
         self.thirdDigit = thirdDigit
-//        self.storyLine = storyLine
+        self.storyLine = storyLine
+        self.boxNode = boxNode
+        
+//        boxNode.delegate = self
         
         buttons.append(backArrowNode)
         buttons.append(firstDigitNode)
@@ -67,18 +71,21 @@ class BoxFocus: BaseGameScene {
     override func setupModel(model: GameModel) {
         super.setupModel(model: model)
         
-        digits = model.scene1.randomPassword.digits
+        guard
+            let boxTexture = model.scene1.boxTextures[model.scene1.boxState]
+        else { return }
         
+        boxNode?.texture = SKTexture(imageNamed: boxTexture)
+
+        digits = model.scene1.randomPassword.digits
         
         firstDigit?.text = model.scene1.currentPassword[0]
         secondDigit?.text = model.scene1.currentPassword[1]
         thirdDigit?.text = model.scene1.currentPassword[2]
         
-//        guard
-//            let dresserTexture = model.scene4.dresserTextures[model.scene4.dresserState]
-//        else { return }
-
-//        firstDigitNode?.texture = SKTexture(imageNamed: dresserTexture)
+        if model.scene1.boxState == .destroyed {
+            changeNodesPosition()
+        }
     }
     
     override func didTap() {
@@ -114,9 +121,26 @@ class BoxFocus: BaseGameScene {
         guard let digits = digits else { return }
         
         if firstDigit?.text == String(digits[0]) && secondDigit?.text == String(digits[1]) && thirdDigit?.text == String(digits[2]) {
-            //MARK: Trocar asset
-            print("Acertou mizeravi")
+            model?.scene1.boxState = .open
+            
+            guard
+                let model = model,
+                let boxTexture = model.scene1.boxTextures[model.scene1.boxState]
+            else { return }
+            
+            boxNode?.texture = SKTexture(imageNamed: boxTexture)
+            changeNodesPosition()
+            model.collectItem(.gift)
+            model.scene1.boxState = .destroyed
         }
+    }
+    
+    func changeNodesPosition() {
+        boxNode?.size = CGSize(width: 1216.57, height: 758)
+        boxNode?.position = CGPoint(x: 34.341, y: 118.288)
+        firstDigitNode?.position = CGPoint(x: -144.73, y: -52.37)
+        secondDigitNode?.position = CGPoint(x: -42.55, y: -52.37)
+        thirdDigitNode?.position = CGPoint(x: 59.135, y: -52.37)
     }
     
     override func didSwipe(direction: UISwipeGestureRecognizer.Direction) {

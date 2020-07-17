@@ -65,10 +65,12 @@ class Scene1: BaseGameScene {
         self.setupInventory(items: model.inventory)
         
         guard
-            let bearTexture = model.scene1.bearTextures[model.scene1.bearState]
+            let bearTexture = model.scene1.bearTextures[model.scene1.bearState],
+            let boxTexture = model.scene1.boxTextures[model.scene1.boxState]
         else { return }
         
         bearNode?.texture = SKTexture(imageNamed: bearTexture)
+        boxNode?.texture = SKTexture(imageNamed: boxTexture)
     }
     
     override func update(_ currentTime: TimeInterval) {
