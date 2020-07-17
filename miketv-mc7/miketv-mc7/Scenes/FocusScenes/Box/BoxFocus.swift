@@ -86,6 +86,7 @@ class BoxFocus: BaseGameScene {
         if model.scene1.boxState == .destroyed {
             changeNodesPosition()
         }
+        print(model.scene1.randomPassword)
     }
     
     override func didTap() {
