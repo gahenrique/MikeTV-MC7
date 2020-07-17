@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F16E9CD24C20F6F00CB4862 /* BoxFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F16E9CC24C20F6F00CB4862 /* BoxFocusNode.swift */; };
 		0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F3782C424B900EE006F90C1 /* Scene3.sks */; };
 		0F3782C724B90103006F90C1 /* Scene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3782C624B90103006F90C1 /* Scene3.swift */; };
 		0F41BF9524BE1E3B00FE83FC /* Scene0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F41BF9424BE1E3B00FE83FC /* Scene0.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F16E9CC24C20F6F00CB4862 /* BoxFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxFocusNode.swift; sourceTree = "<group>"; };
 		0F3782C424B900EE006F90C1 /* Scene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene3.sks; sourceTree = "<group>"; };
 		0F3782C624B90103006F90C1 /* Scene3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene3.swift; sourceTree = "<group>"; };
 		0F41BF9424BE1E3B00FE83FC /* Scene0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				C0B2DE0324BE3E2500277841 /* DresserNode.swift */,
 				C0B2DE0524BE435900277841 /* DresserFocusNode.swift */,
 				0F41BFBA24BF981200FE83FC /* BoxNode.swift */,
+				0F16E9CC24C20F6F00CB4862 /* BoxFocusNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				C0CCA2CB24BCF175009CA446 /* BearFocus.swift in Sources */,
 				C0CCA2C524BCD438009CA446 /* Scene4.swift in Sources */,
 				C0E53DD324B39B9500DEE127 /* GameViewController.swift in Sources */,
+				0F16E9CD24C20F6F00CB4862 /* BoxFocusNode.swift in Sources */,
 				C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */,
 				C0B2DDFB24BE1FCF00277841 /* PlantFocus.swift in Sources */,
 				C0B2DDFD24BE235C00277841 /* PlantFocusNode.swift in Sources */,
