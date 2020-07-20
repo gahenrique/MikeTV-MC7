@@ -34,6 +34,10 @@ class ClockFocusNode: SelectionableNode {
             let newTexture = model.scene4.clockTextures[nextState] {
             self.texture = SKTexture(imageNamed: newTexture)
         }
+        
+        if nextState == .fixedOpenEmpty {
+            model.scene4.clockState = .openDestroyed
+        }
     }
     
     private func getNextState(current: ClockState) -> ClockState {
