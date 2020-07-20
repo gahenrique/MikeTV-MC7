@@ -71,6 +71,7 @@ class GameViewController: UIViewController {
 }
 
 enum SceneName: String {
+    case Tutorial = "TutorialScene"
     case Menu = "MainScene"
     case Scene0 = "Scene0"
     case Scene1 = "Scene1"

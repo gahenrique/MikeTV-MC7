@@ -38,8 +38,7 @@ class MainScene: BaseGameScene {
             if currentFocused == btnPlay {
                 sceneDelegate?.changeScene(to: .Scene0)
             } else if currentFocused == btnTutorial {
-                //MARK: Criar scene de tutorial
-                sceneDelegate?.changeScene(to: .Scene1)
+                sceneDelegate?.changeScene(to: .Tutorial)
             }
         }
         currentFocused?.didTap()

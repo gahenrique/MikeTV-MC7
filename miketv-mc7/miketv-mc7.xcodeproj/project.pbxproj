@@ -19,6 +19,8 @@
 		0F41BFB724BF82E500FE83FC /* BoxFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F41BFB624BF82E500FE83FC /* BoxFocus.swift */; };
 		0F41BFB924BF8D8900FE83FC /* BoxFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BFB824BF8D8900FE83FC /* BoxFocus.sks */; };
 		0F41BFBB24BF981200FE83FC /* BoxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F41BFBA24BF981200FE83FC /* BoxNode.swift */; };
+		0F8DBAB324C63035001A5B1F /* TutorialScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F8DBAB224C63035001A5B1F /* TutorialScene.sks */; };
+		0F8DBAB524C63051001A5B1F /* TutorialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DBAB424C63051001A5B1F /* TutorialScene.swift */; };
 		0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8DE4B24B7938D000284AF /* BedNode.swift */; };
 		C03ABC5424B8D62700B9D4CB /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5324B8D62700B9D4CB /* GameModel.swift */; };
 		C03ABC5624B8E33E00B9D4CB /* BearNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5524B8E33E00B9D4CB /* BearNode.swift */; };
@@ -68,6 +70,8 @@
 		0F41BFB624BF82E500FE83FC /* BoxFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxFocus.swift; sourceTree = "<group>"; };
 		0F41BFB824BF8D8900FE83FC /* BoxFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BoxFocus.sks; sourceTree = "<group>"; };
 		0F41BFBA24BF981200FE83FC /* BoxNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxNode.swift; sourceTree = "<group>"; };
+		0F8DBAB224C63035001A5B1F /* TutorialScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TutorialScene.sks; sourceTree = "<group>"; };
+		0F8DBAB424C63051001A5B1F /* TutorialScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScene.swift; sourceTree = "<group>"; };
 		0FD8DE4B24B7938D000284AF /* BedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedNode.swift; sourceTree = "<group>"; };
 		C03ABC5324B8D62700B9D4CB /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		C03ABC5524B8E33E00B9D4CB /* BearNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearNode.swift; sourceTree = "<group>"; };
@@ -161,6 +165,15 @@
 				0F41BFB624BF82E500FE83FC /* BoxFocus.swift */,
 			);
 			path = Box;
+			sourceTree = "<group>";
+		};
+		0F8DBAB124C63022001A5B1F /* TutorialScene */ = {
+			isa = PBXGroup;
+			children = (
+				0F8DBAB224C63035001A5B1F /* TutorialScene.sks */,
+				0F8DBAB424C63051001A5B1F /* TutorialScene.swift */,
+			);
+			path = TutorialScene;
 			sourceTree = "<group>";
 		};
 		0FD8DE4A24B79377000284AF /* Nodes */ = {
@@ -293,6 +306,7 @@
 		C0E53DE424B4EBFB00DEE127 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0F8DBAB124C63022001A5B1F /* TutorialScene */,
 				0F16E9D024C6042500CB4862 /* MainScene */,
 				0F41BF9324BE1DF400FE83FC /* Scene0 */,
 				C045F0F724B6629500D75E6F /* BaseGameScene.swift */,
@@ -396,6 +410,7 @@
 				C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */,
 				0F41BFB424BE52C400FE83FC /* firework.mp3 in Resources */,
 				0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */,
+				0F8DBAB324C63035001A5B1F /* TutorialScene.sks in Resources */,
 				C0CCA2C924BCEC8E009CA446 /* BearFocus.sks in Resources */,
 				C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */,
 				0F16E9D424C6046700CB4862 /* MainScene.sks in Resources */,
@@ -434,6 +449,7 @@
 				0F41BFBB24BF981200FE83FC /* BoxNode.swift in Sources */,
 				C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */,
 				C0B2DDF624BE1F3F00277841 /* PlantNode.swift in Sources */,
+				0F8DBAB524C63051001A5B1F /* TutorialScene.swift in Sources */,
 				C0D2C76024C608D900B79E9D /* CourtainNode.swift in Sources */,
 				0F41BFB724BF82E500FE83FC /* BoxFocus.swift in Sources */,
 				0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */,
