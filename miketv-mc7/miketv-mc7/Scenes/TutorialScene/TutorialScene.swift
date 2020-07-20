@@ -48,19 +48,23 @@ class TutorialScene: BaseGameScene {
         imgRemote?.position = CGPoint(x: -320, y: -79.5)
         lblTutorial?.text = "Arraste para a esquerda ou para a direita para mudar o foco dos objetos"
         lblTutorial?.position = CGPoint(x: 317, y: -224.177)
-//        guard let backArrowRight = backArrowRight else { return }
-//        buttons.append(backArrowRight)
+        
+        guard let backArrowRight = backArrowRight else { return }
+        buttons.append(backArrowRight)
     }
     
     func setUpSceneTwo() {
         controlScene = "Tutorial2"
         backArrowRight?.isHidden = true
+        backArrowRight?.childNode(withName: "Highlight")?.alpha = 0
         imgRemote?.texture = SKTexture(imageNamed: "SiriRemoteTap")
         imgRemote?.size = CGSize(width: 204, height: 539)
         imgRemote?.position = CGPoint(x: -344, y: -50.5)
         lblTutorial?.text = "Clique para interagir com os objetos"
         lblTutorial?.position = CGPoint(x: 317, y: -140.177)
-//        buttons.remove(at: 1)
+        buttons.remove(at: 1)
+        currentFocused = backArrowLeft
+        currentFocused?.buttonDidGetFocus()
     }
     
     override func didTap() {
