@@ -49,6 +49,7 @@ class Scene4: BaseGameScene {
         self.pegasusNode = pegasusNode
         
         dresserNode.delegate = self
+        courtainNode.delegate = self
         
         buttons.append(leftArrow)
         buttons.append(dresserNode)
@@ -87,6 +88,12 @@ class Scene4: BaseGameScene {
             }
         }
         currentFocused?.didTap()
+        
+        guard
+            let inventoryNode = self.inventoryNode,
+            let model = model
+        else { return }
+        inventoryNode.updateItems(model.inventory)
     }
     
     override func didSwipe(direction: UISwipeGestureRecognizer.Direction) {
