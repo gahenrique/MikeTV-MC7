@@ -49,6 +49,7 @@ class Scene4: BaseGameScene {
         self.pegasusNode = pegasusNode
         
         dresserNode.delegate = self
+        courtainNode.delegate = self
         
         buttons.append(leftArrow)
         buttons.append(dresserNode)
@@ -68,10 +69,17 @@ class Scene4: BaseGameScene {
         self.setupInventory(items: model.inventory)
         
         guard
-            let dresserTexture = model.scene4.dresserTextures[model.scene4.dresserState]
+            let dresserTexture = model.scene4.dresserTextures[model.scene4.dresserState],
+            let courtainTexture = model.scene4.courtainTextures[model.scene4.courtainState]
         else { return }
         
         dresserNode?.texture = SKTexture(imageNamed: dresserTexture)
+        courtainNode?.texture = SKTexture(imageNamed: courtainTexture)
+        
+        if model.scene4.courtainState == .broken,
+            let courtainNode = courtainNode as? CourtainNode {
+            courtainNode.updateHighlight()
+        }
     }
 
     override func update(_ currentTime: TimeInterval) {
@@ -87,6 +95,12 @@ class Scene4: BaseGameScene {
             }
         }
         currentFocused?.didTap()
+        
+        guard
+            let inventoryNode = self.inventoryNode,
+            let model = model
+        else { return }
+        inventoryNode.updateItems(model.inventory)
     }
     
     override func didSwipe(direction: UISwipeGestureRecognizer.Direction) {
