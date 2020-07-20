@@ -38,6 +38,10 @@
 		C0CCA2CB24BCF175009CA446 /* BearFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CCA2CA24BCF175009CA446 /* BearFocus.swift */; };
 		C0CCA2CD24BCF460009CA446 /* BearFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CCA2CC24BCF460009CA446 /* BearFocusNode.swift */; };
 		C0D2C76024C608D900B79E9D /* CourtainNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D2C75F24C608D900B79E9D /* CourtainNode.swift */; };
+		C0D2C76324C6377700B79E9D /* ClockFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0D2C76224C6377700B79E9D /* ClockFocus.sks */; };
+		C0D2C76524C6381D00B79E9D /* ClockFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D2C76424C6381D00B79E9D /* ClockFocus.swift */; };
+		C0D2C76724C638C800B79E9D /* ClockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D2C76624C638C800B79E9D /* ClockNode.swift */; };
+		C0D2C76924C63EB500B79E9D /* ClockFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D2C76824C63EB500B79E9D /* ClockFocusNode.swift */; };
 		C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */; };
 		C0E53DCD24B39B9500DEE127 /* Scene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DCC24B39B9500DEE127 /* Scene2.sks */; };
 		C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DCE24B39B9500DEE127 /* Actions.sks */; };
@@ -83,6 +87,10 @@
 		C0CCA2CA24BCF175009CA446 /* BearFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearFocus.swift; sourceTree = "<group>"; };
 		C0CCA2CC24BCF460009CA446 /* BearFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearFocusNode.swift; sourceTree = "<group>"; };
 		C0D2C75F24C608D900B79E9D /* CourtainNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtainNode.swift; sourceTree = "<group>"; };
+		C0D2C76224C6377700B79E9D /* ClockFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ClockFocus.sks; sourceTree = "<group>"; };
+		C0D2C76424C6381D00B79E9D /* ClockFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockFocus.swift; sourceTree = "<group>"; };
+		C0D2C76624C638C800B79E9D /* ClockNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockNode.swift; sourceTree = "<group>"; };
+		C0D2C76824C63EB500B79E9D /* ClockFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockFocusNode.swift; sourceTree = "<group>"; };
 		C0E53DC724B39B9500DEE127 /* miketv-mc7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "miketv-mc7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E53DCC24B39B9500DEE127 /* Scene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene2.sks; sourceTree = "<group>"; };
@@ -166,8 +174,9 @@
 				C0B2DE0324BE3E2500277841 /* DresserNode.swift */,
 				C0B2DE0524BE435900277841 /* DresserFocusNode.swift */,
 				0F41BFBA24BF981200FE83FC /* BoxNode.swift */,
-				0F16E9CE24C211DB00CB4862 /* BoxFocusNode.swift */,
 				C0D2C75F24C608D900B79E9D /* CourtainNode.swift */,
+				C0D2C76624C638C800B79E9D /* ClockNode.swift */,
+				C0D2C76824C63EB500B79E9D /* ClockFocusNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -218,6 +227,7 @@
 		C0CCA2C624BCEC25009CA446 /* FocusScenes */ = {
 			isa = PBXGroup;
 			children = (
+				C0D2C76124C6376500B79E9D /* Clock */,
 				0F41BFB524BF82CE00FE83FC /* Box */,
 				C0B2DDFE24BE2BD100277841 /* Dresser */,
 				C0B2DDF724BE1FA200277841 /* Plant */,
@@ -233,6 +243,15 @@
 				C0CCA2CA24BCF175009CA446 /* BearFocus.swift */,
 			);
 			path = Bear;
+			sourceTree = "<group>";
+		};
+		C0D2C76124C6376500B79E9D /* Clock */ = {
+			isa = PBXGroup;
+			children = (
+				C0D2C76224C6377700B79E9D /* ClockFocus.sks */,
+				C0D2C76424C6381D00B79E9D /* ClockFocus.swift */,
+			);
+			path = Clock;
 			sourceTree = "<group>";
 		};
 		C0E53DBE24B39B9500DEE127 = {
@@ -363,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E53DD624B39B9500DEE127 /* Main.storyboard in Resources */,
+				C0D2C76324C6377700B79E9D /* ClockFocus.sks in Resources */,
 				0F41BFB224BE2BFB00FE83FC /* ZeroSceneAtlas.atlas in Resources */,
 				0F41BF9724BE1E4B00FE83FC /* Scene0.sks in Resources */,
 				C0E53DCD24B39B9500DEE127 /* Scene2.sks in Resources */,
@@ -389,7 +409,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D2C76724C638C800B79E9D /* ClockNode.swift in Sources */,
 				C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */,
+				C0D2C76524C6381D00B79E9D /* ClockFocus.swift in Sources */,
 				C0B2DE0224BE2C1D00277841 /* DresserFocus.swift in Sources */,
 				C0CCA2CD24BCF460009CA446 /* BearFocusNode.swift in Sources */,
 				0F41BF9524BE1E3B00FE83FC /* Scene0.swift in Sources */,
@@ -404,6 +426,7 @@
 				0F16E9D224C6045300CB4862 /* MainScene.swift in Sources */,
 				C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */,
 				C0B2DDFB24BE1FCF00277841 /* PlantFocus.swift in Sources */,
+				C0D2C76924C63EB500B79E9D /* ClockFocusNode.swift in Sources */,
 				C0B2DDFD24BE235C00277841 /* PlantFocusNode.swift in Sources */,
 				C0B2DE0424BE3E2500277841 /* DresserNode.swift in Sources */,
 				C0E53DEA24B4EEE500DEE127 /* Scene1.swift in Sources */,

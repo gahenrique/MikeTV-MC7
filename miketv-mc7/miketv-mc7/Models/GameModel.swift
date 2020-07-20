@@ -46,6 +46,14 @@ enum CourtainState {
     case destroyed
 }
 
+enum ClockState {
+    case normal
+    case fixed
+    case fixedOpenWithFragment
+    case fixedOpenEmpty
+    case openDestroyed
+}
+
 enum CollectionableItems: String {
     case photoFragment1 = "Parte1Inventario"
     case photoFragment2 = "Parte2Inventario"
@@ -122,4 +130,8 @@ class Scene4Model: SceneModel {
     // Courtain
     var courtainState: CourtainState = .normal
     var courtainTextures: [CourtainState: String] = [.normal: "Cortina", .firstTap: "Cortina", .secondTap: "Cortina", .broken: "CortinaQuebrada", .brokenDestroyed: "CortinaQuebrada", .destroyed: "Cortina"]
+    
+    // Clock
+    var clockState: ClockState = .normal
+    var clockTextures: [ClockState: String] = [.normal: "Relogio", .fixed: "RelogioImaginarioArrumado", .fixedOpenWithFragment: "RelogioImaginarioAbertoFragmento", .fixedOpenEmpty: "RelogioImaginarioAbertoVazio", .openDestroyed: "RelogioRealAberto"]
 }
