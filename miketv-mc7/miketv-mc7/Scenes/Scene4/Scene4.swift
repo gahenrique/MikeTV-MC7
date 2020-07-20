@@ -69,10 +69,12 @@ class Scene4: BaseGameScene {
         self.setupInventory(items: model.inventory)
         
         guard
-            let dresserTexture = model.scene4.dresserTextures[model.scene4.dresserState]
+            let dresserTexture = model.scene4.dresserTextures[model.scene4.dresserState],
+            let courtainTexture = model.scene4.courtainTextures[model.scene4.courtainState]
         else { return }
         
         dresserNode?.texture = SKTexture(imageNamed: dresserTexture)
+        courtainNode?.texture = SKTexture(imageNamed: courtainTexture)
     }
 
     override func update(_ currentTime: TimeInterval) {
