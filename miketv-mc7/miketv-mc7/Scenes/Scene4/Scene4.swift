@@ -75,6 +75,11 @@ class Scene4: BaseGameScene {
         
         dresserNode?.texture = SKTexture(imageNamed: dresserTexture)
         courtainNode?.texture = SKTexture(imageNamed: courtainTexture)
+        
+        if model.scene4.courtainState == .broken,
+            let courtainNode = courtainNode as? CourtainNode {
+            courtainNode.updateHighlight()
+        }
     }
 
     override func update(_ currentTime: TimeInterval) {

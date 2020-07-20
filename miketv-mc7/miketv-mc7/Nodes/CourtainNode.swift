@@ -20,10 +20,9 @@ class CourtainNode: SelectionableNode {
             model.scene4.courtainState = nextState
             self.texture = SKTexture(imageNamed: newTexture)
             
-            if nextState == .broken,
-                let highlight = self.childNode(withName: "Highlight") as? SKSpriteNode {
-                highlight.texture = SKTexture(imageNamed: "CortinaQuebradaHighlight")
+            if nextState == .broken {
                 model.collectItem(.courtainStuff)
+                updateHighlight()
             }
         }
     }
@@ -49,5 +48,11 @@ class CourtainNode: SelectionableNode {
         super.buttonDidLoseFocus()
         
         self.position.y += 20
+    }
+    
+    func updateHighlight() {
+        if let highlight = self.childNode(withName: "Highlight") as? SKSpriteNode {
+            highlight.texture = SKTexture(imageNamed: "CortinaQuebradaHighlight")
+        }
     }
 }
