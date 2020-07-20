@@ -37,6 +37,15 @@ enum BoxState {
     case destroyed
 }
 
+enum CourtainState {
+    case normal
+    case firstTap
+    case secondTap
+    case broken
+    case brokenDestroyed
+    case destroyed
+}
+
 enum CollectionableItems: String {
     case photoFragment1 = "Parte1Inventario"
     case photoFragment2 = "Parte2Inventario"
@@ -109,5 +118,8 @@ class Scene4Model: SceneModel {
     // Only for focused
     var dresserTextures: [DresserState: String] = [.closed: "Comoda",.openedWithFragment: "ComodaAbertaFragmento", .openedWithoutFragment: "ComodaAberta"]
     var dresserState: DresserState = .closed
+    
+    // Courtain
+    var courtainState: CourtainState = .normal
+    var courtainTextures: [CourtainState: String] = [.normal: "Cortina", .firstTap: "Cortina", .secondTap: "Cortina", .broken: "CortinaQuebrada", .brokenDestroyed: "CortinaQuebrada", .destroyed: "Cortina"]
 }
-

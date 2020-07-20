@@ -37,6 +37,7 @@
 		C0CCA2C924BCEC8E009CA446 /* BearFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0CCA2C824BCEC8E009CA446 /* BearFocus.sks */; };
 		C0CCA2CB24BCF175009CA446 /* BearFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CCA2CA24BCF175009CA446 /* BearFocus.swift */; };
 		C0CCA2CD24BCF460009CA446 /* BearFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CCA2CC24BCF460009CA446 /* BearFocusNode.swift */; };
+		C0D2C76024C608D900B79E9D /* CourtainNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D2C75F24C608D900B79E9D /* CourtainNode.swift */; };
 		C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */; };
 		C0E53DCD24B39B9500DEE127 /* Scene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DCC24B39B9500DEE127 /* Scene2.sks */; };
 		C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DCE24B39B9500DEE127 /* Actions.sks */; };
@@ -81,6 +82,7 @@
 		C0CCA2C824BCEC8E009CA446 /* BearFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BearFocus.sks; sourceTree = "<group>"; };
 		C0CCA2CA24BCF175009CA446 /* BearFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearFocus.swift; sourceTree = "<group>"; };
 		C0CCA2CC24BCF460009CA446 /* BearFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearFocusNode.swift; sourceTree = "<group>"; };
+		C0D2C75F24C608D900B79E9D /* CourtainNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtainNode.swift; sourceTree = "<group>"; };
 		C0E53DC724B39B9500DEE127 /* miketv-mc7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "miketv-mc7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E53DCC24B39B9500DEE127 /* Scene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene2.sks; sourceTree = "<group>"; };
@@ -164,6 +166,8 @@
 				C0B2DE0324BE3E2500277841 /* DresserNode.swift */,
 				C0B2DE0524BE435900277841 /* DresserFocusNode.swift */,
 				0F41BFBA24BF981200FE83FC /* BoxNode.swift */,
+				0F16E9CE24C211DB00CB4862 /* BoxFocusNode.swift */,
+				C0D2C75F24C608D900B79E9D /* CourtainNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -407,6 +411,7 @@
 				0F41BFBB24BF981200FE83FC /* BoxNode.swift in Sources */,
 				C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */,
 				C0B2DDF624BE1F3F00277841 /* PlantNode.swift in Sources */,
+				C0D2C76024C608D900B79E9D /* CourtainNode.swift in Sources */,
 				0F41BFB724BF82E500FE83FC /* BoxFocus.swift in Sources */,
 				0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */,
 			);
