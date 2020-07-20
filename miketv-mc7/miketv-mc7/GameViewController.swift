@@ -18,7 +18,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         setupGestures()
-        setupScene1()
+        setupMenu()
     }
     
     private func setupGestures() {
@@ -29,11 +29,14 @@ class GameViewController: UIViewController {
         swipeRightGesture.direction = .right
         let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureHandler(_:)))
         swipeUpGesture.direction = .up
+        let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureHandler(_:)))
+        swipeDownGesture.direction = .down
         
         view.addGestureRecognizer(tapGesture)
         view.addGestureRecognizer(swipeLeftGesture)
         view.addGestureRecognizer(swipeRightGesture)
         view.addGestureRecognizer(swipeUpGesture)
+        view.addGestureRecognizer(swipeDownGesture)
     }
     
     @objc private func tapGestureHandler(_ sender: UITapGestureRecognizer) {
@@ -50,10 +53,10 @@ class GameViewController: UIViewController {
         }
     }
     
-    private func setupScene1() {
+    private func setupMenu() {
         if let view = self.view as! SKView? {
             // Load the SKScene from .sks
-            if let scene = SKScene(fileNamed: "Scene0") as? Scene0 {
+            if let scene = SKScene(fileNamed: "MainScene") as? BaseGameScene {
                 scene.sceneDelegate = self
                 scene.setupModel(model: self.gameModel)
                 scene.scaleMode = .aspectFit
@@ -68,6 +71,8 @@ class GameViewController: UIViewController {
 }
 
 enum SceneName: String {
+    case Menu = "MainScene"
+    case Scene0 = "Scene0"
     case Scene1 = "Scene1"
     case Scene2 = "Scene2"
     case Scene3 = "Scene3"

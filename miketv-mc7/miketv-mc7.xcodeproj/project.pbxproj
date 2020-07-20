@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F16E9CF24C211DB00CB4862 /* BoxFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F16E9CE24C211DB00CB4862 /* BoxFocusNode.swift */; };
+		0F16E9D224C6045300CB4862 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F16E9D124C6045300CB4862 /* MainScene.swift */; };
+		0F16E9D424C6046700CB4862 /* MainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F16E9D324C6046700CB4862 /* MainScene.sks */; };
+		0F16E9D724C616E800CB4862 /* Chalkduster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F16E9D624C616D600CB4862 /* Chalkduster.ttf */; };
 		0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F3782C424B900EE006F90C1 /* Scene3.sks */; };
 		0F3782C724B90103006F90C1 /* Scene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3782C624B90103006F90C1 /* Scene3.swift */; };
 		0F41BF9524BE1E3B00FE83FC /* Scene0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F41BF9424BE1E3B00FE83FC /* Scene0.swift */; };
@@ -49,7 +51,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F16E9CE24C211DB00CB4862 /* BoxFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxFocusNode.swift; sourceTree = "<group>"; };
+		0F16E9D124C6045300CB4862 /* MainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
+		0F16E9D324C6046700CB4862 /* MainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainScene.sks; sourceTree = "<group>"; };
+		0F16E9D624C616D600CB4862 /* Chalkduster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chalkduster.ttf; sourceTree = "<group>"; };
 		0F3782C424B900EE006F90C1 /* Scene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene3.sks; sourceTree = "<group>"; };
 		0F3782C624B90103006F90C1 /* Scene3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene3.swift; sourceTree = "<group>"; };
 		0F41BF9424BE1E3B00FE83FC /* Scene0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0.swift; sourceTree = "<group>"; };
@@ -103,6 +107,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F16E9D024C6042500CB4862 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				0F16E9D324C6046700CB4862 /* MainScene.sks */,
+				0F16E9D124C6045300CB4862 /* MainScene.swift */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		0F16E9D524C616B400CB4862 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0F16E9D624C616D600CB4862 /* Chalkduster.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		0F3782C324B90083006F90C1 /* Scene3 */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +164,6 @@
 				C0B2DE0324BE3E2500277841 /* DresserNode.swift */,
 				C0B2DE0524BE435900277841 /* DresserFocusNode.swift */,
 				0F41BFBA24BF981200FE83FC /* BoxNode.swift */,
-				0F16E9CE24C211DB00CB4862 /* BoxFocusNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -230,6 +250,7 @@
 		C0E53DC924B39B9500DEE127 /* miketv-mc7 */ = {
 			isa = PBXGroup;
 			children = (
+				0F16E9D524C616B400CB4862 /* Fonts */,
 				0FD8DE4A24B79377000284AF /* Nodes */,
 				C045F0F424B6623600D75E6F /* Protocols */,
 				C03ABC5224B8D60A00B9D4CB /* Models */,
@@ -249,6 +270,7 @@
 		C0E53DE424B4EBFB00DEE127 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0F16E9D024C6042500CB4862 /* MainScene */,
 				0F41BF9324BE1DF400FE83FC /* Scene0 */,
 				C045F0F724B6629500D75E6F /* BaseGameScene.swift */,
 				C0E53DE824B4EED500DEE127 /* Scene1 */,
@@ -342,6 +364,7 @@
 				C0E53DCD24B39B9500DEE127 /* Scene2.sks in Resources */,
 				C0B2DDF924BE1FC700277841 /* PlantFocus.sks in Resources */,
 				C0E53DD824B39B9600DEE127 /* Assets.xcassets in Resources */,
+				0F16E9D724C616E800CB4862 /* Chalkduster.ttf in Resources */,
 				C0CCA2C424BCD438009CA446 /* Scene4.sks in Resources */,
 				C0E53DDB24B39B9600DEE127 /* LaunchScreen.storyboard in Resources */,
 				0F41BFB924BF8D8900FE83FC /* BoxFocus.sks in Resources */,
@@ -351,6 +374,7 @@
 				0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */,
 				C0CCA2C924BCEC8E009CA446 /* BearFocus.sks in Resources */,
 				C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */,
+				0F16E9D424C6046700CB4862 /* MainScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +397,7 @@
 				C0CCA2CB24BCF175009CA446 /* BearFocus.swift in Sources */,
 				C0CCA2C524BCD438009CA446 /* Scene4.swift in Sources */,
 				C0E53DD324B39B9500DEE127 /* GameViewController.swift in Sources */,
-				0F16E9CF24C211DB00CB4862 /* BoxFocusNode.swift in Sources */,
+				0F16E9D224C6045300CB4862 /* MainScene.swift in Sources */,
 				C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */,
 				C0B2DDFB24BE1FCF00277841 /* PlantFocus.swift in Sources */,
 				C0B2DDFD24BE235C00277841 /* PlantFocusNode.swift in Sources */,
