@@ -59,6 +59,11 @@
 		C0E53DE324B3A30400DEE127 /* SelectionableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DE224B3A30400DEE127 /* SelectionableNode.swift */; };
 		C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E53DE524B4EC7600DEE127 /* Scene1.sks */; };
 		C0E53DEA24B4EEE500DEE127 /* Scene1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E53DE924B4EEE500DEE127 /* Scene1.swift */; };
+		C0FE80A824C7561200A285E4 /* BooksNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE80A724C7561200A285E4 /* BooksNode.swift */; };
+		C0FE80AA24C7592900A285E4 /* OctopusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE80A924C7592900A285E4 /* OctopusNode.swift */; };
+		C0FE80AC24C759FE00A285E4 /* DoorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE80AB24C759FE00A285E4 /* DoorNode.swift */; };
+		C0FE80AE24C75DB400A285E4 /* DinoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE80AD24C75DB400A285E4 /* DinoNode.swift */; };
+		C0FE80B024C75DC000A285E4 /* PegasusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE80AF24C75DC000A285E4 /* PegasusNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +121,11 @@
 		C0E53DE224B3A30400DEE127 /* SelectionableNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionableNode.swift; sourceTree = "<group>"; };
 		C0E53DE524B4EC7600DEE127 /* Scene1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene1.sks; sourceTree = "<group>"; };
 		C0E53DE924B4EEE500DEE127 /* Scene1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene1.swift; sourceTree = "<group>"; };
+		C0FE80A724C7561200A285E4 /* BooksNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksNode.swift; sourceTree = "<group>"; };
+		C0FE80A924C7592900A285E4 /* OctopusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusNode.swift; sourceTree = "<group>"; };
+		C0FE80AB24C759FE00A285E4 /* DoorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorNode.swift; sourceTree = "<group>"; };
+		C0FE80AD24C75DB400A285E4 /* DinoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoNode.swift; sourceTree = "<group>"; };
+		C0FE80AF24C75DC000A285E4 /* PegasusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegasusNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				0FD8DE4B24B7938D000284AF /* BedNode.swift */,
+				C0FE80A724C7561200A285E4 /* BooksNode.swift */,
 				C03ABC5524B8E33E00B9D4CB /* BearNode.swift */,
 				C0CCA2CC24BCF460009CA446 /* BearFocusNode.swift */,
 				C0B2DDF524BE1F3F00277841 /* PlantNode.swift */,
@@ -209,6 +220,10 @@
 				C0D2C76824C63EB500B79E9D /* ClockFocusNode.swift */,
 				0F19D2EE24C76408004372CB /* CoatFocusNode.swift */,
 				0F19D2F024C7735C004372CB /* CoatNode.swift */,
+				C0FE80A924C7592900A285E4 /* OctopusNode.swift */,
+				C0FE80AB24C759FE00A285E4 /* DoorNode.swift */,
+				C0FE80AD24C75DB400A285E4 /* DinoNode.swift */,
+				C0FE80AF24C75DC000A285E4 /* PegasusNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -448,16 +463,21 @@
 				C0D2C76724C638C800B79E9D /* ClockNode.swift in Sources */,
 				C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */,
 				C0D2C76524C6381D00B79E9D /* ClockFocus.swift in Sources */,
+				C0FE80AE24C75DB400A285E4 /* DinoNode.swift in Sources */,
+				C0FE80AC24C759FE00A285E4 /* DoorNode.swift in Sources */,
 				C0B2DE0224BE2C1D00277841 /* DresserFocus.swift in Sources */,
 				C0CCA2CD24BCF460009CA446 /* BearFocusNode.swift in Sources */,
 				0F41BF9524BE1E3B00FE83FC /* Scene0.swift in Sources */,
 				C0E53DD124B39B9500DEE127 /* Scene2.swift in Sources */,
 				0F3782C724B90103006F90C1 /* Scene3.swift in Sources */,
+				C0FE80B024C75DC000A285E4 /* PegasusNode.swift in Sources */,
 				C03ABC5424B8D62700B9D4CB /* GameModel.swift in Sources */,
 				C03ABC5624B8E33E00B9D4CB /* BearNode.swift in Sources */,
 				C0B2DE0624BE435900277841 /* DresserFocusNode.swift in Sources */,
 				C0CCA2CB24BCF175009CA446 /* BearFocus.swift in Sources */,
+				C0FE80A824C7561200A285E4 /* BooksNode.swift in Sources */,
 				C0CCA2C524BCD438009CA446 /* Scene4.swift in Sources */,
+				C0FE80AA24C7592900A285E4 /* OctopusNode.swift in Sources */,
 				C0E53DD324B39B9500DEE127 /* GameViewController.swift in Sources */,
 				0F16E9D224C6045300CB4862 /* MainScene.swift in Sources */,
 				C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */,

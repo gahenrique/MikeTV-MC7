@@ -17,7 +17,6 @@ class ClockFocusNode: SelectionableNode {
         
         // TODO: Check if player has key
         if !model.hasItem(.courtainStuff) {
-            delegate?.setLines(line: "Tem algo errado nesse relógio...")
             return
         }
         
