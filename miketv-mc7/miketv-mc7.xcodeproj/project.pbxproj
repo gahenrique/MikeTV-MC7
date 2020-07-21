@@ -13,6 +13,7 @@
 		0F19D2EB24C75A2A004372CB /* CoatFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F19D2EA24C75A2A004372CB /* CoatFocus.sks */; };
 		0F19D2ED24C75A4C004372CB /* CoatFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F19D2EC24C75A4C004372CB /* CoatFocus.swift */; };
 		0F19D2EF24C76408004372CB /* CoatFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F19D2EE24C76408004372CB /* CoatFocusNode.swift */; };
+		0F19D2F124C7735C004372CB /* CoatNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F19D2F024C7735C004372CB /* CoatNode.swift */; };
 		0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F3782C424B900EE006F90C1 /* Scene3.sks */; };
 		0F3782C724B90103006F90C1 /* Scene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3782C624B90103006F90C1 /* Scene3.swift */; };
 		0F41BF9524BE1E3B00FE83FC /* Scene0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F41BF9424BE1E3B00FE83FC /* Scene0.swift */; };
@@ -67,6 +68,7 @@
 		0F19D2EA24C75A2A004372CB /* CoatFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CoatFocus.sks; sourceTree = "<group>"; };
 		0F19D2EC24C75A4C004372CB /* CoatFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatFocus.swift; sourceTree = "<group>"; };
 		0F19D2EE24C76408004372CB /* CoatFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatFocusNode.swift; sourceTree = "<group>"; };
+		0F19D2F024C7735C004372CB /* CoatNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatNode.swift; sourceTree = "<group>"; };
 		0F3782C424B900EE006F90C1 /* Scene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene3.sks; sourceTree = "<group>"; };
 		0F3782C624B90103006F90C1 /* Scene3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene3.swift; sourceTree = "<group>"; };
 		0F41BF9424BE1E3B00FE83FC /* Scene0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				C0D2C76624C638C800B79E9D /* ClockNode.swift */,
 				C0D2C76824C63EB500B79E9D /* ClockFocusNode.swift */,
 				0F19D2EE24C76408004372CB /* CoatFocusNode.swift */,
+				0F19D2F024C7735C004372CB /* CoatNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				0F19D2ED24C75A4C004372CB /* CoatFocus.swift in Sources */,
 				C0B2DE0424BE3E2500277841 /* DresserNode.swift in Sources */,
 				C0E53DEA24B4EEE500DEE127 /* Scene1.swift in Sources */,
+				0F19D2F124C7735C004372CB /* CoatNode.swift in Sources */,
 				C0E53DE324B3A30400DEE127 /* SelectionableNode.swift in Sources */,
 				0F41BFBB24BF981200FE83FC /* BoxNode.swift in Sources */,
 				C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */,
