@@ -58,10 +58,12 @@ class Scene2: BaseGameScene {
         self.setupInventory(items: model.inventory)
         
         guard
-            let plantTexture = model.scene2.plantTextures[model.scene2.plantState]
+            let plantTexture = model.scene2.plantTextures[model.scene2.plantState],
+            let coatTexture = model.scene2.coatTextures[model.scene2.coatState]
         else { return }
         
         plantNode?.texture = SKTexture(imageNamed: plantTexture)
+        coatNode?.texture = SKTexture(imageNamed: coatTexture)
     }
     
     override func update(_ currentTime: TimeInterval) {

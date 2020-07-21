@@ -48,7 +48,9 @@ class CoatFocus: BaseGameScene {
             setLines(line: "Meu pai, o famoso rei Julian, deixou esse casaco aqui antes de ir viajar. Queria que ele tivesse me levado junto…")
         case .openWithMap:
             setLines(line: "Olha! Tem algo dentro do bolso...")
-        case .destroyed:
+        case .openDestroyed:
+            setLines(line: "Hm… Estranho… O casaco não estava assim antes…")
+        case . closedDestroyed:
             setLines(line: "Hm… Estranho… O casaco não estava assim antes…")
         default:
             setLines(line: "Meu pai, o famoso rei Julian, deixou esse casaco aqui antes de ir viajar")
@@ -59,6 +61,15 @@ class CoatFocus: BaseGameScene {
         else { return }
         
         coatNode?.texture = SKTexture(imageNamed: coatTexture)
+        coatNode?.size = CGSize(width: 874.28, height: 2774.23)
+        
+        if coatTexture == "CoatFocusClosed" || coatTexture == "CoatFocusWithMap" {
+            coatNode?.position = CGPoint(x: -0, y: 350)
+        } else {
+            coatNode?.position = CGPoint(x: 26, y: -315)
+            coatNode?.childNode(withName: "Highlight")?.position = CGPoint(x: 9, y: 315)
+        }
+        
     }
     
     override func didTap() {

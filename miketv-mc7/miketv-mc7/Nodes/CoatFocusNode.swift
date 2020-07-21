@@ -19,14 +19,9 @@ class CoatFocusNode: SelectionableNode {
         
         let nextState = getNextState(current: currentState)
         
-        if nextState != .destroyed,
-            let newTexture = model.scene2.coatTextures[nextState] {
+        if let newTexture = model.scene2.coatTextures[nextState] {
             model.scene2.coatState = nextState
             self.texture = SKTexture(imageNamed: newTexture)
-        }
-        
-        if nextState == .openEmpty {
-            model.scene2.coatState = .destroyed
         }
     }
     
@@ -35,11 +30,11 @@ class CoatFocusNode: SelectionableNode {
         case .normal:
             return .openWithMap
         case .openWithMap:
-            return .openEmpty
-        case .openEmpty:
-            fallthrough
-        case .destroyed:
-            return .destroyed
+            return .openWithMap
+        case .closedDestroyed:
+            return .openDestroyed
+        case .openDestroyed:
+            return .openDestroyed
         }
     }
 }

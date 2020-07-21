@@ -27,7 +27,11 @@ class BearFocusNode: SelectionableNode {
         
         if nextState == .openedWithoutFragment {
             model.scene1.bearState = .destroyed
-            
+            if model.scene2.coatState == .normal {
+                model.scene2.coatState = .closedDestroyed
+            } else if model.scene2.coatState == .openWithMap {
+                model.scene2.coatState = .openDestroyed
+            }
             model.collectItem(.photoFragment2)
         }
     }

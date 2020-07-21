@@ -57,8 +57,8 @@ enum ClockState {
 enum CoatState {
     case normal
     case openWithMap
-    case openEmpty
-    case destroyed
+    case closedDestroyed
+    case openDestroyed
 }
 
 enum CollectionableItems: String {
@@ -122,7 +122,7 @@ class Scene2Model: SceneModel {
     var plantTextures: [PlantState: String] = [.withKey: "PlantaChave", .withoutKey: "Planta"]
     var plantState: PlantState = .withKey
     
-    var coatTextures: [CoatState: String] = [.normal: "CoatFocusClosed", .openWithMap: "CoatFocusWithMap", .openEmpty: "CoatFocusWithoutMap", .destroyed: "CoatDestroyed"]
+    var coatTextures: [CoatState: String] = [.normal: "CoatFocusClosed", .openWithMap: "CoatFocusWithMap", .closedDestroyed: "CoatClosedDestroyed", .openDestroyed: "CoatDestroyed"]
     var coatState: CoatState = .normal
 }
 
