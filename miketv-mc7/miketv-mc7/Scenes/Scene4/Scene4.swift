@@ -51,6 +51,8 @@ class Scene4: BaseGameScene {
         dresserNode.delegate = self
         courtainNode.delegate = self
         clockNode.delegate = self
+        pegasusNode.delegate = self
+        tRexNode.delegate = self
         
         buttons.append(leftArrow)
         buttons.append(dresserNode)

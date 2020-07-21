@@ -48,6 +48,10 @@ class ClockFocus: BaseGameScene {
         else { return }
 
         clockNode?.texture = SKTexture(imageNamed: clockTexture)
+        
+        if model.scene4.clockState == .normal {
+            setLines(line: "Meu pai construiu esse relógio para mim! Mas ué… Está faltando um ponteiro…")
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
