@@ -41,11 +41,13 @@ class Scene1: BaseGameScene {
         self.storyLine = storyLine
         
         self.bedNode = bedNode
-        bedNode.delegate = self
         self.bearNode = bearNode
-        bearNode.delegate = self
         self.booksNode = booksNode
         self.boxNode = boxNode
+        
+        bedNode.delegate = self
+        bearNode.delegate = self
+        booksNode.delegate = self
         boxNode.delegate = self
         
         buttons.append(leftArrow)

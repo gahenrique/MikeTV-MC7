@@ -14,17 +14,22 @@ class PlantFocus: BaseGameScene {
     private var currentFocused: SelectionableNode?
     
     private var backArrowNode: SelectionableNode?
+    private var storyLine: SKLabelNode?
     
     private var plantNode: SelectionableNode?
+    
+    private var timer: Timer?
         
     override func didMove(to view: SKView) {
         
         guard
             let backArrowNode = self.childNode(withName: "BackArrow") as? SelectionableNode,
-            let plantNode = self.childNode(withName: "Plant") as? SelectionableNode
+            let plantNode = self.childNode(withName: "Plant") as? SelectionableNode,
+            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
             else { return }
         
         self.backArrowNode = backArrowNode
+        self.storyLine = storyLine
         self.plantNode = plantNode
         
         plantNode.delegate = self
@@ -44,6 +49,10 @@ class PlantFocus: BaseGameScene {
         else { return }
         
         plantNode?.texture = SKTexture(imageNamed: plantTexture)
+        
+        if model.scene2.plantState == .withKey {
+            setLines(line: "Nossa, parece que tem alguma coisa brilhante ali atrás")
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -86,20 +95,25 @@ class PlantFocus: BaseGameScene {
 }
 
 extension PlantFocus: SelectionableNodeDelegate {
+    func setLines(line: String) {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
+        storyLine?.text = line
+    }
+    
+    func changeScene(to scene: SceneName) {
+        sceneDelegate?.changeScene(to: scene)
+    }
+    
+    func changeState(_ node: SelectionableNode, to newState: State) {
+        
+    }
+    
     func getModel() -> GameModel? {
         return self.model
     }
     
-    func changeState(_ node: SelectionableNode, to newState: State) {
-    }
-    
-    func setLines(line: String) {
-    }
-    
-    func changeScene(to scene: SceneName) {
-        //lala
-    }
-    
     @objc func disableLine() {
+        storyLine?.text = " "
     }
 }
