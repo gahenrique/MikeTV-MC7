@@ -14,9 +14,8 @@ class BoxFocus: BaseGameScene {
     private var currentFocused: SelectionableNode?
     
     private var backArrowNode: SelectionableNode?
-    private var storyLine: SKLabelNode?
 
-    private var boxNode: SKSpriteNode?
+    private var boxNode: SelectionableNode?
     private var firstDigitNode: SelectionableNode?
     private var secondDigitNode: SelectionableNode?
     private var thirdDigitNode: SelectionableNode?
@@ -26,9 +25,10 @@ class BoxFocus: BaseGameScene {
     private var thirdDigit : SKLabelNode?
     
     private var timer: Timer?
+    private var backgroundImg: SKSpriteNode?
+    private var gift: SKSpriteNode?
     
     private let arrayNumbers = ["0","1","2","3","4","5","6","7","8","9"]
-    
     private var digits: [Int]?
     private var rightPassword: String?
     
@@ -42,8 +42,10 @@ class BoxFocus: BaseGameScene {
             let firstDigit = firstDigitNode.childNode(withName: "firstDigit") as? SKLabelNode,
             let secondDigit = secondDigitNode.childNode(withName: "secondDigit") as? SKLabelNode,
             let thirdDigit = thirdDigitNode.childNode(withName: "thirdDigit") as? SKLabelNode,
-            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode,
-            let boxNode = self.childNode(withName: "Box") as? SKSpriteNode
+            let backgroundImg = self.childNode(withName: "backgroundBlack") as? SKSpriteNode,
+            let gift = self.childNode(withName: "gift") as? SKSpriteNode,
+            let boxNode = self.childNode(withName: "Box") as? SelectionableNode
+            
             else { return }
         
         self.backArrowNode = backArrowNode
@@ -53,10 +55,14 @@ class BoxFocus: BaseGameScene {
         self.firstDigit = firstDigit
         self.secondDigit = secondDigit
         self.thirdDigit = thirdDigit
-        self.storyLine = storyLine
         self.boxNode = boxNode
+        self.backgroundImg = backgroundImg
+        self.gift = gift
         
-//        boxNode.delegate = self
+        boxNode.delegate = self
+        if let boxNode = boxNode as? BoxFocusNode {
+            boxNode.delegateBox = self
+        }
         
         buttons.append(backArrowNode)
         buttons.append(firstDigitNode)
@@ -67,7 +73,6 @@ class BoxFocus: BaseGameScene {
         self.currentFocused?.buttonDidGetFocus()
     }
     
-    //MARK: Mudar a textura da caixa
     override func setupModel(model: GameModel) {
         super.setupModel(model: model)
         
@@ -85,6 +90,7 @@ class BoxFocus: BaseGameScene {
         
         if model.scene1.boxState == .destroyed {
             changeNodesPosition()
+            setUpSceneAfterGift()
         } else if model.scene1.boxState == .closed {
             setLines(line: "É a caixa secreta do meu pai! Ele deixou comigo quando foi viajar mas ainda não consegui abrir ela")
         }
@@ -94,7 +100,11 @@ class BoxFocus: BaseGameScene {
     override func didTap() {
         if let currentFocused = self.currentFocused, let model = model, let firstDigit = firstDigit, let secondDigit = secondDigit, let thirdDigit = thirdDigit {
             if currentFocused == backArrowNode {
-                sceneDelegate?.changeScene(to: .Scene1)
+                if backgroundImg?.alpha == 1 {
+                    setUpSceneAfterGift()
+                } else {
+                    sceneDelegate?.changeScene(to: .Scene1)
+                }
             } else if currentFocused == firstDigitNode {
                 changeDigit(currentFocusedLabel: firstDigit)
                 model.scene1.currentPassword[0] = firstDigit.text ?? "9"
@@ -107,6 +117,25 @@ class BoxFocus: BaseGameScene {
             }
         }
         currentFocused?.didTap()
+    }
+    
+    func setUpSceneAfterGift() {
+        backgroundImg?.alpha = 0
+        
+        gift?.alpha = 0
+        
+        if let backArrowNode = backArrowNode,
+            let boxNode = boxNode {
+            buttons = []
+            buttons.append(backArrowNode)
+            buttons.append(boxNode)
+            currentFocused = backArrowNode
+            boxNode.buttonDidLoseFocus()
+            //MARK: Digitos seguindo o scale
+            firstDigit?.alpha = 0
+            secondDigit?.alpha = 0
+            thirdDigit?.alpha = 0
+        }
     }
     
     func changeDigit(currentFocusedLabel: SKLabelNode) {
@@ -133,8 +162,9 @@ class BoxFocus: BaseGameScene {
             
             boxNode?.texture = SKTexture(imageNamed: boxTexture)
             changeNodesPosition()
-            model.collectItem(.gift)
+//            model.collectItem(.gift)
             model.scene1.boxState = .destroyed
+            showGift()
         }
     }
     
@@ -174,4 +204,26 @@ class BoxFocus: BaseGameScene {
 
 extension StringProtocol  {
     var digits: [Int] { compactMap(\.wholeNumberValue) }
+}
+
+extension BoxFocus: BoxFocusNodeDelegate {
+    
+    func showGift() {
+        backgroundImg?.alpha = 1
+        let fade = SKAction.fadeAlpha(to: 1, duration: 1)
+        gift?.run(fade)
+        
+        if let firstDigitNode = firstDigitNode,
+            let secondDigitNode = secondDigitNode,
+            let thirdDigitNode = thirdDigitNode,
+            let backArrowNode = backArrowNode {
+            thirdDigitNode.buttonDidLoseFocus()
+            secondDigitNode.buttonDidLoseFocus()
+            firstDigitNode.buttonDidLoseFocus()
+            buttons = [backArrowNode]
+            backArrowNode.buttonDidGetFocus()
+            currentFocused = backArrowNode
+            boxNode?.buttonDidLoseFocus()
+        }
+    }
 }

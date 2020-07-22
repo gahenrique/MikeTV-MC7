@@ -23,6 +23,7 @@
 		0F41BFB724BF82E500FE83FC /* BoxFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F41BFB624BF82E500FE83FC /* BoxFocus.swift */; };
 		0F41BFB924BF8D8900FE83FC /* BoxFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BFB824BF8D8900FE83FC /* BoxFocus.sks */; };
 		0F41BFBB24BF981200FE83FC /* BoxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F41BFBA24BF981200FE83FC /* BoxNode.swift */; };
+		0F44082224C8CAC200D2104F /* BoxFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44082124C8CAC200D2104F /* BoxFocusNode.swift */; };
 		0F8DBAB324C63035001A5B1F /* TutorialScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F8DBAB224C63035001A5B1F /* TutorialScene.sks */; };
 		0F8DBAB524C63051001A5B1F /* TutorialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DBAB424C63051001A5B1F /* TutorialScene.swift */; };
 		0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8DE4B24B7938D000284AF /* BedNode.swift */; };
@@ -83,6 +84,7 @@
 		0F41BFB624BF82E500FE83FC /* BoxFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxFocus.swift; sourceTree = "<group>"; };
 		0F41BFB824BF8D8900FE83FC /* BoxFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BoxFocus.sks; sourceTree = "<group>"; };
 		0F41BFBA24BF981200FE83FC /* BoxNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxNode.swift; sourceTree = "<group>"; };
+		0F44082124C8CAC200D2104F /* BoxFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxFocusNode.swift; sourceTree = "<group>"; };
 		0F8DBAB224C63035001A5B1F /* TutorialScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TutorialScene.sks; sourceTree = "<group>"; };
 		0F8DBAB424C63051001A5B1F /* TutorialScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScene.swift; sourceTree = "<group>"; };
 		0FD8DE4B24B7938D000284AF /* BedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedNode.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				C0B2DE0324BE3E2500277841 /* DresserNode.swift */,
 				C0B2DE0524BE435900277841 /* DresserFocusNode.swift */,
 				0F41BFBA24BF981200FE83FC /* BoxNode.swift */,
+				0F44082124C8CAC200D2104F /* BoxFocusNode.swift */,
 				C0D2C75F24C608D900B79E9D /* CourtainNode.swift */,
 				C0D2C76624C638C800B79E9D /* ClockNode.swift */,
 				C0D2C76824C63EB500B79E9D /* ClockFocusNode.swift */,
@@ -496,6 +499,7 @@
 				0F8DBAB524C63051001A5B1F /* TutorialScene.swift in Sources */,
 				C0D2C76024C608D900B79E9D /* CourtainNode.swift in Sources */,
 				0F41BFB724BF82E500FE83FC /* BoxFocus.swift in Sources */,
+				0F44082224C8CAC200D2104F /* BoxFocusNode.swift in Sources */,
 				0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
