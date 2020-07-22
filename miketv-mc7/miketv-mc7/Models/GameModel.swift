@@ -74,6 +74,7 @@ enum CollectionableItems: String {
 class GameModel {
     
     private(set) var inventory: [CollectionableItems] = []
+    private(set) var usedItems: [CollectionableItems] = []
     
     // Game State Models
     var backgroundState: State = .normal
@@ -88,6 +89,17 @@ class GameModel {
     
     func hasItem(_ item: CollectionableItems) -> Bool {
         inventory.contains(item)
+    }
+    
+    func useItem(_ item: CollectionableItems) {
+        if let itemIndex = inventory.firstIndex(of: item) {
+            inventory.remove(at: itemIndex)
+            usedItems.append(item)
+        }
+    }
+    
+    func haveUsedItem(_ item: CollectionableItems) -> Bool {
+        usedItems.contains(item)
     }
 }
 
