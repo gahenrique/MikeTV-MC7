@@ -15,7 +15,6 @@ class Scene4: BaseGameScene {
     
     private var leftArrowNode: SelectionableNode?
     private var rightArrowNode: SelectionableNode?
-    private var storyLine: SKLabelNode?
     
     private var dresserNode: SelectionableNode?
     private var clockNode: SelectionableNode?
@@ -34,13 +33,11 @@ class Scene4: BaseGameScene {
             let clockNode = self.childNode(withName: "Clock") as? SelectionableNode,
             let courtainNode = self.childNode(withName: "Courtain") as? SelectionableNode,
             let tRexNode = self.childNode(withName: "TRex") as? SelectionableNode,
-            let pegasusNode = self.childNode(withName: "Pegasus") as? SelectionableNode,
-            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
+            let pegasusNode = self.childNode(withName: "Pegasus") as? SelectionableNode
         else { return }
         
         self.leftArrowNode = leftArrow
         self.rightArrowNode = rightArrow
-        self.storyLine = storyLine
         
         self.dresserNode = dresserNode
         self.clockNode = clockNode
@@ -131,29 +128,5 @@ class Scene4: BaseGameScene {
         
         self.currentFocused = buttons[nextFocusIndex]
         self.currentFocused?.buttonDidGetFocus()
-    }
-}
-
-extension Scene4: SelectionableNodeDelegate {
-    func setLines(line: String) {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
-        storyLine?.text = line
-    }
-    
-    func changeScene(to scene: SceneName) {
-        sceneDelegate?.changeScene(to: scene)
-    }
-    
-    func changeState(_ node: SelectionableNode, to newState: State) {
-        
-    }
-    
-    func getModel() -> GameModel? {
-        return self.model
-    }
-    
-    @objc func disableLine() {
-        storyLine?.text = " "
     }
 }

@@ -11,7 +11,6 @@ import SpriteKit
 protocol SelectionableNodeDelegate: AnyObject {
     func setLines(line: String)
     func changeScene(to scene: SceneName)
-    func changeState(_ node: SelectionableNode, to newState: State)
     func getModel() -> GameModel?
 }
 

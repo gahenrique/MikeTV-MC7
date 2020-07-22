@@ -11,8 +11,8 @@ import SpriteKit
 
 class Scene0: BaseGameScene {
     
-    private var storyLine: SKLabelNode?
-    private var timer: Timer?
+//    private var storyLine: SKLabelNode?
+//    private var timer: Timer?
     private var backgroundImg: SKSpriteNode?
     private var backgroundFrames: [SKTexture] = []
     
@@ -34,13 +34,10 @@ class Scene0: BaseGameScene {
         addChild(soundNode)
         
         guard
-            let backgroundImg = self.childNode(withName: "background") as? SKSpriteNode,
-            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
-            
+            let backgroundImg = self.childNode(withName: "background") as? SKSpriteNode 
             else { return }
 
         self.backgroundImg = backgroundImg
-        self.storyLine = storyLine
         
         backgroundColor = .black
         buildBackground()
@@ -86,26 +83,5 @@ class Scene0: BaseGameScene {
             countLines += 1
             setLines(line: arrayLines[countLines])
         }
-    }
-}
-
-extension Scene0: SelectionableNodeDelegate {
-    func getModel() -> GameModel? {
-        return self.model
-    }
-    
-    func changeState(_ node: SelectionableNode, to newState: State) {
-    }
-    
-    func setLines(line: String) {
-        storyLine?.text = line
-    }
-    
-    func changeScene(to scene: SceneName) {
-        sceneDelegate?.changeScene(to: scene)
-    }
-    
-    @objc func disableLine() {
-        storyLine?.text = " "
     }
 }

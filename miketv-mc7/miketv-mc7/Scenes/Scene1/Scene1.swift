@@ -16,13 +16,11 @@ class Scene1: BaseGameScene {
     
     private var leftArrowNode: SelectionableNode?
     private var rightArrowNode: SelectionableNode?
-    private var storyLine: SKLabelNode?
     
     private var bedNode: SelectionableNode?
     private var bearNode: SelectionableNode?
     private var booksNode: SelectionableNode?
     private var boxNode: SelectionableNode?
-    private var timer: Timer?
     
     override func didMove(to view: SKView) {
         
@@ -32,13 +30,12 @@ class Scene1: BaseGameScene {
             let bedNode = self.childNode(withName: "Bed") as? SelectionableNode,
             let bearNode = self.childNode(withName: "Bear") as? SelectionableNode,
             let booksNode = self.childNode(withName: "Books") as? SelectionableNode,
-            let boxNode = self.childNode(withName: "Box") as? SelectionableNode,
-            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
+            let boxNode = self.childNode(withName: "Box") as? SelectionableNode
             else { return }
         
         self.leftArrowNode = leftArrow
         self.rightArrowNode = rightArrow
-        self.storyLine = storyLine
+//        self.story
         
         self.bedNode = bedNode
         self.bearNode = bearNode
@@ -121,34 +118,5 @@ class Scene1: BaseGameScene {
         
         self.currentFocused = buttons[nextFocusIndex]
         self.currentFocused?.buttonDidGetFocus()
-    }
-}
-
-extension Scene1: SelectionableNodeDelegate {
-    func getModel() -> GameModel? {
-        return self.model
-    }
-    
-    func changeState(_ node: SelectionableNode, to newState: State) {
-        
-//        if node == bearNode,
-//            let newTexture = model.bearTextures[newState] {
-//            model.bearState = newState
-//            bearNode?.texture = SKTexture(imageNamed: newTexture)
-//        }
-    }
-    
-    func setLines(line: String) {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
-        storyLine?.text = line
-    }
-    
-    func changeScene(to scene: SceneName) {
-        sceneDelegate?.changeScene(to: scene)
-    }
-    
-    @objc func disableLine() {
-        storyLine?.text = " "
     }
 }
