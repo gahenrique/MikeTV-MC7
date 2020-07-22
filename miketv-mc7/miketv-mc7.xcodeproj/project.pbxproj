@@ -10,6 +10,10 @@
 		0F16E9D224C6045300CB4862 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F16E9D124C6045300CB4862 /* MainScene.swift */; };
 		0F16E9D424C6046700CB4862 /* MainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F16E9D324C6046700CB4862 /* MainScene.sks */; };
 		0F16E9D724C616E800CB4862 /* Chalkduster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F16E9D624C616D600CB4862 /* Chalkduster.ttf */; };
+		0F19D2EB24C75A2A004372CB /* CoatFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F19D2EA24C75A2A004372CB /* CoatFocus.sks */; };
+		0F19D2ED24C75A4C004372CB /* CoatFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F19D2EC24C75A4C004372CB /* CoatFocus.swift */; };
+		0F19D2EF24C76408004372CB /* CoatFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F19D2EE24C76408004372CB /* CoatFocusNode.swift */; };
+		0F19D2F124C7735C004372CB /* CoatNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F19D2F024C7735C004372CB /* CoatNode.swift */; };
 		0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F3782C424B900EE006F90C1 /* Scene3.sks */; };
 		0F3782C724B90103006F90C1 /* Scene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3782C624B90103006F90C1 /* Scene3.swift */; };
 		0F41BF9524BE1E3B00FE83FC /* Scene0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F41BF9424BE1E3B00FE83FC /* Scene0.swift */; };
@@ -66,6 +70,10 @@
 		0F16E9D124C6045300CB4862 /* MainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		0F16E9D324C6046700CB4862 /* MainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainScene.sks; sourceTree = "<group>"; };
 		0F16E9D624C616D600CB4862 /* Chalkduster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chalkduster.ttf; sourceTree = "<group>"; };
+		0F19D2EA24C75A2A004372CB /* CoatFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CoatFocus.sks; sourceTree = "<group>"; };
+		0F19D2EC24C75A4C004372CB /* CoatFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatFocus.swift; sourceTree = "<group>"; };
+		0F19D2EE24C76408004372CB /* CoatFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatFocusNode.swift; sourceTree = "<group>"; };
+		0F19D2F024C7735C004372CB /* CoatNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatNode.swift; sourceTree = "<group>"; };
 		0F3782C424B900EE006F90C1 /* Scene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene3.sks; sourceTree = "<group>"; };
 		0F3782C624B90103006F90C1 /* Scene3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene3.swift; sourceTree = "<group>"; };
 		0F41BF9424BE1E3B00FE83FC /* Scene0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0.swift; sourceTree = "<group>"; };
@@ -148,6 +156,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		0F19D2E924C75A12004372CB /* Coat */ = {
+			isa = PBXGroup;
+			children = (
+				0F19D2EA24C75A2A004372CB /* CoatFocus.sks */,
+				0F19D2EC24C75A4C004372CB /* CoatFocus.swift */,
+			);
+			path = Coat;
+			sourceTree = "<group>";
+		};
 		0F3782C324B90083006F90C1 /* Scene3 */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +218,8 @@
 				C0D2C75F24C608D900B79E9D /* CourtainNode.swift */,
 				C0D2C76624C638C800B79E9D /* ClockNode.swift */,
 				C0D2C76824C63EB500B79E9D /* ClockFocusNode.swift */,
+				0F19D2EE24C76408004372CB /* CoatFocusNode.swift */,
+				0F19D2F024C7735C004372CB /* CoatNode.swift */,
 				C0FE80A924C7592900A285E4 /* OctopusNode.swift */,
 				C0FE80AB24C759FE00A285E4 /* DoorNode.swift */,
 				C0FE80AD24C75DB400A285E4 /* DinoNode.swift */,
@@ -255,6 +274,7 @@
 		C0CCA2C624BCEC25009CA446 /* FocusScenes */ = {
 			isa = PBXGroup;
 			children = (
+				0F19D2E924C75A12004372CB /* Coat */,
 				C0D2C76124C6376500B79E9D /* Clock */,
 				0F41BFB524BF82CE00FE83FC /* Box */,
 				C0B2DDFE24BE2BD100277841 /* Dresser */,
@@ -429,6 +449,7 @@
 				C0CCA2C924BCEC8E009CA446 /* BearFocus.sks in Resources */,
 				C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */,
 				0F16E9D424C6046700CB4862 /* MainScene.sks in Resources */,
+				0F19D2EB24C75A2A004372CB /* CoatFocus.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,11 +484,14 @@
 				C0B2DDFB24BE1FCF00277841 /* PlantFocus.swift in Sources */,
 				C0D2C76924C63EB500B79E9D /* ClockFocusNode.swift in Sources */,
 				C0B2DDFD24BE235C00277841 /* PlantFocusNode.swift in Sources */,
+				0F19D2ED24C75A4C004372CB /* CoatFocus.swift in Sources */,
 				C0B2DE0424BE3E2500277841 /* DresserNode.swift in Sources */,
 				C0E53DEA24B4EEE500DEE127 /* Scene1.swift in Sources */,
+				0F19D2F124C7735C004372CB /* CoatNode.swift in Sources */,
 				C0E53DE324B3A30400DEE127 /* SelectionableNode.swift in Sources */,
 				0F41BFBB24BF981200FE83FC /* BoxNode.swift in Sources */,
 				C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */,
+				0F19D2EF24C76408004372CB /* CoatFocusNode.swift in Sources */,
 				C0B2DDF624BE1F3F00277841 /* PlantNode.swift in Sources */,
 				0F8DBAB524C63051001A5B1F /* TutorialScene.swift in Sources */,
 				C0D2C76024C608D900B79E9D /* CourtainNode.swift in Sources */,
