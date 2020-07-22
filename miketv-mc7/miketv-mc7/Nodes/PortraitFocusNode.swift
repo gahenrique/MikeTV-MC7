@@ -19,7 +19,8 @@ class PortraitFocusNode: SelectionableNode {
             let fragment1Node = self.childNode(withName: "Fragment1") as? SKSpriteNode,
             let fragment2Node = self.childNode(withName: "Fragment2") as? SKSpriteNode,
             let fragment3Node = self.childNode(withName: "Fragment3") as? SKSpriteNode,
-            let fragment4Node = self.childNode(withName: "Fragment4") as? SKSpriteNode
+            let fragment4Node = self.childNode(withName: "Fragment4") as? SKSpriteNode,
+            let passwordNode = self.childNode(withName: "Password") as? SKSpriteNode
         else { return }
         
         var insertedItem: Bool = false
@@ -50,10 +51,12 @@ class PortraitFocusNode: SelectionableNode {
             
             if nextState == .flipped {
                 delegate?.setLines(line: "O que é isso? Parece uma senha")
+                passwordNode.texture = SKTexture(imageNamed: model.scene1.passwordPhotoTexture)
+                passwordNode.size = fragment1Node.size
             }
             
             let alpha: CGFloat = (nextState == .normal) ? 0 : 1
-            childNode(withName: "Password")?.alpha = alpha
+            passwordNode.alpha = alpha
             fragment1Node.alpha = 1-alpha
             fragment2Node.alpha = model.haveUsedItem(.photoFragment2) ? 1-alpha : 0
             fragment3Node.alpha = model.haveUsedItem(.photoFragment3) ? 1-alpha : 0
