@@ -37,18 +37,30 @@ class PortraitFocus: BaseGameScene {
     override func setupModel(model: GameModel) {
         super.setupModel(model: model)
         
-        // Checking if player already used fragments 2, 3 and 4
-        if model.haveUsedItem(.photoFragment2),
-            let fragment2Node = portraitNode?.childNode(withName: "Fragment2") as? SKSpriteNode {
-            fragment2Node.alpha = 1
-        }
-        if model.haveUsedItem(.photoFragment3),
-            let fragment3Node = portraitNode?.childNode(withName: "Fragment3") as? SKSpriteNode {
-            fragment3Node.alpha = 1
-        }
-        if model.haveUsedItem(.photoFragment4),
-            let fragment4Node = portraitNode?.childNode(withName: "Fragment4") as? SKSpriteNode {
-            fragment4Node.alpha = 1
+        guard
+            let fragment1Node = portraitNode?.childNode(withName: "Fragment1") as? SKSpriteNode,
+            let fragment2Node = portraitNode?.childNode(withName: "Fragment2") as? SKSpriteNode,
+            let fragment3Node = portraitNode?.childNode(withName: "Fragment3") as? SKSpriteNode,
+            let fragment4Node = portraitNode?.childNode(withName: "Fragment4") as? SKSpriteNode,
+            let passwordNode = portraitNode?.childNode(withName: "Password") as? SKSpriteNode
+        else { return }
+        
+        if model.scene3.photoState == .flipped {
+            passwordNode.texture = SKTexture(imageNamed: model.scene1.passwordPhotoTexture)
+            passwordNode.size = fragment2Node.size
+            passwordNode.alpha = 1
+            fragment1Node.alpha = 0
+        } else {
+            // Checking if player already used fragments 2, 3 and 4
+            if model.haveUsedItem(.photoFragment2) {
+                fragment2Node.alpha = 1
+            }
+            if model.haveUsedItem(.photoFragment3) {
+                fragment3Node.alpha = 1
+            }
+            if model.haveUsedItem(.photoFragment4)  {
+                fragment4Node.alpha = 1
+            }
         }
         
     }
