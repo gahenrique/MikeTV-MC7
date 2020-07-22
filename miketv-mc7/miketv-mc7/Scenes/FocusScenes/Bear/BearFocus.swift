@@ -13,7 +13,6 @@ class BearFocus: BaseGameScene {
     private var buttons: [SelectionableNode] = []
     private var currentFocused: SelectionableNode?
     
-    private var storyLine: SKLabelNode?
     private var backArrowNode: SelectionableNode?
     
     private var timer: Timer?
@@ -24,13 +23,11 @@ class BearFocus: BaseGameScene {
         
         guard
             let backArrowNode = self.childNode(withName: "BackArrow") as? SelectionableNode,
-            let bearNode = self.childNode(withName: "Bear") as? SelectionableNode,
-            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
+            let bearNode = self.childNode(withName: "Bear") as? SelectionableNode
             else { return }
         
         self.backArrowNode = backArrowNode
         self.bearNode = bearNode
-        self.storyLine = storyLine
         
         bearNode.delegate = self
         
@@ -96,35 +93,5 @@ class BearFocus: BaseGameScene {
         
         self.currentFocused = buttons[nextFocusIndex]
         self.currentFocused?.buttonDidGetFocus()
-    }
-}
-
-extension BearFocus: SelectionableNodeDelegate {
-    func getModel() -> GameModel? {
-        return self.model
-    }
-    
-    func changeState(_ node: SelectionableNode, to newState: State) {
-//        guard let model = self.model as? Scene1Model else { return }
-//
-//        if node == bearNode,
-//            let newTexture = model.bearTextures[newState] {
-//            model.bearState = newState
-//            bearNode?.texture = SKTexture(imageNamed: newTexture)
-//        }
-    }
-    
-    func setLines(line: String) {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
-        storyLine?.text = line
-    }
-    
-    func changeScene(to scene: SceneName) {
-        //lala
-    }
-    
-    @objc func disableLine() {
-        storyLine?.text = " "
     }
 }

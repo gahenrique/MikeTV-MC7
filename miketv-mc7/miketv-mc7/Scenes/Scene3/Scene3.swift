@@ -93,27 +93,3 @@ class Scene3: BaseGameScene {
     }
     
 }
-
-extension Scene3: SelectionableNodeDelegate {
-    func setLines(line: String) {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
-        storyLine?.text = line
-    }
-    
-    func changeScene(to scene: SceneName) {
-        sceneDelegate?.changeScene(to: scene)
-    }
-    
-    func changeState(_ node: SelectionableNode, to newState: State) {
-        
-    }
-    
-    func getModel() -> GameModel? {
-        return self.model
-    }
-    
-    @objc func disableLine() {
-        storyLine?.text = " "
-    }
-}

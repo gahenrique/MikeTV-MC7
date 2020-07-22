@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class BaseGameScene: SKScene {
+class BaseGameScene: SKScene, SelectionableNodeDelegate {
     
     weak var sceneDelegate: GameSceneDelegate?
     
@@ -16,20 +16,80 @@ class BaseGameScene: SKScene {
     
     private(set) var inventoryNode: InventoryNode?
     
+    private var storyLine: SKLabelNode?
+    private var storyLineBackground: SKSpriteNode?
+    private var timer: Timer?
+    
     func didSwipe(direction: UISwipeGestureRecognizer.Direction) {}
     
     func didTap() {}
     
+    // MARK: Setup Model
     func setupModel(model: GameModel) {
         self.model = model
+        
+        setupStoryLine()
     }
     
+    // MARK: Setup Inventory
     func setupInventory(items: [CollectionableItems]) {
         let inventoryNode = InventoryNode(screenSize: self.size)
         self.inventoryNode = inventoryNode
         addChild(inventoryNode)
         
         inventoryNode.updateItems(items)
+    }
+    
+    // MARK: Setup Story Line
+    func setupStoryLine() {
+        // Label
+        let storyLineNode = SKLabelNode()
+        storyLine?.fontName = "Arial"
+        storyLineNode.fontColor = .black
+        storyLineNode.zPosition = 10
+        storyLineNode.fontSize = 50
+        storyLineNode.preferredMaxLayoutWidth = 1720
+        storyLineNode.numberOfLines = 0
+        storyLineNode.position = CGPoint(x: 0, y: -540)
+        self.storyLine = storyLineNode
+        addChild(storyLineNode)
+        
+        // Background
+        let background = SKSpriteNode()
+        background.zPosition = 9
+        background.color = .lightGray
+        background.isHidden = true
+        self.storyLineBackground = background
+        addChild(background)
+    }
+    
+    // MARK: SelectionableNodeDelegate
+    func setLines(line: String) {
+        guard
+            let storyLine = storyLine,
+            let storyLineBackground = storyLineBackground
+        else { return }
+        
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
+        storyLine.text = line
+        
+        storyLineBackground.size = CGSize(width: storyLine.frame.width+100, height: storyLine.frame.height + 25)
+        storyLineBackground.position = CGPoint(x: 0, y: -540 + storyLineBackground.frame.height/2)
+        storyLineBackground.isHidden = false
+    }
+    
+    @objc func disableLine() {
+        storyLine?.text = " "
+        storyLineBackground?.isHidden = true
+    }
+    
+    func changeScene(to scene: SceneName) {
+        sceneDelegate?.changeScene(to: scene)
+    }
+    
+    func getModel() -> GameModel? {
+        return self.model
     }
 }
 
