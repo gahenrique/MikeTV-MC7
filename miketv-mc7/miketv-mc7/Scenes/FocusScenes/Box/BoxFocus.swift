@@ -162,7 +162,7 @@ class BoxFocus: BaseGameScene {
             
             boxNode?.texture = SKTexture(imageNamed: boxTexture)
             changeNodesPosition()
-            model.collectItem(.gift)
+//            model.collectItem(.gift)
             model.scene1.boxState = .destroyed
             showGift()
         }
