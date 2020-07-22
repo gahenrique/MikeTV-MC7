@@ -1,57 +1,41 @@
 //
-//  Scene3.swift
+//  PortraitFocus.swift
 //  miketv-mc7
 //
-//  Created by Juliana Vigato Pavan on 10/07/20.
+//  Created by gabriel on 22/07/20.
 //  Copyright © 2020 gabriel. All rights reserved.
 //
 
 import SpriteKit
 
-class Scene3: BaseGameScene {
-    
+class PortraitFocus: BaseGameScene {
     private var buttons: [SelectionableNode] = []
     private var currentFocused: SelectionableNode?
-    
-    private var leftArrowNode: SelectionableNode?
-    private var rightArrowNode: SelectionableNode?
-    
+        
+    private var backArrowNode: SelectionableNode?
     private var portraitNode: SelectionableNode?
     
     override func didMove(to view: SKView) {
         
         guard
-            let leftArrow = self.childNode(withName: "LeftArrow") as? SelectionableNode,
-            let rightArrow = self.childNode(withName: "RightArrow") as? SelectionableNode,
-            let portraitNode = self.childNode(withName: "Portrait") as? SelectionableNode,
-            let doorNode = self.childNode(withName: "Door") as? SelectionableNode,
-            let octopusNode = self.childNode(withName: "Octopus") as? SelectionableNode,
-            let lampNode = self.childNode(withName: "Lamp") as? SelectionableNode
-        else { return }
+            let backArrowNode = self.childNode(withName: "BackArrow") as? SelectionableNode,
+            let portraitNode = self.childNode(withName: "Portrait") as? SelectionableNode
+            else { return }
         
-        self.leftArrowNode = leftArrow
-        self.rightArrowNode = rightArrow
+        self.backArrowNode = backArrowNode
         self.portraitNode = portraitNode
         
-        octopusNode.delegate = self
-        doorNode.delegate = self
         portraitNode.delegate = self
         
-        buttons.append(leftArrow)
+        buttons.append(backArrowNode)
         buttons.append(portraitNode)
-        buttons.append(octopusNode)
-        buttons.append(doorNode)
-        buttons.append(lampNode)
-        buttons.append(rightArrow)
         
-        self.currentFocused = portraitNode
+        self.currentFocused = backArrowNode
         self.currentFocused?.buttonDidGetFocus()
     }
     
     override func setupModel(model: GameModel) {
         super.setupModel(model: model)
-        
-        self.setupInventory(items: model.inventory)
         
         guard
             let fragment1Node = portraitNode?.childNode(withName: "Fragment1") as? SKSpriteNode,
@@ -78,25 +62,23 @@ class Scene3: BaseGameScene {
                 fragment4Node.alpha = 1
             }
         }
+        
     }
     
     override func didTap() {
         if let currentFocused = self.currentFocused {
-            if currentFocused == leftArrowNode {
-                sceneDelegate?.changeScene(to: .Scene2)
-            } else if currentFocused == rightArrowNode {
-                sceneDelegate?.changeScene(to: .Scene4)
+            if currentFocused == backArrowNode {
+                sceneDelegate?.changeScene(to: .Scene3)
             }
         }
         currentFocused?.didTap()
     }
     
-    // MARK: Mudar funcao para game scene
     override func didSwipe(direction: UISwipeGestureRecognizer.Direction) {
         guard
             let currentFocused = self.currentFocused,
             let currentFocusedIndex = buttons.firstIndex(of: currentFocused)
-        else { return }
+            else { return }
         
         currentFocused.buttonDidLoseFocus()
         
@@ -116,5 +98,4 @@ class Scene3: BaseGameScene {
         self.currentFocused = buttons[nextFocusIndex]
         self.currentFocused?.buttonDidGetFocus()
     }
-    
 }

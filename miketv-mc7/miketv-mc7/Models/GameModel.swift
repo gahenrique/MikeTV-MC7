@@ -61,6 +61,11 @@ enum CoatState {
     case openDestroyed
 }
 
+enum PhotoState {
+    case normal
+    case flipped
+}
+
 enum CollectionableItems: String {
     case photoFragment1 = "Parte1Inventario"
     case photoFragment2 = "Parte2Inventario"
@@ -74,6 +79,7 @@ enum CollectionableItems: String {
 class GameModel {
     
     private(set) var inventory: [CollectionableItems] = []
+    private(set) var usedItems: [CollectionableItems] = []
     
     // Game State Models
     var backgroundState: State = .normal
@@ -89,6 +95,17 @@ class GameModel {
     func hasItem(_ item: CollectionableItems) -> Bool {
         inventory.contains(item)
     }
+    
+    func useItem(_ item: CollectionableItems) {
+        if let itemIndex = inventory.firstIndex(of: item) {
+            inventory.remove(at: itemIndex)
+            usedItems.append(item)
+        }
+    }
+    
+    func haveUsedItem(_ item: CollectionableItems) -> Bool {
+        usedItems.contains(item)
+    }
 }
 
 protocol SceneModel {
@@ -98,10 +115,13 @@ protocol SceneModel {
 class Scene1Model: SceneModel {
     
     let randomPassword: String
+    let passwordPhotoTexture: String
     private let possiblePasswords: [String] = ["921", "803", "547"]
-    
+        
     init() {
-        randomPassword = possiblePasswords.randomElement() ?? "921"
+        let randomIndex = Int.random(in: 0..<possiblePasswords.count)
+        randomPassword = possiblePasswords[randomIndex]
+        passwordPhotoTexture = "PhotoPassword\(randomIndex+1)"
     }
     
     var currentPassword: [String] = ["0","0","0"]
@@ -128,6 +148,8 @@ class Scene2Model: SceneModel {
 
 class Scene3Model: SceneModel {
     var sceneName : SceneName = .Scene3
+    
+    var photoState: PhotoState = .normal
 }
 
 class Scene4Model: SceneModel {

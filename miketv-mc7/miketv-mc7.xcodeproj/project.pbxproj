@@ -31,6 +31,10 @@
 		C03ABC5624B8E33E00B9D4CB /* BearNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5524B8E33E00B9D4CB /* BearNode.swift */; };
 		C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */; };
 		C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045F0F724B6629500D75E6F /* BaseGameScene.swift */; };
+		C09D8FE324C8AA5800B12434 /* PortraitFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = C09D8FE224C8AA5800B12434 /* PortraitFocus.sks */; };
+		C09D8FE524C8AA8C00B12434 /* PortraitFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09D8FE424C8AA8C00B12434 /* PortraitFocus.swift */; };
+		C09D8FE724C8AF1900B12434 /* PortraitNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09D8FE624C8AF1900B12434 /* PortraitNode.swift */; };
+		C09D8FE924C8AF2500B12434 /* PortraitFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09D8FE824C8AF2500B12434 /* PortraitFocusNode.swift */; };
 		C0B2DDF624BE1F3F00277841 /* PlantNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2DDF524BE1F3F00277841 /* PlantNode.swift */; };
 		C0B2DDF924BE1FC700277841 /* PlantFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0B2DDF824BE1FC700277841 /* PlantFocus.sks */; };
 		C0B2DDFB24BE1FCF00277841 /* PlantFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2DDFA24BE1FCF00277841 /* PlantFocus.swift */; };
@@ -92,6 +96,10 @@
 		C03ABC5524B8E33E00B9D4CB /* BearNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearNode.swift; sourceTree = "<group>"; };
 		C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneDelegate.swift; sourceTree = "<group>"; };
 		C045F0F724B6629500D75E6F /* BaseGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGameScene.swift; sourceTree = "<group>"; };
+		C09D8FE224C8AA5800B12434 /* PortraitFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PortraitFocus.sks; sourceTree = "<group>"; };
+		C09D8FE424C8AA8C00B12434 /* PortraitFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitFocus.swift; sourceTree = "<group>"; };
+		C09D8FE624C8AF1900B12434 /* PortraitNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitNode.swift; sourceTree = "<group>"; };
+		C09D8FE824C8AF2500B12434 /* PortraitFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitFocusNode.swift; sourceTree = "<group>"; };
 		C0B2DDF524BE1F3F00277841 /* PlantNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantNode.swift; sourceTree = "<group>"; };
 		C0B2DDF824BE1FC700277841 /* PlantFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlantFocus.sks; sourceTree = "<group>"; };
 		C0B2DDFA24BE1FCF00277841 /* PlantFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantFocus.swift; sourceTree = "<group>"; };
@@ -227,6 +235,8 @@
 				C0FE80AB24C759FE00A285E4 /* DoorNode.swift */,
 				C0FE80AD24C75DB400A285E4 /* DinoNode.swift */,
 				C0FE80AF24C75DC000A285E4 /* PegasusNode.swift */,
+				C09D8FE624C8AF1900B12434 /* PortraitNode.swift */,
+				C09D8FE824C8AF2500B12434 /* PortraitFocusNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -256,6 +266,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		C09D8FDF24C8AA2000B12434 /* Portrait */ = {
+			isa = PBXGroup;
+			children = (
+				C09D8FE224C8AA5800B12434 /* PortraitFocus.sks */,
+				C09D8FE424C8AA8C00B12434 /* PortraitFocus.swift */,
+			);
+			path = Portrait;
+			sourceTree = "<group>";
+		};
 		C0B2DDF724BE1FA200277841 /* Plant */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +296,7 @@
 		C0CCA2C624BCEC25009CA446 /* FocusScenes */ = {
 			isa = PBXGroup;
 			children = (
+				C09D8FDF24C8AA2000B12434 /* Portrait */,
 				0F19D2E924C75A12004372CB /* Coat */,
 				C0D2C76124C6376500B79E9D /* Clock */,
 				0F41BFB524BF82CE00FE83FC /* Box */,
@@ -443,6 +463,7 @@
 				0F16E9D724C616E800CB4862 /* Chalkduster.ttf in Resources */,
 				C0CCA2C424BCD438009CA446 /* Scene4.sks in Resources */,
 				C0E53DDB24B39B9600DEE127 /* LaunchScreen.storyboard in Resources */,
+				C09D8FE324C8AA5800B12434 /* PortraitFocus.sks in Resources */,
 				0F41BFB924BF8D8900FE83FC /* BoxFocus.sks in Resources */,
 				C0B2DE0024BE2C1500277841 /* DresserFocus.sks in Resources */,
 				C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */,
@@ -472,6 +493,7 @@
 				C0CCA2CD24BCF460009CA446 /* BearFocusNode.swift in Sources */,
 				0F41BF9524BE1E3B00FE83FC /* Scene0.swift in Sources */,
 				C0E53DD124B39B9500DEE127 /* Scene2.swift in Sources */,
+				C09D8FE524C8AA8C00B12434 /* PortraitFocus.swift in Sources */,
 				0F3782C724B90103006F90C1 /* Scene3.swift in Sources */,
 				C0FE80B024C75DC000A285E4 /* PegasusNode.swift in Sources */,
 				C03ABC5424B8D62700B9D4CB /* GameModel.swift in Sources */,
@@ -483,6 +505,7 @@
 				C0FE80AA24C7592900A285E4 /* OctopusNode.swift in Sources */,
 				C0E53DD324B39B9500DEE127 /* GameViewController.swift in Sources */,
 				0F16E9D224C6045300CB4862 /* MainScene.swift in Sources */,
+				C09D8FE924C8AF2500B12434 /* PortraitFocusNode.swift in Sources */,
 				C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */,
 				C0B2DDFB24BE1FCF00277841 /* PlantFocus.swift in Sources */,
 				C0D2C76924C63EB500B79E9D /* ClockFocusNode.swift in Sources */,
@@ -494,6 +517,7 @@
 				C0E53DE324B3A30400DEE127 /* SelectionableNode.swift in Sources */,
 				0F41BFBB24BF981200FE83FC /* BoxNode.swift in Sources */,
 				C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */,
+				C09D8FE724C8AF1900B12434 /* PortraitNode.swift in Sources */,
 				0F19D2EF24C76408004372CB /* CoatFocusNode.swift in Sources */,
 				C0B2DDF624BE1F3F00277841 /* PlantNode.swift in Sources */,
 				0F8DBAB524C63051001A5B1F /* TutorialScene.swift in Sources */,
