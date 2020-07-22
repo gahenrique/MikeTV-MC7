@@ -52,8 +52,6 @@ class CoatFocus: BaseGameScene {
             setLines(line: "Hm… Estranho… O casaco não estava assim antes…")
         case . closedDestroyed:
             setLines(line: "Hm… Estranho… O casaco não estava assim antes…")
-        default:
-            setLines(line: "Meu pai, o famoso rei Julian, deixou esse casaco aqui antes de ir viajar")
         }
         
         guard
@@ -104,35 +102,5 @@ class CoatFocus: BaseGameScene {
         
         self.currentFocused = buttons[nextFocusIndex]
         self.currentFocused?.buttonDidGetFocus()
-    }
-}
-
-extension CoatFocus: SelectionableNodeDelegate {
-    func getModel() -> GameModel? {
-        return self.model
-    }
-    
-    func changeState(_ node: SelectionableNode, to newState: State) {
-//        guard let model = self.model as? Scene1Model else { return }
-//
-//        if node == bearNode,
-//            let newTexture = model.bearTextures[newState] {
-//            model.bearState = newState
-//            bearNode?.texture = SKTexture(imageNamed: newTexture)
-//        }
-    }
-    
-    func setLines(line: String) {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
-        storyLine?.text = line
-    }
-    
-    func changeScene(to scene: SceneName) {
-        //lala
-    }
-    
-    @objc func disableLine() {
-        storyLine?.text = " "
     }
 }

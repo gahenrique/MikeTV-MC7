@@ -35,7 +35,6 @@ class Scene1: BaseGameScene {
         
         self.leftArrowNode = leftArrow
         self.rightArrowNode = rightArrow
-//        self.story
         
         self.bedNode = bedNode
         self.bearNode = bearNode
