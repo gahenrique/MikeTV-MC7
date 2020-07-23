@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Boogaloo-Regular.otf</string>
 		<string>Chalkduster.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>

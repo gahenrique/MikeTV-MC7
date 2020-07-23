@@ -26,7 +26,8 @@ class Scene3: BaseGameScene {
             let portraitNode = self.childNode(withName: "Portrait") as? SelectionableNode,
             let doorNode = self.childNode(withName: "Door") as? SelectionableNode,
             let octopusNode = self.childNode(withName: "Octopus") as? SelectionableNode,
-            let lampNode = self.childNode(withName: "Lamp") as? SelectionableNode
+            let lampNode = self.childNode(withName: "Lamp") as? SelectionableNode,
+            let letterNode = self.childNode(withName: "Letter") as? SelectionableNode
         else { return }
         
         self.leftArrowNode = leftArrow
@@ -36,11 +37,13 @@ class Scene3: BaseGameScene {
         octopusNode.delegate = self
         doorNode.delegate = self
         portraitNode.delegate = self
+        letterNode.delegate = self
         
         buttons.append(leftArrow)
         buttons.append(portraitNode)
         buttons.append(octopusNode)
         buttons.append(doorNode)
+        buttons.append(letterNode)
         buttons.append(lampNode)
         buttons.append(rightArrow)
         

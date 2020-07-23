@@ -9,6 +9,14 @@
 class DoorNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.setLines(line: "Não posso ir lá fora, existem muitos monstros lá!")
+        guard
+            let model = delegate?.getModel()
+        else { return }
+        
+        if model.haveUsedItem(.gift) {
+            delegate?.changeScene(to: .DoorFocus)
+        } else {
+            delegate?.setLines(line: "Não posso ir lá fora, existem muitos monstros lá!")
+        }
     }
 }
