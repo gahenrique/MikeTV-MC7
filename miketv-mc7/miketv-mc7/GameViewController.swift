@@ -85,6 +85,7 @@ enum SceneName: String {
     case ClockFocus = "ClockFocus"
     case CoatFocus = "CoatFocus"
     case PortraitFocus = "PortraitFocus"
+    case DoorFocus = "DoorFocus"
 }
 
 extension GameViewController: GameSceneDelegate {

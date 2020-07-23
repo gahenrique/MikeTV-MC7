@@ -24,6 +24,9 @@
 		0F41BFB924BF8D8900FE83FC /* BoxFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F41BFB824BF8D8900FE83FC /* BoxFocus.sks */; };
 		0F41BFBB24BF981200FE83FC /* BoxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F41BFBA24BF981200FE83FC /* BoxNode.swift */; };
 		0F44082224C8CAC200D2104F /* BoxFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44082124C8CAC200D2104F /* BoxFocusNode.swift */; };
+		0F44082524C8E58600D2104F /* DoorFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44082424C8E58600D2104F /* DoorFocus.swift */; };
+		0F44082724C8E59200D2104F /* DoorFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F44082624C8E59200D2104F /* DoorFocus.sks */; };
+		0F44082924C8ED0F00D2104F /* Boogaloo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F44082824C8ED0F00D2104F /* Boogaloo-Regular.otf */; };
 		0F8DBAB324C63035001A5B1F /* TutorialScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F8DBAB224C63035001A5B1F /* TutorialScene.sks */; };
 		0F8DBAB524C63051001A5B1F /* TutorialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DBAB424C63051001A5B1F /* TutorialScene.swift */; };
 		0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8DE4B24B7938D000284AF /* BedNode.swift */; };
@@ -89,6 +92,9 @@
 		0F41BFB824BF8D8900FE83FC /* BoxFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BoxFocus.sks; sourceTree = "<group>"; };
 		0F41BFBA24BF981200FE83FC /* BoxNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxNode.swift; sourceTree = "<group>"; };
 		0F44082124C8CAC200D2104F /* BoxFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxFocusNode.swift; sourceTree = "<group>"; };
+		0F44082424C8E58600D2104F /* DoorFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorFocus.swift; sourceTree = "<group>"; };
+		0F44082624C8E59200D2104F /* DoorFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DoorFocus.sks; sourceTree = "<group>"; };
+		0F44082824C8ED0F00D2104F /* Boogaloo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Boogaloo-Regular.otf"; sourceTree = "<group>"; };
 		0F8DBAB224C63035001A5B1F /* TutorialScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TutorialScene.sks; sourceTree = "<group>"; };
 		0F8DBAB424C63051001A5B1F /* TutorialScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScene.swift; sourceTree = "<group>"; };
 		0FD8DE4B24B7938D000284AF /* BedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedNode.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 		0F16E9D524C616B400CB4862 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				0F44082824C8ED0F00D2104F /* Boogaloo-Regular.otf */,
 				0F16E9D624C616D600CB4862 /* Chalkduster.ttf */,
 			);
 			path = Fonts;
@@ -202,6 +209,15 @@
 				0F41BFB624BF82E500FE83FC /* BoxFocus.swift */,
 			);
 			path = Box;
+			sourceTree = "<group>";
+		};
+		0F44082324C8E56E00D2104F /* Door */ = {
+			isa = PBXGroup;
+			children = (
+				0F44082624C8E59200D2104F /* DoorFocus.sks */,
+				0F44082424C8E58600D2104F /* DoorFocus.swift */,
+			);
+			path = Door;
 			sourceTree = "<group>";
 		};
 		0F8DBAB124C63022001A5B1F /* TutorialScene */ = {
@@ -296,6 +312,7 @@
 		C0CCA2C624BCEC25009CA446 /* FocusScenes */ = {
 			isa = PBXGroup;
 			children = (
+				0F44082324C8E56E00D2104F /* Door */,
 				C09D8FDF24C8AA2000B12434 /* Portrait */,
 				0F19D2E924C75A12004372CB /* Coat */,
 				C0D2C76124C6376500B79E9D /* Clock */,
@@ -471,6 +488,8 @@
 				0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */,
 				0F8DBAB324C63035001A5B1F /* TutorialScene.sks in Resources */,
 				C0CCA2C924BCEC8E009CA446 /* BearFocus.sks in Resources */,
+				0F44082924C8ED0F00D2104F /* Boogaloo-Regular.otf in Resources */,
+				0F44082724C8E59200D2104F /* DoorFocus.sks in Resources */,
 				C0E53DCF24B39B9500DEE127 /* Actions.sks in Resources */,
 				0F16E9D424C6046700CB4862 /* MainScene.sks in Resources */,
 				0F19D2EB24C75A2A004372CB /* CoatFocus.sks in Resources */,
@@ -492,6 +511,7 @@
 				C0B2DE0224BE2C1D00277841 /* DresserFocus.swift in Sources */,
 				C0CCA2CD24BCF460009CA446 /* BearFocusNode.swift in Sources */,
 				0F41BF9524BE1E3B00FE83FC /* Scene0.swift in Sources */,
+				0F44082524C8E58600D2104F /* DoorFocus.swift in Sources */,
 				C0E53DD124B39B9500DEE127 /* Scene2.swift in Sources */,
 				C09D8FE524C8AA8C00B12434 /* PortraitFocus.swift in Sources */,
 				0F3782C724B90103006F90C1 /* Scene3.swift in Sources */,
