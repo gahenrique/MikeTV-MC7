@@ -12,7 +12,7 @@ import GameController
 
 class GameViewController: UIViewController {
     
-    let gameModel = GameModel()
+    private(set) var gameModel = GameModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +90,10 @@ enum SceneName: String {
 
 extension GameViewController: GameSceneDelegate {
     func changeScene(to sceneName: SceneName) {
+        if sceneName == .Menu {
+            gameModel = GameModel()
+        }
+        
         if let view = self.view as! SKView?,
             let scene = BaseGameScene(fileNamed: sceneName.rawValue) {
             
