@@ -72,6 +72,9 @@
 		C0FE80AC24C759FE00A285E4 /* DoorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE80AB24C759FE00A285E4 /* DoorNode.swift */; };
 		C0FE80AE24C75DB400A285E4 /* DinoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE80AD24C75DB400A285E4 /* DinoNode.swift */; };
 		C0FE80B024C75DC000A285E4 /* PegasusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE80AF24C75DC000A285E4 /* PegasusNode.swift */; };
+		C0FF368924C9FBD6008271DD /* LetterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF368824C9FBD6008271DD /* LetterNode.swift */; };
+		C0FF368C24C9FC7E008271DD /* LetterFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0FF368B24C9FC7E008271DD /* LetterFocus.sks */; };
+		C0FF368E24C9FCB5008271DD /* LetterFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF368D24C9FCB5008271DD /* LetterFocus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +145,9 @@
 		C0FE80AB24C759FE00A285E4 /* DoorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorNode.swift; sourceTree = "<group>"; };
 		C0FE80AD24C75DB400A285E4 /* DinoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoNode.swift; sourceTree = "<group>"; };
 		C0FE80AF24C75DC000A285E4 /* PegasusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegasusNode.swift; sourceTree = "<group>"; };
+		C0FF368824C9FBD6008271DD /* LetterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterNode.swift; sourceTree = "<group>"; };
+		C0FF368B24C9FC7E008271DD /* LetterFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LetterFocus.sks; sourceTree = "<group>"; };
+		C0FF368D24C9FCB5008271DD /* LetterFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterFocus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +259,7 @@
 				C0FE80AF24C75DC000A285E4 /* PegasusNode.swift */,
 				C09D8FE624C8AF1900B12434 /* PortraitNode.swift */,
 				C09D8FE824C8AF2500B12434 /* PortraitFocusNode.swift */,
+				C0FF368824C9FBD6008271DD /* LetterNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -312,6 +319,7 @@
 		C0CCA2C624BCEC25009CA446 /* FocusScenes */ = {
 			isa = PBXGroup;
 			children = (
+				C0FF368A24C9FC02008271DD /* Letter */,
 				0F44082324C8E56E00D2104F /* Door */,
 				C09D8FDF24C8AA2000B12434 /* Portrait */,
 				0F19D2E924C75A12004372CB /* Coat */,
@@ -412,6 +420,15 @@
 			path = Scene1;
 			sourceTree = "<group>";
 		};
+		C0FF368A24C9FC02008271DD /* Letter */ = {
+			isa = PBXGroup;
+			children = (
+				C0FF368B24C9FC7E008271DD /* LetterFocus.sks */,
+				C0FF368D24C9FCB5008271DD /* LetterFocus.swift */,
+			);
+			path = Letter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -484,6 +501,7 @@
 				0F41BFB924BF8D8900FE83FC /* BoxFocus.sks in Resources */,
 				C0B2DE0024BE2C1500277841 /* DresserFocus.sks in Resources */,
 				C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */,
+				C0FF368C24C9FC7E008271DD /* LetterFocus.sks in Resources */,
 				0F41BFB424BE52C400FE83FC /* firework.mp3 in Resources */,
 				0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */,
 				0F8DBAB324C63035001A5B1F /* TutorialScene.sks in Resources */,
@@ -511,6 +529,7 @@
 				C0B2DE0224BE2C1D00277841 /* DresserFocus.swift in Sources */,
 				C0CCA2CD24BCF460009CA446 /* BearFocusNode.swift in Sources */,
 				0F41BF9524BE1E3B00FE83FC /* Scene0.swift in Sources */,
+				C0FF368E24C9FCB5008271DD /* LetterFocus.swift in Sources */,
 				0F44082524C8E58600D2104F /* DoorFocus.swift in Sources */,
 				C0E53DD124B39B9500DEE127 /* Scene2.swift in Sources */,
 				C09D8FE524C8AA8C00B12434 /* PortraitFocus.swift in Sources */,
@@ -539,6 +558,7 @@
 				C0E53DCB24B39B9500DEE127 /* AppDelegate.swift in Sources */,
 				C09D8FE724C8AF1900B12434 /* PortraitNode.swift in Sources */,
 				0F19D2EF24C76408004372CB /* CoatFocusNode.swift in Sources */,
+				C0FF368924C9FBD6008271DD /* LetterNode.swift in Sources */,
 				C0B2DDF624BE1F3F00277841 /* PlantNode.swift in Sources */,
 				0F8DBAB524C63051001A5B1F /* TutorialScene.swift in Sources */,
 				C0D2C76024C608D900B79E9D /* CourtainNode.swift in Sources */,
