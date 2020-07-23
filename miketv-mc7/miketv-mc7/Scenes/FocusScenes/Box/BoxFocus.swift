@@ -120,8 +120,9 @@ class BoxFocus: BaseGameScene {
     }
     
     func setUpSceneAfterGift() {
-        backgroundImg?.alpha = 0
+        gift?.removeAllActions()
         
+        backgroundImg?.alpha = 0
         gift?.alpha = 0
         
         if let backArrowNode = backArrowNode,
