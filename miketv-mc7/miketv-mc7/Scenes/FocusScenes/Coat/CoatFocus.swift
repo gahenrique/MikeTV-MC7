@@ -17,20 +17,29 @@ class CoatFocus: BaseGameScene {
     
     private var backArrowNode: SelectionableNode?
     private var coatNode: SelectionableNode?
+    private var blackBackground: SKSpriteNode?
+    private var mapNode: SKSpriteNode?
     
     override func didMove(to view: SKView) {
         
         guard
             let backArrowNode = self.childNode(withName: "BackArrow") as? SelectionableNode,
             let coatNode = self.childNode(withName: "Coat") as? SelectionableNode,
-            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
+            let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode,
+            let blackBackground = self.childNode(withName: "blackBackground") as? SKSpriteNode,
+            let map = self.childNode(withName: "map") as? SKSpriteNode
             else { return }
         
         self.backArrowNode = backArrowNode
         self.coatNode = coatNode
         self.storyLine = storyLine
+        self.blackBackground = blackBackground
+        self.mapNode = map
         
         coatNode.delegate = self
+        if let coatNode = coatNode as? CoatFocusNode {
+            coatNode.delegateCoat = self
+        }
         
         buttons.append(backArrowNode)
         buttons.append(coatNode)
@@ -42,7 +51,6 @@ class CoatFocus: BaseGameScene {
     override func setupModel(model: GameModel) {
         super.setupModel(model: model)
         
-        //MARK: Mudar para coat
         switch model.scene2.coatState {
         case .normal:
             setLines(line: "Meu pai, o famoso rei Julian, deixou esse casaco aqui antes de ir viajar. Queria que ele tivesse me levado junto…")
@@ -67,13 +75,31 @@ class CoatFocus: BaseGameScene {
             coatNode?.position = CGPoint(x: 26, y: -315)
             coatNode?.childNode(withName: "Highlight")?.position = CGPoint(x: 9, y: 315)
         }
+    }
+    
+    func setUpSceneAfterGift() {
+        blackBackground?.alpha = 0
+        mapNode?.removeAllActions()
+        mapNode?.alpha = 0
         
+        if let backArrowNode = backArrowNode,
+            let coatNode = coatNode {
+            buttons = []
+            buttons.append(backArrowNode)
+            buttons.append(coatNode)
+            currentFocused = backArrowNode
+            coatNode.buttonDidLoseFocus()
+        }
     }
     
     override func didTap() {
         if let currentFocused = self.currentFocused {
             if currentFocused == backArrowNode {
-                sceneDelegate?.changeScene(to: .Scene2)
+                if blackBackground?.alpha == 1 {
+                    setUpSceneAfterGift()
+                } else {
+                    sceneDelegate?.changeScene(to: .Scene2)
+                }
             }
         }
         currentFocused?.didTap()
@@ -102,5 +128,24 @@ class CoatFocus: BaseGameScene {
         
         self.currentFocused = buttons[nextFocusIndex]
         self.currentFocused?.buttonDidGetFocus()
+    }
+}
+
+
+extension CoatFocus: CoatFocusNodeDelegate {
+    func showMap() {
+
+        blackBackground?.alpha = 1
+        let fade = SKAction.fadeAlpha(to: 1, duration: 1)
+        mapNode?.run(fade)
+        
+        if let backArrowNode = backArrowNode {
+            buttons = [backArrowNode]
+        }
+    
+        backArrowNode?.buttonDidGetFocus()
+        currentFocused = backArrowNode
+        coatNode?.buttonDidLoseFocus()
+
     }
 }
