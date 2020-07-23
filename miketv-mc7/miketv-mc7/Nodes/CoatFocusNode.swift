@@ -8,7 +8,13 @@
 
 import SpriteKit
 
+protocol CoatFocusNodeDelegate: AnyObject {
+    func showMap()
+}
+
 class CoatFocusNode: SelectionableNode {
+    
+    weak var delegateCoat: CoatFocusNodeDelegate?
     
     override func didTap() {
         guard
@@ -19,10 +25,15 @@ class CoatFocusNode: SelectionableNode {
         
         let nextState = getNextState(current: currentState)
         
+        if model.scene2.coatState == .openDestroyed || model.scene2.coatState == .openWithMap {
+            delegateCoat?.showMap()
+        }
+        
         if let newTexture = model.scene2.coatTextures[nextState] {
             model.scene2.coatState = nextState
             self.texture = SKTexture(imageNamed: newTexture)
         }
+        
     }
     
     private func getNextState(current: CoatState) -> CoatState {
