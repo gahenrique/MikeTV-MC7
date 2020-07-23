@@ -28,6 +28,11 @@ class BaseGameScene: SKScene, SelectionableNodeDelegate {
     func setupModel(model: GameModel) {
         self.model = model
         
+        if model.backgroundState == .destroyed,
+            let backgroundNode = self.childNode(withName: "background") as? SKSpriteNode {
+            backgroundNode.texture = SKTexture(imageNamed: "BackgroundDestruido")
+        }
+        
         setupStoryLine()
     }
     

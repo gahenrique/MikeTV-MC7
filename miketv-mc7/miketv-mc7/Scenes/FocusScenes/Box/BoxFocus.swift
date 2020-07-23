@@ -164,6 +164,7 @@ class BoxFocus: BaseGameScene {
             changeNodesPosition()
             model.collectItem(.gift)
             model.useItem(.gift)
+            model.backgroundState = .destroyed
             model.scene1.boxState = .destroyed
             showGift()
         }
