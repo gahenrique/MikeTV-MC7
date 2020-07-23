@@ -72,7 +72,7 @@ enum CollectionableItems: String {
     case photoFragment3 = "Parte3Inventario"
     case photoFragment4 = "Parte4Inventario"
     case key = "ChaveInventario"
-    case courtainStuff = ""
+    case courtainStuff = "CortinaItem"
     case gift = "gift"
 }
 

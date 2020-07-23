@@ -23,6 +23,10 @@ class CourtainNode: SelectionableNode {
             if nextState == .broken {
                 model.collectItem(.courtainStuff)
                 updateHighlight()
+            } else if nextState == .firstTap {
+                delegate?.setLines(line: "Cuidado! Tá caindo")
+            } else if nextState == .secondTap {
+                delegate?.setLines(line: "Mais um pouco e vai cair")
             }
         }
     }
