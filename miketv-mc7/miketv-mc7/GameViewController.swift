@@ -21,22 +21,71 @@ class GameViewController: UIViewController {
         setupMenu()
     }
     
+    let threshold: CGFloat = 50
+    var firstPoint: CGPoint?
+    public func touchDown(at pos: CGPoint) {
+        firstPoint = pos
+    }
+
+    public func touchMoved(to pos: CGPoint) {
+        checkSwipe(on: pos)
+    }
+
+    public func touchUp(at pos: CGPoint) {
+        checkSwipe(on: pos)
+    }
+
+    private func checkSwipe(on pos: CGPoint) {
+        guard let firstPoint = firstPoint else {
+            return
+        }
+        let movement = CGPoint(x: pos.x - firstPoint.x, y: pos.y - firstPoint.y)
+        let value = max(abs(movement.x), abs(movement.y))
+        if value > threshold {
+            self.firstPoint = pos
+            if abs(movement.x) == value {
+                if movement.x < 0 {
+                    swipeOccur(direction: .left)
+                } else {
+                    swipeOccur(direction: .right)
+                }
+            } else if abs(movement.y) == value {
+                if movement.y < 0 {
+                    swipeOccur(direction: .up)
+                } else {
+                    swipeOccur(direction: .down)
+                }
+            }
+        }
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchDown(at: t.location(in: self.view)) }
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchMoved(to: t.location(in: self.view)) }
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchUp(at: t.location(in: self.view)) }
+    }
+
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchUp(at: t.location(in: self.view)) }
+    }
+    
     private func setupGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler(_:)))
-        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureHandler(_:)))
-        swipeLeftGesture.direction = .left
-        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureHandler(_:)))
-        swipeRightGesture.direction = .right
-        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureHandler(_:)))
-        swipeUpGesture.direction = .up
-        let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureHandler(_:)))
-        swipeDownGesture.direction = .down
         
         view.addGestureRecognizer(tapGesture)
-        view.addGestureRecognizer(swipeLeftGesture)
-        view.addGestureRecognizer(swipeRightGesture)
-        view.addGestureRecognizer(swipeUpGesture)
-        view.addGestureRecognizer(swipeDownGesture)
+    }
+    
+    private func swipeOccur(direction: UISwipeGestureRecognizer.Direction) {
+        if let view = self.view as! SKView?,
+            let scene = view.scene as? BaseGameScene {
+            scene.didSwipe(direction: direction)
+        }
     }
     
     @objc private func tapGestureHandler(_ sender: UITapGestureRecognizer) {
