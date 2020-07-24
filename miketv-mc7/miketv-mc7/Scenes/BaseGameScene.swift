@@ -49,20 +49,20 @@ class BaseGameScene: SKScene, SelectionableNodeDelegate {
     func setupStoryLine() {
         // Label
         let storyLineNode = SKLabelNode()
-        storyLine?.fontName = "Arial"
+        storyLineNode.fontName = "Boogaloo-Regular"
         storyLineNode.fontColor = .black
         storyLineNode.zPosition = 10
         storyLineNode.fontSize = 50
         storyLineNode.preferredMaxLayoutWidth = 1720
         storyLineNode.numberOfLines = 0
-        storyLineNode.position = CGPoint(x: 0, y: -540)
+        storyLineNode.position = CGPoint(x: 0, y: -460 + 10)
         self.storyLine = storyLineNode
         addChild(storyLineNode)
         
         // Background
         let background = SKSpriteNode()
         background.zPosition = 9
-        background.color = .lightGray
+        background.texture = SKTexture(imageNamed: "StoryLineBackground")
         background.isHidden = true
         self.storyLineBackground = background
         addChild(background)
@@ -79,8 +79,8 @@ class BaseGameScene: SKScene, SelectionableNodeDelegate {
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
         storyLine.text = line
         
-        storyLineBackground.size = CGSize(width: storyLine.frame.width+100, height: storyLine.frame.height + 25)
-        storyLineBackground.position = CGPoint(x: 0, y: -540 + storyLineBackground.frame.height/2)
+        storyLineBackground.size = CGSize(width: storyLine.frame.width+50, height: storyLine.frame.height + 20)
+        storyLineBackground.position = CGPoint(x: 0, y: storyLine.position.y + storyLineBackground.frame.height/2 - 10)
         storyLineBackground.isHidden = false
     }
     
