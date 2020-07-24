@@ -77,6 +77,14 @@ class Scene1: BaseGameScene {
             highlight.position = CGPoint(x: 3.162, y: 0.531)
             highlight.texture = SKTexture(imageNamed: "HighlightCaixaDestruida")
         }
+        
+        // Bed Texture
+        if model.haveUsedItem(.photoFragment3) || model.hasItem(.photoFragment3),
+            let bedNode = self.bedNode,
+            let bedNodeHighlight = bedNode.childNode(withName: "Highlight") as? SKSpriteNode {
+            bedNode.texture = SKTexture(imageNamed: "CamaDestruida")
+            bedNodeHighlight.texture = SKTexture(imageNamed: "CamaRealHighlight")
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
