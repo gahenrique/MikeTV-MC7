@@ -9,6 +9,6 @@
 class LetterNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.changeScene(to: .LetterFocus)
+        delegate?.changeScene(to: .LetterFocus, from: .Scene3)
     }
 }

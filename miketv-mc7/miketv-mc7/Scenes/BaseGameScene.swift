@@ -24,6 +24,12 @@ class BaseGameScene: SKScene, SelectionableNodeDelegate {
     
     func didTap() {}
     
+    // MARK: Setup
+    func setup(model: GameModel, commingFrom scene: SceneName) {
+        setupModel(model: model)
+        setupFocus(commingFrom: scene)
+    }
+    
     // MARK: Setup Model
     func setupModel(model: GameModel) {
         self.model = model
@@ -35,6 +41,8 @@ class BaseGameScene: SKScene, SelectionableNodeDelegate {
         
         setupStoryLine()
     }
+    
+    func setupFocus(commingFrom scene: SceneName) {}
     
     // MARK: Setup Inventory
     func setupInventory(items: [CollectionableItems]) {
@@ -93,8 +101,8 @@ class BaseGameScene: SKScene, SelectionableNodeDelegate {
         storyLineBackground?.isHidden = true
     }
     
-    func changeScene(to scene: SceneName) {
-        sceneDelegate?.changeScene(to: scene)
+    func changeScene(to toScene: SceneName, from fromScene: SceneName) {
+        sceneDelegate?.changeScene(to: toScene, fromScene: fromScene)
     }
     
     func getModel() -> GameModel? {

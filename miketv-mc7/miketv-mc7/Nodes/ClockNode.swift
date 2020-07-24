@@ -11,6 +11,6 @@ import Foundation
 class ClockNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.changeScene(to: .ClockFocus)
+        delegate?.changeScene(to: .ClockFocus, from: .Scene4)
     }
 }

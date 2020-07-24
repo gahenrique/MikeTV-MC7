@@ -9,6 +9,6 @@
 class PortraitNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.changeScene(to: .PortraitFocus)
+        delegate?.changeScene(to: .PortraitFocus, from: .Scene3)
     }
 }

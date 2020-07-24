@@ -36,9 +36,9 @@ class MainScene: BaseGameScene {
     override func didTap() {
         if let currentFocused = self.currentFocused {
             if currentFocused == btnPlay {
-                sceneDelegate?.changeScene(to: .Scene0)
+                sceneDelegate?.changeScene(to: .Scene0, fromScene: .Menu)
             } else if currentFocused == btnTutorial {
-                sceneDelegate?.changeScene(to: .Tutorial)
+                sceneDelegate?.changeScene(to: .Tutorial, fromScene: .Menu)
             }
         }
         currentFocused?.didTap()

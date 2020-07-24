@@ -71,7 +71,7 @@ class TutorialScene: BaseGameScene {
         if let currentFocused = self.currentFocused {
             if controlScene == "Tutorial1" {
                 if currentFocused == backArrowLeft {
-                    sceneDelegate?.changeScene(to: .Menu)
+                    sceneDelegate?.changeScene(to: .Menu, fromScene: .Tutorial)
                 } else if currentFocused == backArrowRight {
                     setUpSceneTwo()
                 }

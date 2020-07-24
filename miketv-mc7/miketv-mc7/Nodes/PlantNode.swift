@@ -9,6 +9,6 @@
 class PlantNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.changeScene(to: .PlantFocus)
+        delegate?.changeScene(to: .PlantFocus, from: .Scene2)
     }
 }

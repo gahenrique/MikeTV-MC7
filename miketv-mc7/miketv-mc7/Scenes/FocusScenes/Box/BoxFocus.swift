@@ -73,8 +73,8 @@ class BoxFocus: BaseGameScene {
         self.currentFocused?.buttonDidGetFocus()
     }
     
-    override func setupModel(model: GameModel) {
-        super.setupModel(model: model)
+    override func setup(model: GameModel, commingFrom scene: SceneName) {
+        super.setup(model: model, commingFrom: scene)
         
         guard
             let boxTexture = model.scene1.boxTextures[model.scene1.boxState]
@@ -103,7 +103,7 @@ class BoxFocus: BaseGameScene {
                 if backgroundImg?.alpha == 1 {
                     setUpSceneAfterGift()
                 } else {
-                    sceneDelegate?.changeScene(to: .Scene1)
+                    sceneDelegate?.changeScene(to: .Scene1, fromScene: .BoxFocus)
                 }
             } else if currentFocused == firstDigitNode {
                 changeDigit(currentFocusedLabel: firstDigit)

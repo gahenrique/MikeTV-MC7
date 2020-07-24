@@ -17,6 +17,7 @@ class Scene3: BaseGameScene {
     private var rightArrowNode: SelectionableNode?
     
     private var portraitNode: SelectionableNode?
+    private var letterNode: SelectionableNode?
     
     override func didMove(to view: SKView) {
         
@@ -33,6 +34,7 @@ class Scene3: BaseGameScene {
         self.leftArrowNode = leftArrow
         self.rightArrowNode = rightArrow
         self.portraitNode = portraitNode
+        self.letterNode = letterNode
         
         octopusNode.delegate = self
         doorNode.delegate = self
@@ -51,8 +53,8 @@ class Scene3: BaseGameScene {
         self.currentFocused?.buttonDidGetFocus()
     }
     
-    override func setupModel(model: GameModel) {
-        super.setupModel(model: model)
+    override func setup(model: GameModel, commingFrom scene: SceneName) {
+        super.setup(model: model, commingFrom: scene)
         
         self.setupInventory(items: model.inventory)
         
@@ -83,12 +85,31 @@ class Scene3: BaseGameScene {
         }
     }
     
+    override func setupFocus(commingFrom scene: SceneName) {
+        // Adjusting focus
+        currentFocused?.buttonDidLoseFocus()
+        switch scene {
+        case .PortraitFocus:
+            currentFocused = portraitNode
+        case .LetterFocus:
+            currentFocused = letterNode
+        case .Scene2:
+            currentFocused = leftArrowNode
+        case .Scene4:
+            currentFocused = rightArrowNode
+        default:
+            break
+        }
+        currentFocused?.buttonDidGetFocus()
+        // End focus adjustment
+    }
+    
     override func didTap() {
         if let currentFocused = self.currentFocused {
             if currentFocused == leftArrowNode {
-                sceneDelegate?.changeScene(to: .Scene2)
+                sceneDelegate?.changeScene(to: .Scene2, fromScene: .Scene3)
             } else if currentFocused == rightArrowNode {
-                sceneDelegate?.changeScene(to: .Scene4)
+                sceneDelegate?.changeScene(to: .Scene4, fromScene: .Scene3)
             }
         }
         currentFocused?.didTap()

@@ -26,15 +26,15 @@ class GameViewController: UIViewController {
     public func touchDown(at pos: CGPoint) {
         firstPoint = pos
     }
-
+    
     public func touchMoved(to pos: CGPoint) {
         checkSwipe(on: pos)
     }
-
+    
     public func touchUp(at pos: CGPoint) {
         checkSwipe(on: pos)
     }
-
+    
     private func checkSwipe(on pos: CGPoint) {
         guard let firstPoint = firstPoint else {
             return
@@ -58,19 +58,19 @@ class GameViewController: UIViewController {
             }
         }
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchDown(at: t.location(in: self.view)) }
     }
-
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchMoved(to: t.location(in: self.view)) }
     }
-
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchUp(at: t.location(in: self.view)) }
     }
-
+    
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchUp(at: t.location(in: self.view)) }
     }
@@ -107,7 +107,7 @@ class GameViewController: UIViewController {
             // Load the SKScene from .sks
             if let scene = SKScene(fileNamed: "MainScene") as? BaseGameScene {
                 scene.sceneDelegate = self
-                scene.setupModel(model: self.gameModel)
+                scene.setup(model: self.gameModel, commingFrom: .Menu)
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
             }
@@ -137,7 +137,7 @@ enum SceneName: String {
 }
 
 extension GameViewController: GameSceneDelegate {
-    func changeScene(to sceneName: SceneName) {
+    func changeScene(to sceneName: SceneName, fromScene: SceneName) {
         if sceneName == .Menu {
             gameModel = GameModel()
         }
@@ -149,7 +149,7 @@ extension GameViewController: GameSceneDelegate {
             scene.scaleMode = .aspectFit
             view.presentScene(scene)
             
-            scene.setupModel(model: self.gameModel)
+            scene.setup(model: self.gameModel, commingFrom: fromScene)
         }
     }
 }

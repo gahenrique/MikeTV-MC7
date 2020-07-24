@@ -9,6 +9,6 @@
 class BearNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.changeScene(to: .BearFocus)
+        delegate?.changeScene(to: .BearFocus, from: .Scene1)
     }
 }

@@ -40,8 +40,8 @@ class ClockFocus: BaseGameScene {
         self.currentFocused?.buttonDidGetFocus()
     }
     
-    override func setupModel(model: GameModel) {
-        super.setupModel(model: model)
+    override func setup(model: GameModel, commingFrom scene: SceneName) {
+        super.setup(model: model, commingFrom: scene)
 
         guard
             let clockTexture = model.scene4.clockTextures[model.scene4.clockState]
@@ -61,7 +61,7 @@ class ClockFocus: BaseGameScene {
     override func didTap() {
         if let currentFocused = self.currentFocused {
             if currentFocused == backArrowNode {
-                sceneDelegate?.changeScene(to: .Scene4)
+                sceneDelegate?.changeScene(to: .Scene4, fromScene: .ClockFocus)
             }
         }
         currentFocused?.didTap()

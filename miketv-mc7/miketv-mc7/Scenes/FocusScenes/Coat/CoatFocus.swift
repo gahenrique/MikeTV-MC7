@@ -48,8 +48,8 @@ class CoatFocus: BaseGameScene {
         self.currentFocused?.buttonDidGetFocus()
     }
     
-    override func setupModel(model: GameModel) {
-        super.setupModel(model: model)
+    override func setup(model: GameModel, commingFrom scene: SceneName) {
+        super.setup(model: model, commingFrom: scene)
         
         switch model.scene2.coatState {
         case .normal:
@@ -98,7 +98,7 @@ class CoatFocus: BaseGameScene {
                 if blackBackground?.alpha == 1 {
                     setUpSceneAfterGift()
                 } else {
-                    sceneDelegate?.changeScene(to: .Scene2)
+                    sceneDelegate?.changeScene(to: .Scene2, fromScene: .CoatFocus)
                 }
             }
         }

@@ -38,8 +38,8 @@ class PlantFocus: BaseGameScene {
         self.currentFocused?.buttonDidGetFocus()
     }
     
-    override func setupModel(model: GameModel) {
-        super.setupModel(model: model)
+    override func setup(model: GameModel, commingFrom scene: SceneName) {
+        super.setup(model: model, commingFrom: scene)
         
         guard
             let plantTexture = model.scene2.plantTextures[model.scene2.plantState]
@@ -59,7 +59,7 @@ class PlantFocus: BaseGameScene {
     override func didTap() {
         if let currentFocused = self.currentFocused {
             if currentFocused == backArrowNode {
-                sceneDelegate?.changeScene(to: .Scene2)
+                sceneDelegate?.changeScene(to: .Scene2, fromScene: .PlantFocus)
             }
         }
         currentFocused?.didTap()
