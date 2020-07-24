@@ -9,6 +9,6 @@
 class OctopusNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.setLines(line: "Essa é a senhora Opupu, ganhei ela quanto tinha 6 anos da minha mãe!")
+        delegate?.setLines(line: "Essa é a senhora Opupu, ganhei ela quanto tinha 6 anos da minha mãe!", duration: 5)
     }
 }

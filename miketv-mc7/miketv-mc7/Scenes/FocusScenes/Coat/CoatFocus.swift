@@ -53,13 +53,13 @@ class CoatFocus: BaseGameScene {
         
         switch model.scene2.coatState {
         case .normal:
-            setLines(line: "Meu pai, o famoso rei Julian, deixou esse casaco aqui antes de ir viajar. Queria que ele tivesse me levado junto…")
+            setLines(line: "Meu pai, o famoso rei Julian, deixou esse casaco aqui antes de ir viajar. Queria que ele tivesse me levado junto…", duration: 7)
         case .openWithMap:
-            setLines(line: "Olha! Tem algo dentro do bolso...")
+            setLines(line: "Olha! Tem algo dentro do bolso...", duration: 3)
         case .openDestroyed:
-            setLines(line: "Hm… Estranho… O casaco não estava assim antes…")
+            setLines(line: "Hm… Estranho… O casaco não estava assim antes…", duration: 3)
         case . closedDestroyed:
-            setLines(line: "Hm… Estranho… O casaco não estava assim antes…")
+            setLines(line: "Hm… Estranho… O casaco não estava assim antes…", duration: 3)
         }
         
         guard

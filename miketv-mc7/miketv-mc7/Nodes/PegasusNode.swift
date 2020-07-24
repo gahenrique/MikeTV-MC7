@@ -9,6 +9,6 @@
 class PegasusNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.setLines(line: "Meu lindo Pegasus! Ele adora voar acima das nuvens!")
+        delegate?.setLines(line: "Meu lindo Pegasus! Ele adora voar acima das nuvens!", duration: 4)
     }
 }

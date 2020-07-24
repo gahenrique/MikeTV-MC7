@@ -92,7 +92,7 @@ class BoxFocus: BaseGameScene {
             changeNodesPosition()
             setUpSceneAfterGift()
         } else if model.scene1.boxState == .closed {
-            setLines(line: "É a caixa secreta do meu pai! Ele deixou comigo quando foi viajar mas ainda não consegui abrir ela")
+            setLines(line: "É a caixa secreta do meu pai! Ele deixou comigo quando foi viajar mas ainda não consegui abrir ela", duration: 6)
         }
         print(model.scene1.randomPassword)
     }

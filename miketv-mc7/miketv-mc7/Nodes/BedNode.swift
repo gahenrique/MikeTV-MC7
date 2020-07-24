@@ -9,6 +9,6 @@
 class BedNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.setLines(line: "Adoro minha cama, ela é tão macia!")
+        delegate?.setLines(line: "Adoro minha cama, ela é tão macia!", duration: 3)
     }
 }
