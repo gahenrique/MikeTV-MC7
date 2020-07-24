@@ -9,7 +9,7 @@
 import SpriteKit
 
 protocol SelectionableNodeDelegate: AnyObject {
-    func setLines(line: String)
+    func setLines(line: String, duration: TimeInterval)
     func changeScene(to scene: SceneName)
     func getModel() -> GameModel?
 }
@@ -32,14 +32,12 @@ class SelectionableNode: SKSpriteNode {
         self.color = .clear
         self.setScale(1.2)
         self.highlightNode?.alpha = 1
-//        self.highlightNode?.setScale(1.2)
     }
     
     func buttonDidLoseFocus() {
         self.color = normalColor ?? UIColor.black
         self.setScale(1.0)
         self.highlightNode?.alpha = 0
-//        self.highlightNode?.setScale(1.0)
     }
     
     func didTap() { }

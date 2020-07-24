@@ -67,7 +67,7 @@ class Scene0: BaseGameScene {
                          resize: false,
                          restore: false)) {
                             self.backgroundImg?.removeFromParent()
-                            self.setLines(line: self.arrayLines[0])
+                            self.setLines(line: self.arrayLines[0], duration: 0)
                             self.canTap = true
         }
     }
@@ -81,7 +81,7 @@ class Scene0: BaseGameScene {
             sceneDelegate?.changeScene(to: .Scene1)
         } else {
             countLines += 1
-            setLines(line: arrayLines[countLines])
+            setLines(line: arrayLines[countLines], duration: 0)
         }
     }
 }

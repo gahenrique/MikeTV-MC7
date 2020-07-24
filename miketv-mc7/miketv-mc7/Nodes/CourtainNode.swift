@@ -24,9 +24,9 @@ class CourtainNode: SelectionableNode {
                 model.collectItem(.courtainStuff)
                 updateHighlight()
             } else if nextState == .firstTap {
-                delegate?.setLines(line: "Cuidado! Tá caindo")
+                delegate?.setLines(line: "Cuidado! Tá caindo", duration: 3)
             } else if nextState == .secondTap {
-                delegate?.setLines(line: "Mais um pouco e vai cair")
+                delegate?.setLines(line: "Mais um pouco e vai cair", duration: 3)
             }
         }
     }

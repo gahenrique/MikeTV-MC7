@@ -16,7 +16,7 @@ class DoorNode: SelectionableNode {
         if model.haveUsedItem(.gift) {
             delegate?.changeScene(to: .DoorFocus)
         } else {
-            delegate?.setLines(line: "Não posso ir lá fora, existem muitos monstros lá!")
+            delegate?.setLines(line: "Não posso ir lá fora, existem muitos monstros lá!", duration: 4)
         }
     }
 }

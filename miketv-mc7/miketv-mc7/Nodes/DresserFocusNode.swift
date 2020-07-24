@@ -17,7 +17,7 @@ class DresserFocusNode: SelectionableNode {
         
         // TODO: Check if player has key
         if !model.hasItem(.key) {
-            delegate?.setLines(line: "Tá trancado!")
+            delegate?.setLines(line: "Tá trancado!", duration: 3)
             return
         }
         

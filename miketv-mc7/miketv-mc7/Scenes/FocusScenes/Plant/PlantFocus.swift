@@ -48,7 +48,7 @@ class PlantFocus: BaseGameScene {
         plantNode?.texture = SKTexture(imageNamed: plantTexture)
         
         if model.scene2.plantState == .withKey {
-            setLines(line: "Nossa, parece que tem alguma coisa brilhante ali atrás")
+            setLines(line: "Nossa, parece que tem alguma coisa brilhante ali atrás", duration: 5)
         }
     }
     

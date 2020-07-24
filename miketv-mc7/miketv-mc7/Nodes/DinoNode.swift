@@ -9,6 +9,6 @@
 class DinoNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.setLines(line: "Rawh!")
+        delegate?.setLines(line: "Rawh!", duration: 2)
     }
 }

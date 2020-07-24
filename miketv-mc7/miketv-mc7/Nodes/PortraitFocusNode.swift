@@ -50,7 +50,7 @@ class PortraitFocusNode: SelectionableNode {
             model.scene3.photoState = nextState
             
             if nextState == .flipped {
-                delegate?.setLines(line: "O que é isso? Parece uma senha")
+                delegate?.setLines(line: "O que é isso? Parece uma senha", duration: 5)
                 passwordNode.texture = SKTexture(imageNamed: model.scene1.passwordPhotoTexture)
                 passwordNode.size = fragment1Node.size
             }

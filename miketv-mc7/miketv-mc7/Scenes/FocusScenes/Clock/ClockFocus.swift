@@ -50,7 +50,7 @@ class ClockFocus: BaseGameScene {
         clockNode?.texture = SKTexture(imageNamed: clockTexture)
         
         if model.scene4.clockState == .normal {
-            setLines(line: "Meu pai construiu esse relógio para mim! Mas ué… Está faltando um ponteiro…")
+            setLines(line: "Meu pai construiu esse relógio para mim! Mas ué… Está faltando um ponteiro…", duration: 6)
         }
     }
     

@@ -43,11 +43,11 @@ class BearFocus: BaseGameScene {
         
         switch model.scene1.bearState {
         case .normal:
-            setLines(line: "Esse é senhor Catatau, meu melhor amigo!")
+            setLines(line: "Esse é senhor Catatau, meu melhor amigo!", duration: 3)
         case .destroyed:
-            setLines(line: "Ah não! O que aconteceu com você senhor Catatau?!")
+            setLines(line: "Ah não! O que aconteceu com você senhor Catatau?!", duration: 3)
         default:
-            setLines(line: "Esse é senhor Catatau, meu melhor amigo!")
+            setLines(line: "Esse é senhor Catatau, meu melhor amigo!", duration: 3)
         }
         
         guard

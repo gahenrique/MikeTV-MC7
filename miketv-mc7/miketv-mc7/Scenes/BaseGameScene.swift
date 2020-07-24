@@ -69,14 +69,18 @@ class BaseGameScene: SKScene, SelectionableNodeDelegate {
     }
     
     // MARK: SelectionableNodeDelegate
-    func setLines(line: String) {
+    func setLines(line: String, duration: TimeInterval) {
         guard
             let storyLine = storyLine,
             let storyLineBackground = storyLineBackground
         else { return }
         
         timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
+        
+        if duration != 0 {
+            timer = Timer.scheduledTimer(timeInterval: duration, target: self, selector: #selector(disableLine), userInfo: nil, repeats: false)
+        }
+        
         storyLine.text = line
         
         storyLineBackground.size = CGSize(width: storyLine.frame.width+50, height: storyLine.frame.height + 20)
