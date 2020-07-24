@@ -10,6 +10,6 @@ import Foundation
 
 class CoatNode: SelectionableNode {
     override func didTap() {
-        delegate?.changeScene(to: .CoatFocus)
+        delegate?.changeScene(to: .CoatFocus, from: .Scene2)
     }
 }

@@ -6,8 +6,8 @@
 //  Copyright © 2020 gabriel. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol GameSceneDelegate: NSObject {
-    func changeScene(to sceneName: SceneName)
+    func changeScene(to sceneName: SceneName, fromScene: SceneName)
 }

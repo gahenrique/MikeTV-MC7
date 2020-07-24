@@ -11,6 +11,6 @@ import Foundation
 class BoxNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.changeScene(to: .BoxFocus)
+        delegate?.changeScene(to: .BoxFocus, from: .Scene1)
     }
 }

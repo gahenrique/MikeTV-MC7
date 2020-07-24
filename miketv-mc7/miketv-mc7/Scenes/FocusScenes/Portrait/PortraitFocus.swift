@@ -34,8 +34,8 @@ class PortraitFocus: BaseGameScene {
         self.currentFocused?.buttonDidGetFocus()
     }
     
-    override func setupModel(model: GameModel) {
-        super.setupModel(model: model)
+    override func setup(model: GameModel, commingFrom scene: SceneName) {
+        super.setup(model: model, commingFrom: scene)
         
         guard
             let fragment1Node = portraitNode?.childNode(withName: "Fragment1") as? SKSpriteNode,
@@ -68,7 +68,7 @@ class PortraitFocus: BaseGameScene {
     override func didTap() {
         if let currentFocused = self.currentFocused {
             if currentFocused == backArrowNode {
-                sceneDelegate?.changeScene(to: .Scene3)
+                sceneDelegate?.changeScene(to: .Scene3, fromScene: .PortraitFocus)
             }
         }
         currentFocused?.didTap()

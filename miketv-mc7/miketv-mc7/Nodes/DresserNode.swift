@@ -9,6 +9,6 @@
 class DresserNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.changeScene(to: .DresserFocus)
+        delegate?.changeScene(to: .DresserFocus, from: .Scene4)
     }
 }

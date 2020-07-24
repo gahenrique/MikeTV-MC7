@@ -10,7 +10,7 @@ import SpriteKit
 
 protocol SelectionableNodeDelegate: AnyObject {
     func setLines(line: String, duration: TimeInterval)
-    func changeScene(to scene: SceneName)
+    func changeScene(to scene: SceneName, from: SceneName)
     func getModel() -> GameModel?
 }
 

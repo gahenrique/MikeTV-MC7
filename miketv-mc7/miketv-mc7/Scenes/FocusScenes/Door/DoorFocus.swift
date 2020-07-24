@@ -86,7 +86,7 @@ class DoorFocus: BaseGameScene {
             finalText?.text = arrayText[count]
             count += 1
         } else {
-            sceneDelegate?.changeScene(to: .Menu)
+            sceneDelegate?.changeScene(to: .Menu, fromScene: .DoorFocus)
         }
     }
     

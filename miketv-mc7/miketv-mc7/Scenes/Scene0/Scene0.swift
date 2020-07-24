@@ -78,7 +78,7 @@ class Scene0: BaseGameScene {
         } else if countLines >= arrayLines.count - 1 {
             disableLine()
             soundNode.run(SKAction.pause())
-            sceneDelegate?.changeScene(to: .Scene1)
+            sceneDelegate?.changeScene(to: .Scene1, fromScene: .Scene0)
         } else {
             countLines += 1
             setLines(line: arrayLines[countLines], duration: 0)

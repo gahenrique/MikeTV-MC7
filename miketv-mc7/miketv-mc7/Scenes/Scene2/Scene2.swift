@@ -52,8 +52,8 @@ class Scene2: BaseGameScene {
         self.currentFocused?.buttonDidGetFocus()
     }
     
-    override func setupModel(model: GameModel) {
-        super.setupModel(model: model)
+    override func setup(model: GameModel, commingFrom scene: SceneName) {
+        super.setup(model: model, commingFrom: scene)
         
         self.setupInventory(items: model.inventory)
         
@@ -66,6 +66,25 @@ class Scene2: BaseGameScene {
         coatNode?.texture = SKTexture(imageNamed: coatTexture)
     }
     
+    override func setupFocus(commingFrom scene: SceneName) {
+        // Adjusting focus
+        currentFocused?.buttonDidLoseFocus()
+        switch scene {
+        case .CoatFocus:
+            currentFocused = coatNode
+        case .PlantFocus:
+            currentFocused = plantNode
+        case .Scene1:
+            currentFocused = leftArrowNode
+        case .Scene3:
+            currentFocused = rightArrowNode
+        default:
+            break
+        }
+        currentFocused?.buttonDidGetFocus()
+        // End focus adjustment
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
@@ -73,9 +92,9 @@ class Scene2: BaseGameScene {
     override func didTap() {
         if let currentFocused = self.currentFocused {
             if currentFocused == leftArrowNode {
-                sceneDelegate?.changeScene(to: .Scene1)
+                sceneDelegate?.changeScene(to: .Scene1, fromScene: .Scene2)
             } else if currentFocused == rightArrowNode {
-                sceneDelegate?.changeScene(to: .Scene3)
+                sceneDelegate?.changeScene(to: .Scene3, fromScene: .Scene2)
             }
         }
         currentFocused?.didTap()
