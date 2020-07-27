@@ -45,6 +45,8 @@ class PortraitFocus: BaseGameScene {
             let passwordNode = portraitNode?.childNode(withName: "Password") as? SKSpriteNode
         else { return }
         
+        var fragmentsUsed: Int = 0
+        
         if model.scene3.photoState == .flipped {
             passwordNode.texture = SKTexture(imageNamed: model.scene1.passwordPhotoTexture)
             passwordNode.size = fragment2Node.size
@@ -54,15 +56,27 @@ class PortraitFocus: BaseGameScene {
             // Checking if player already used fragments 2, 3 and 4
             if model.haveUsedItem(.photoFragment2) {
                 fragment2Node.alpha = 1
+                fragmentsUsed += 1
             }
             if model.haveUsedItem(.photoFragment3) {
                 fragment3Node.alpha = 1
+                fragmentsUsed += 1
             }
             if model.haveUsedItem(.photoFragment4)  {
                 fragment4Node.alpha = 1
+                fragmentsUsed += 1
             }
         }
         
+        if fragmentsUsed == 0 {
+            setLines(line: "Ah não! O que aconteceu com a foto do papai?", duration: 4)
+        } else if fragmentsUsed == 1 {
+            setLines(line: "Só faltam mais dois pedaços!", duration: 3)
+        } else if fragmentsUsed == 2 {
+            setLines(line: "Odeio essa roupa! Papai sempre ia trabalhar com ela e ficava vários dias sem me ver", duration: 6)
+        } else if fragmentsUsed == 3 {
+            setLines(line: "Sinto tanta falta do papai, será que ele está bem?", duration: 4)
+        }
     }
     
     override func didTap() {

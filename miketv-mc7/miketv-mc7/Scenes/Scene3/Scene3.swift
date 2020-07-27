@@ -17,6 +17,7 @@ class Scene3: BaseGameScene {
     private var rightArrowNode: SelectionableNode?
     
     private var portraitNode: SelectionableNode?
+    private var octopusNode: SelectionableNode?
     private var letterNode: SelectionableNode?
     
     override func didMove(to view: SKView) {
@@ -34,6 +35,7 @@ class Scene3: BaseGameScene {
         self.leftArrowNode = leftArrow
         self.rightArrowNode = rightArrow
         self.portraitNode = portraitNode
+        self.octopusNode = octopusNode
         self.letterNode = letterNode
         
         octopusNode.delegate = self
@@ -81,6 +83,14 @@ class Scene3: BaseGameScene {
             }
             if model.haveUsedItem(.photoFragment4)  {
                 fragment4Node.alpha = 1
+            }
+        }
+        
+        // Removing octopus interaction
+        if model.hasItem(.photoFragment3) || model.haveUsedItem(.photoFragment3) {
+            if let octopusNode = self.octopusNode,
+                let octopusIndex = buttons.firstIndex(of: octopusNode) {
+                 buttons.remove(at: octopusIndex)
             }
         }
     }

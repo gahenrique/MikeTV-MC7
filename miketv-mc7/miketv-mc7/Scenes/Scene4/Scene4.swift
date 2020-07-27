@@ -82,6 +82,14 @@ class Scene4: BaseGameScene {
             let courtainNode = courtainNode as? CourtainNode {
             courtainNode.updateHighlight()
         }
+        
+        // Removing octopus interaction
+        if model.hasItem(.photoFragment3) || model.haveUsedItem(.photoFragment3) {
+            if let pegasusNode = self.pegasusNode,
+                let pegasusIndex = buttons.firstIndex(of: pegasusNode) {
+                 buttons.remove(at: pegasusIndex)
+            }
+        }
     }
     
     override func setupFocus(commingFrom scene: SceneName) {

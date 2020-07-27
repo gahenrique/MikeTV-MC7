@@ -137,6 +137,8 @@ class BoxFocus: BaseGameScene {
             secondDigit?.alpha = 0
             thirdDigit?.alpha = 0
         }
+        
+        model?.setTextCached("O papai está lutando contra os monstros reais. Eu preciso encontrar minha mãe!", duration: 6)
     }
     
     func changeDigit(currentFocusedLabel: SKLabelNode) {

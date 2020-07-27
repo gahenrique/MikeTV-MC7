@@ -33,6 +33,7 @@ class BearFocusNode: SelectionableNode {
                 model.scene2.coatState = .openDestroyed
             }
             model.collectItem(.photoFragment2)
+            delegate?.setLines(line: "O que é isso? Um pedaço da foto!", duration: 4)
         }
     }
     

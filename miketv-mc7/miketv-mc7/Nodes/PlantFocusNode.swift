@@ -23,6 +23,8 @@ class PlantFocusNode: SelectionableNode {
         model.collectItem(.key)
         model.scene2.plantState = .withoutKey
         
+        delegate?.setLines(line: "Peguei um chave! O que será que ela abre?", duration: 4)
+        
         if let newTexture = model.scene2.plantTextures[.withoutKey] {
             texture = SKTexture(imageNamed: newTexture)
         }

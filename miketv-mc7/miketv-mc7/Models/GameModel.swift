@@ -76,10 +76,16 @@ enum CollectionableItems: String {
     case gift = "gift"
 }
 
+struct TextCache {
+    let text: String
+    let duration: TimeInterval
+}
+
 class GameModel {
     
     private(set) var inventory: [CollectionableItems] = []
     private(set) var usedItems: [CollectionableItems] = []
+    private var textCache: TextCache?
     
     // Game State Models
     var backgroundState: State = .normal
@@ -105,6 +111,16 @@ class GameModel {
     
     func haveUsedItem(_ item: CollectionableItems) -> Bool {
         usedItems.contains(item)
+    }
+    
+    func setTextCached(_ text: String, duration: TimeInterval) {
+        self.textCache = TextCache(text: text, duration: duration)
+    }
+    
+    func getTextCached() -> TextCache? {
+        let text = textCache
+        self.textCache = nil
+        return text
     }
 }
 
@@ -154,6 +170,8 @@ class Scene3Model: SceneModel {
 
 class Scene4Model: SceneModel {
     var sceneName : SceneName = .Scene4
+    
+    var usedFragments: Int = 0
     
     // Only for focused
     var dresserTextures: [DresserState: String] = [.closed: "Comoda",.openedWithFragment: "ComodaAbertaFragmento", .openedWithoutFragment: "ComodaAberta"]

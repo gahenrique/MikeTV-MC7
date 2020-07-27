@@ -9,6 +9,12 @@
 class BedNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.setLines(line: "Adoro minha cama, ela é tão macia!", duration: 3)
+        guard let model = delegate?.getModel() else { return }
+        
+        if model.haveUsedItem(.photoFragment2) || model.hasItem(.photoFragment2) {
+            delegate?.setLines(line: "Às vezes não consigo dormir por conta dos barulhos", duration: 4)
+        } else {
+            delegate?.setLines(line: "Adoro minha cama, ela é tão macia!", duration: 3)
+        }
     }
 }
