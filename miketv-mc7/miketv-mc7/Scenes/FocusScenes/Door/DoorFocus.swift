@@ -30,7 +30,7 @@ class DoorFocus: BaseGameScene {
             let yesButton = self.childNode(withName: "YesButton") as? SelectionableNode,
             let noButton = self.childNode(withName: "NoButton") as? SelectionableNode,
             let arrowNode = self.childNode(withName: "BackArrowRight") as? SelectionableNode,
-            let backgroundNode = self.childNode(withName: "background") as? SKSpriteNode,
+            let backgroundNode = self.childNode(withName: "FinalBackground") as? SKSpriteNode,
             let finalText = self.childNode(withName: "FinalText") as? SKLabelNode
             else { return }
         
