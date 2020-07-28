@@ -21,7 +21,7 @@ class GameViewController: UIViewController {
         setupMenu()
     }
     
-    let threshold: CGFloat = 50
+    let threshold: CGFloat = 192
     var firstPoint: CGPoint?
     public func touchDown(at pos: CGPoint) {
         firstPoint = pos

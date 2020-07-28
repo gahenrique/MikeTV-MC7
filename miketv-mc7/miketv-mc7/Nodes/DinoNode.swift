@@ -9,6 +9,12 @@
 class DinoNode: SelectionableNode {
     
     override func didTap() {
-        delegate?.setLines(line: "Rawh!", duration: 2)
+        guard let model = delegate?.getModel() else { return }
+        
+        if model.hasItem(.photoFragment3) || model.haveUsedItem(.photoFragment3) {
+            delegate?.setLines(line: "Não quero mais brincar", duration: 3)
+        } else {
+            delegate?.setLines(line: "Rawh!", duration: 2)
+        }
     }
 }

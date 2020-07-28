@@ -15,10 +15,11 @@ class DresserFocusNode: SelectionableNode {
             let model = delegate?.getModel()
         else { return }
         
-        // TODO: Check if player has key
-        if !model.hasItem(.key) {
+        if !model.hasItem(.key) && !model.haveUsedItem(.key) {
             delegate?.setLines(line: "Tá trancado!", duration: 3)
             return
+        } else if model.hasItem(.key) {
+            model.useItem(.key)
         }
         
         let currentState = model.scene4.dresserState
@@ -27,15 +28,21 @@ class DresserFocusNode: SelectionableNode {
         switch currentState {
         case .closed:
             model.scene4.dresserState = .openedWithFragment
+            model.useItem(.key)
         case .openedWithFragment:
             model.collectItem(.photoFragment4)
             model.scene4.dresserState = .openedWithoutFragment
+            delegate?.setLines(line: "Um pedaço da foto!", duration: 3)
         default:
             return
         }
         
         if let newTexture = model.scene4.dresserTextures[nextState] {
             texture = SKTexture(imageNamed: newTexture)
+        }
+        
+        if nextState == .openedWithoutFragment {
+            model.scene4.dresserState = .openedDestroyed
         }
     }
     

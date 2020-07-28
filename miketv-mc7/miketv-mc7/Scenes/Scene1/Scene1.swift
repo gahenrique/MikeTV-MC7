@@ -79,11 +79,16 @@ class Scene1: BaseGameScene {
         }
         
         // Bed Texture
-        if model.haveUsedItem(.photoFragment3) || model.hasItem(.photoFragment3),
+        if model.haveUsedItem(.photoFragment2) || model.hasItem(.photoFragment2),
             let bedNode = self.bedNode,
             let bedNodeHighlight = bedNode.childNode(withName: "Highlight") as? SKSpriteNode {
             bedNode.texture = SKTexture(imageNamed: "CamaDestruida")
             bedNodeHighlight.texture = SKTexture(imageNamed: "CamaRealHighlight")
+        }
+        
+        // Set text cached
+        if let textCached = model.getTextCached() {
+            setLines(line: textCached.text, duration: textCached.duration)
         }
     }
     

@@ -30,18 +30,27 @@ class PortraitFocusNode: SelectionableNode {
             fragment2Node.alpha = 1
             model.useItem(.photoFragment2)
             insertedItem = true
+            model.scene4.usedFragments += 1
         }
         if model.hasItem(.photoFragment3) {
             fragment3Node.alpha = 1
             model.useItem(.photoFragment3)
             insertedItem = true
+            model.scene4.usedFragments += 1
         }
         if model.hasItem(.photoFragment4) {
             fragment4Node.alpha = 1
             model.useItem(.photoFragment4)
             insertedItem = true
+            model.scene4.usedFragments += 1
         }
         
+        if model.scene4.usedFragments == 3{
+            model.scene4.usedFragments += 1
+            delegate?.setLines(line: "Acho que tem algo atrás da foto", duration: 4)
+        }
+                
+        // Flip photo
         if !insertedItem &&
             model.haveUsedItem(.photoFragment2) &&
             model.haveUsedItem(.photoFragment3) &&

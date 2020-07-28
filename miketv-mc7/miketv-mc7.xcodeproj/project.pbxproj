@@ -34,6 +34,7 @@
 		C03ABC5624B8E33E00B9D4CB /* BearNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5524B8E33E00B9D4CB /* BearNode.swift */; };
 		C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */; };
 		C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045F0F724B6629500D75E6F /* BaseGameScene.swift */; };
+		C07CCA3224D0907500444630 /* LampNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07CCA3124D0907500444630 /* LampNode.swift */; };
 		C09D8FE324C8AA5800B12434 /* PortraitFocus.sks in Resources */ = {isa = PBXBuildFile; fileRef = C09D8FE224C8AA5800B12434 /* PortraitFocus.sks */; };
 		C09D8FE524C8AA8C00B12434 /* PortraitFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09D8FE424C8AA8C00B12434 /* PortraitFocus.swift */; };
 		C09D8FE724C8AF1900B12434 /* PortraitNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09D8FE624C8AF1900B12434 /* PortraitNode.swift */; };
@@ -105,6 +106,7 @@
 		C03ABC5524B8E33E00B9D4CB /* BearNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearNode.swift; sourceTree = "<group>"; };
 		C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneDelegate.swift; sourceTree = "<group>"; };
 		C045F0F724B6629500D75E6F /* BaseGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGameScene.swift; sourceTree = "<group>"; };
+		C07CCA3124D0907500444630 /* LampNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LampNode.swift; sourceTree = "<group>"; };
 		C09D8FE224C8AA5800B12434 /* PortraitFocus.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PortraitFocus.sks; sourceTree = "<group>"; };
 		C09D8FE424C8AA8C00B12434 /* PortraitFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitFocus.swift; sourceTree = "<group>"; };
 		C09D8FE624C8AF1900B12434 /* PortraitNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitNode.swift; sourceTree = "<group>"; };
@@ -127,7 +129,7 @@
 		C0D2C76424C6381D00B79E9D /* ClockFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockFocus.swift; sourceTree = "<group>"; };
 		C0D2C76624C638C800B79E9D /* ClockNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockNode.swift; sourceTree = "<group>"; };
 		C0D2C76824C63EB500B79E9D /* ClockFocusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockFocusNode.swift; sourceTree = "<group>"; };
-		C0E53DC724B39B9500DEE127 /* miketv-mc7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "miketv-mc7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0E53DC724B39B9500DEE127 /* EnigmaDoPresente.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnigmaDoPresente.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E53DCC24B39B9500DEE127 /* Scene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene2.sks; sourceTree = "<group>"; };
 		C0E53DCE24B39B9500DEE127 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				C09D8FE624C8AF1900B12434 /* PortraitNode.swift */,
 				C09D8FE824C8AF2500B12434 /* PortraitFocusNode.swift */,
 				C0FF368824C9FBD6008271DD /* LetterNode.swift */,
+				C07CCA3124D0907500444630 /* LampNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -361,7 +364,7 @@
 		C0E53DC824B39B9500DEE127 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C0E53DC724B39B9500DEE127 /* miketv-mc7.app */,
+				C0E53DC724B39B9500DEE127 /* EnigmaDoPresente.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -446,7 +449,7 @@
 			);
 			name = "miketv-mc7";
 			productName = "miketv-mc7";
-			productReference = C0E53DC724B39B9500DEE127 /* miketv-mc7.app */;
+			productReference = C0E53DC724B39B9500DEE127 /* EnigmaDoPresente.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -551,6 +554,7 @@
 				C0B2DDFD24BE235C00277841 /* PlantFocusNode.swift in Sources */,
 				0F19D2ED24C75A4C004372CB /* CoatFocus.swift in Sources */,
 				C0B2DE0424BE3E2500277841 /* DresserNode.swift in Sources */,
+				C07CCA3224D0907500444630 /* LampNode.swift in Sources */,
 				C0E53DEA24B4EEE500DEE127 /* Scene1.swift in Sources */,
 				0F19D2F124C7735C004372CB /* CoatNode.swift in Sources */,
 				C0E53DE324B3A30400DEE127 /* SelectionableNode.swift in Sources */,
@@ -716,7 +720,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gabriel.miketv-mc7";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EnigmaDoPresente;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
@@ -734,7 +738,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gabriel.miketv-mc7";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EnigmaDoPresente;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 			};

@@ -17,7 +17,10 @@ class Scene3: BaseGameScene {
     private var rightArrowNode: SelectionableNode?
     
     private var portraitNode: SelectionableNode?
+    private var octopusNode: SelectionableNode?
     private var letterNode: SelectionableNode?
+    private var doorNode: SelectionableNode?
+    private var lampNode: SelectionableNode?
     
     override func didMove(to view: SKView) {
         
@@ -29,17 +32,21 @@ class Scene3: BaseGameScene {
             let octopusNode = self.childNode(withName: "Octopus") as? SelectionableNode,
             let lampNode = self.childNode(withName: "Lamp") as? SelectionableNode,
             let letterNode = self.childNode(withName: "Letter") as? SelectionableNode
-        else { return }
+            else { return }
         
         self.leftArrowNode = leftArrow
         self.rightArrowNode = rightArrow
         self.portraitNode = portraitNode
+        self.octopusNode = octopusNode
         self.letterNode = letterNode
+        self.doorNode = doorNode
+        self.lampNode = lampNode
         
         octopusNode.delegate = self
         doorNode.delegate = self
         portraitNode.delegate = self
         letterNode.delegate = self
+        lampNode.delegate = self
         
         buttons.append(leftArrow)
         buttons.append(portraitNode)
@@ -64,7 +71,7 @@ class Scene3: BaseGameScene {
             let fragment3Node = portraitNode?.childNode(withName: "Fragment3") as? SKSpriteNode,
             let fragment4Node = portraitNode?.childNode(withName: "Fragment4") as? SKSpriteNode,
             let passwordNode = portraitNode?.childNode(withName: "Password") as? SKSpriteNode
-        else { return }
+            else { return }
         
         if model.scene3.photoState == .flipped {
             passwordNode.texture = SKTexture(imageNamed: model.scene1.passwordPhotoTexture)
@@ -82,6 +89,22 @@ class Scene3: BaseGameScene {
             if model.haveUsedItem(.photoFragment4)  {
                 fragment4Node.alpha = 1
             }
+        }
+        
+        // Removing octopus interaction
+        if model.hasItem(.photoFragment3) || model.haveUsedItem(.photoFragment3),
+            let octopusNode = self.octopusNode,
+            let octopusIndex = buttons.firstIndex(of: octopusNode) {
+            buttons.remove(at: octopusIndex)
+            octopusNode.texture = SKTexture(imageNamed: "PolvoReal")
+            octopusNode.size = CGSize(width: 539.25, height: 289.5)
+        }
+        
+        if model.backgroundState == .destroyed,
+            let bureauNode = childNode(withName: "Bureau") as? SKSpriteNode {
+            doorNode?.texture = SKTexture(imageNamed: "PortaReal")
+            bureauNode.texture = SKTexture(imageNamed: "BureauReal")
+            lampNode?.texture = SKTexture(imageNamed: "AbajurReal")
         }
     }
     
@@ -120,7 +143,7 @@ class Scene3: BaseGameScene {
         guard
             let currentFocused = self.currentFocused,
             let currentFocusedIndex = buttons.firstIndex(of: currentFocused)
-        else { return }
+            else { return }
         
         currentFocused.buttonDidLoseFocus()
         

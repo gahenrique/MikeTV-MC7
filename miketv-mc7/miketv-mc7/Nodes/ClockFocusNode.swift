@@ -16,15 +16,20 @@ class ClockFocusNode: SelectionableNode {
         else { return }
         
         // TODO: Check if player has key
-        if !model.hasItem(.courtainStuff) {
+        if !model.hasItem(.courtainStuff) && !model.haveUsedItem(.courtainStuff) {
             return
+        } else if model.hasItem(.courtainStuff) {
+            model.useItem(.courtainStuff)
         }
         
         let currentState = model.scene4.clockState
         let nextState = getNextState(current: currentState)
         
-        if currentState == .fixedOpenWithFragment {
+        if nextState == .fixed {
+            delegate?.setLines(line: "Deu certo! A argola da cortina serviu para algo", duration: 5)
+        } else if nextState == .fixedOpenEmpty {
             model.collectItem(.photoFragment3)
+            delegate?.setLines(line: "Um pedaço da foto do pai!", duration: 3)
         }
         
         model.scene4.clockState = nextState
