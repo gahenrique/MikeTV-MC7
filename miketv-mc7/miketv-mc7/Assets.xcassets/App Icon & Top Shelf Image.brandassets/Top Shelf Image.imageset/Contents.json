@@ -1,18 +1,22 @@
 {
   "images" : [
     {
+      "filename" : "Frame 170.png",
       "idiom" : "tv",
       "scale" : "1x"
     },
     {
+      "filename" : "Frame 172.png",
       "idiom" : "tv",
       "scale" : "2x"
     },
     {
+      "filename" : "Frame 170-1.png",
       "idiom" : "tv-marketing",
       "scale" : "1x"
     },
     {
+      "filename" : "Frame 172-1.png",
       "idiom" : "tv-marketing",
       "scale" : "2x"
     }
