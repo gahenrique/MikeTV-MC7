@@ -30,6 +30,8 @@
 		0F8DBAB324C63035001A5B1F /* TutorialScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F8DBAB224C63035001A5B1F /* TutorialScene.sks */; };
 		0F8DBAB524C63051001A5B1F /* TutorialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DBAB424C63051001A5B1F /* TutorialScene.swift */; };
 		0FD8DE4C24B7938D000284AF /* BedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8DE4B24B7938D000284AF /* BedNode.swift */; };
+		25F4AB4124D0BF650086FA82 /* themeSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 25F4AB4024D0BF650086FA82 /* themeSong.mp3 */; };
+		25F4AB4324D0C4CB0086FA82 /* BackgroundSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4AB4224D0C4CB0086FA82 /* BackgroundSound.swift */; };
 		C03ABC5424B8D62700B9D4CB /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5324B8D62700B9D4CB /* GameModel.swift */; };
 		C03ABC5624B8E33E00B9D4CB /* BearNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03ABC5524B8E33E00B9D4CB /* BearNode.swift */; };
 		C045F0F624B6624200D75E6F /* GameSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */; };
@@ -102,6 +104,8 @@
 		0F8DBAB224C63035001A5B1F /* TutorialScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TutorialScene.sks; sourceTree = "<group>"; };
 		0F8DBAB424C63051001A5B1F /* TutorialScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScene.swift; sourceTree = "<group>"; };
 		0FD8DE4B24B7938D000284AF /* BedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedNode.swift; sourceTree = "<group>"; };
+		25F4AB4024D0BF650086FA82 /* themeSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = themeSong.mp3; sourceTree = "<group>"; };
+		25F4AB4224D0C4CB0086FA82 /* BackgroundSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSound.swift; sourceTree = "<group>"; };
 		C03ABC5324B8D62700B9D4CB /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		C03ABC5524B8E33E00B9D4CB /* BearNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearNode.swift; sourceTree = "<group>"; };
 		C045F0F524B6624200D75E6F /* GameSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneDelegate.swift; sourceTree = "<group>"; };
@@ -267,6 +271,14 @@
 			path = Nodes;
 			sourceTree = "<group>";
 		};
+		25F4AB3F24D0BF2D0086FA82 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				25F4AB4024D0BF650086FA82 /* themeSong.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		C037CC8B24BCD3880014AA16 /* Scene4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +384,7 @@
 		C0E53DC924B39B9500DEE127 /* miketv-mc7 */ = {
 			isa = PBXGroup;
 			children = (
+				25F4AB3F24D0BF2D0086FA82 /* Sounds */,
 				0F16E9D524C616B400CB4862 /* Fonts */,
 				0FD8DE4A24B79377000284AF /* Nodes */,
 				C045F0F424B6623600D75E6F /* Protocols */,
@@ -380,6 +393,7 @@
 				C0E53DCA24B39B9500DEE127 /* AppDelegate.swift */,
 				C0E53DCE24B39B9500DEE127 /* Actions.sks */,
 				C0E53DD224B39B9500DEE127 /* GameViewController.swift */,
+				25F4AB4224D0C4CB0086FA82 /* BackgroundSound.swift */,
 				C0E53DE224B3A30400DEE127 /* SelectionableNode.swift */,
 				C0E53DD424B39B9500DEE127 /* Main.storyboard */,
 				C0E53DD724B39B9600DEE127 /* Assets.xcassets */,
@@ -506,6 +520,7 @@
 				C0E53DE624B4EC7600DEE127 /* Scene1.sks in Resources */,
 				C0FF368C24C9FC7E008271DD /* LetterFocus.sks in Resources */,
 				0F41BFB424BE52C400FE83FC /* firework.mp3 in Resources */,
+				25F4AB4124D0BF650086FA82 /* themeSong.mp3 in Resources */,
 				0F3782C524B900EE006F90C1 /* Scene3.sks in Resources */,
 				0F8DBAB324C63035001A5B1F /* TutorialScene.sks in Resources */,
 				C0CCA2C924BCEC8E009CA446 /* BearFocus.sks in Resources */,
@@ -527,6 +542,7 @@
 				C0D2C76724C638C800B79E9D /* ClockNode.swift in Sources */,
 				C045F0F824B6629500D75E6F /* BaseGameScene.swift in Sources */,
 				C0D2C76524C6381D00B79E9D /* ClockFocus.swift in Sources */,
+				25F4AB4324D0C4CB0086FA82 /* BackgroundSound.swift in Sources */,
 				C0FE80AE24C75DB400A285E4 /* DinoNode.swift in Sources */,
 				C0FE80AC24C759FE00A285E4 /* DoorNode.swift in Sources */,
 				C0B2DE0224BE2C1D00277841 /* DresserFocus.swift in Sources */,
@@ -713,7 +729,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9Z92W36843;
+				DEVELOPMENT_TEAM = D6BLGKTBJB;
 				INFOPLIST_FILE = "miketv-mc7/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -731,7 +747,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9Z92W36843;
+				DEVELOPMENT_TEAM = D6BLGKTBJB;
 				INFOPLIST_FILE = "miketv-mc7/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

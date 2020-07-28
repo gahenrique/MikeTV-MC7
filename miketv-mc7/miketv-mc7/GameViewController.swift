@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 import GameController
+import AVFoundation
 
 class GameViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class GameViewController: UIViewController {
         
         setupGestures()
         setupMenu()
+        BackgroundSoundSetUp.shared.startBackgroundMusic()
     }
     
     let threshold: CGFloat = 192
