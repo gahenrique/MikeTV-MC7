@@ -64,6 +64,15 @@ class Scene2: BaseGameScene {
         
         plantNode?.texture = SKTexture(imageNamed: plantTexture)
         coatNode?.texture = SKTexture(imageNamed: coatTexture)
+        
+        if (model.hasItem(.photoFragment2) || model.haveUsedItem(.photoFragment2)),
+            let tableNode = childNode(withName: "Table") as? SKSpriteNode,
+            let leftChairNode = childNode(withName: "LeftChair") as? SKSpriteNode,
+            let rightChairNode = childNode(withName: "RightChair") as? SKSpriteNode {
+            tableNode.texture = SKTexture(imageNamed: "MesaReal")
+            leftChairNode.texture = SKTexture(imageNamed: "LeftChairReal")
+            rightChairNode.texture = SKTexture(imageNamed: "RightChairReal")
+        }
     }
     
     override func setupFocus(commingFrom scene: SceneName) {

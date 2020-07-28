@@ -19,6 +19,8 @@ class Scene3: BaseGameScene {
     private var portraitNode: SelectionableNode?
     private var octopusNode: SelectionableNode?
     private var letterNode: SelectionableNode?
+    private var doorNode: SelectionableNode?
+    private var lampNode: SelectionableNode?
     
     override func didMove(to view: SKView) {
         
@@ -37,11 +39,14 @@ class Scene3: BaseGameScene {
         self.portraitNode = portraitNode
         self.octopusNode = octopusNode
         self.letterNode = letterNode
+        self.doorNode = doorNode
+        self.lampNode = lampNode
         
         octopusNode.delegate = self
         doorNode.delegate = self
         portraitNode.delegate = self
         letterNode.delegate = self
+        lampNode.delegate = self
         
         buttons.append(leftArrow)
         buttons.append(portraitNode)
@@ -87,11 +92,18 @@ class Scene3: BaseGameScene {
         }
         
         // Removing octopus interaction
-        if model.hasItem(.photoFragment3) || model.haveUsedItem(.photoFragment3) {
-            if let octopusNode = self.octopusNode,
+        if model.hasItem(.photoFragment3) || model.haveUsedItem(.photoFragment3),
+            let octopusNode = self.octopusNode,
                 let octopusIndex = buttons.firstIndex(of: octopusNode) {
                  buttons.remove(at: octopusIndex)
-            }
+                octopusNode.texture = SKTexture(imageNamed: "PolvoReal")
+        }
+        
+        if model.backgroundState == .destroyed,
+            let bureauNode = childNode(withName: "Bureau") as? SKSpriteNode {
+            doorNode?.texture = SKTexture(imageNamed: "PortaReal")
+            bureauNode.texture = SKTexture(imageNamed: "BureauReal")
+            lampNode?.texture = SKTexture(imageNamed: "AbajurReal")
         }
     }
     

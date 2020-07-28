@@ -22,7 +22,7 @@ class Scene4: BaseGameScene {
     private var tRexNode: SelectionableNode?
     private var pegasusNode: SelectionableNode?
     private var timer: Timer?
-
+    
     
     override func didMove(to view: SKView) {
         
@@ -34,7 +34,7 @@ class Scene4: BaseGameScene {
             let courtainNode = self.childNode(withName: "Courtain") as? SelectionableNode,
             let tRexNode = self.childNode(withName: "TRex") as? SelectionableNode,
             let pegasusNode = self.childNode(withName: "Pegasus") as? SelectionableNode
-        else { return }
+            else { return }
         
         self.leftArrowNode = leftArrow
         self.rightArrowNode = rightArrow
@@ -72,7 +72,7 @@ class Scene4: BaseGameScene {
             let dresserTexture = model.scene4.dresserTextures[model.scene4.dresserState],
             let courtainTexture = model.scene4.courtainTextures[model.scene4.courtainState],
             let clockTexture = model.scene4.clockTextures[model.scene4.clockState]
-        else { return }
+            else { return }
         
         dresserNode?.texture = SKTexture(imageNamed: dresserTexture)
         courtainNode?.texture = SKTexture(imageNamed: courtainTexture)
@@ -84,11 +84,28 @@ class Scene4: BaseGameScene {
         }
         
         // Removing octopus interaction
-        if model.hasItem(.photoFragment3) || model.haveUsedItem(.photoFragment3) {
-            if let pegasusNode = self.pegasusNode,
-                let pegasusIndex = buttons.firstIndex(of: pegasusNode) {
-                 buttons.remove(at: pegasusIndex)
+        if (model.hasItem(.photoFragment3) || model.haveUsedItem(.photoFragment3)),
+            let pegasusNode = self.pegasusNode,
+            let pegasusIndex = buttons.firstIndex(of: pegasusNode) {
+            buttons.remove(at: pegasusIndex)
+            
+            if let trainNode = childNode(withName: "Train") as? SKSpriteNode,
+                let ballNode = childNode(withName: "Ball") as? SKSpriteNode {
+                tRexNode?.texture = SKTexture(imageNamed: "T-RexReal")
+                pegasusNode.texture = SKTexture(imageNamed: "CavalinhoReal")
+                trainNode.texture = SKTexture(imageNamed: "TrenzinhoReal")
+                ballNode.texture = SKTexture(imageNamed: "BolaReal")
             }
+        }
+        
+        if model.backgroundState == .destroyed,
+            let windowNode = childNode(withName: "Window") as? SKSpriteNode {
+            windowNode.texture = SKTexture(imageNamed: "JanelaReal")
+            courtainNode?.texture = SKTexture(imageNamed: "CortinaQuebradaReal")
+        }
+        
+        if model.hasItem(.photoFragment4) || model.haveUsedItem(.photoFragment4) {
+            dresserNode?.texture = SKTexture(imageNamed: "ComodaAbertaReal")
         }
     }
     
@@ -110,7 +127,7 @@ class Scene4: BaseGameScene {
         currentFocused?.buttonDidGetFocus()
         // End focus adjustment
     }
-
+    
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
@@ -128,7 +145,7 @@ class Scene4: BaseGameScene {
         guard
             let inventoryNode = self.inventoryNode,
             let model = model
-        else { return }
+            else { return }
         inventoryNode.updateItems(model.inventory)
     }
     
@@ -136,7 +153,7 @@ class Scene4: BaseGameScene {
         guard
             let currentFocused = self.currentFocused,
             let currentFocusedIndex = buttons.firstIndex(of: currentFocused)
-        else { return }
+            else { return }
         
         currentFocused.buttonDidLoseFocus()
         
