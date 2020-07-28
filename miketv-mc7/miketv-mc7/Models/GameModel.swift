@@ -75,6 +75,7 @@ enum CollectionableItems: String {
     case key = "ChaveInventario"
     case courtainStuff = "CortinaItem"
     case gift = "gift"
+    case scissor = "TesouraInventario"
 }
 
 struct TextCache {

@@ -15,7 +15,6 @@ class DresserFocusNode: SelectionableNode {
             let model = delegate?.getModel()
         else { return }
         
-        // TODO: Check if player has key
         if !model.hasItem(.key) && !model.haveUsedItem(.key) {
             delegate?.setLines(line: "Tá trancado!", duration: 3)
             return

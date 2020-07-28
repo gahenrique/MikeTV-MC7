@@ -15,6 +15,14 @@ class BearFocusNode: SelectionableNode {
             let model = delegate?.getModel()
         else { return }
         
+        if !model.hasItem(.scissor) && !model.haveUsedItem(.scissor) {
+            delegate?.setLines(line: "Nossa, o Catatau está costurado", duration: 3)
+            return
+        } else if model.hasItem(.scissor) {
+            delegate?.setLines(line: "Ainda bem que tenho essa tesoura", duration: 3)
+            model.useItem(.scissor)
+        }
+        
         let currentState = model.scene1.bearState
         
         let nextState = getNextState(current: currentState)

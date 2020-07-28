@@ -20,6 +20,7 @@ class Scene2: BaseGameScene {
     
     private var coatNode: SelectionableNode?
     private var plantNode: SelectionableNode?
+    private var scissorNode: SelectionableNode?
     private var timer: Timer?
     
     
@@ -29,6 +30,7 @@ class Scene2: BaseGameScene {
             let leftArrow = self.childNode(withName: "LeftArrow") as? SelectionableNode,
             let rightArrow = self.childNode(withName: "RightArrow") as? SelectionableNode,
             let coatNode = self.childNode(withName: "Coat") as? SelectionableNode,
+            let scissorNode = self.childNode(withName: "Scissor") as? SelectionableNode,
             let plantNode = self.childNode(withName: "Plant") as? SelectionableNode,
             let storyLine = self.childNode(withName: "StoryLine") as? SKLabelNode
             else { return }
@@ -39,12 +41,14 @@ class Scene2: BaseGameScene {
         
         self.plantNode = plantNode
         self.coatNode = coatNode
+        self.scissorNode = scissorNode
         
         plantNode.delegate = self
         coatNode.delegate = self
         
         buttons.append(leftArrow)
         buttons.append(coatNode)
+        buttons.append(scissorNode)
         buttons.append(plantNode)
         buttons.append(rightArrow)
         
@@ -72,6 +76,10 @@ class Scene2: BaseGameScene {
             tableNode.texture = SKTexture(imageNamed: "MesaReal")
             leftChairNode.texture = SKTexture(imageNamed: "LeftChairReal")
             rightChairNode.texture = SKTexture(imageNamed: "RightChairReal")
+        }
+        
+        if model.hasItem(.scissor) || model.haveUsedItem(.scissor) {
+            removeScissor()
         }
     }
     
@@ -104,6 +112,14 @@ class Scene2: BaseGameScene {
                 sceneDelegate?.changeScene(to: .Scene1, fromScene: .Scene2)
             } else if currentFocused == rightArrowNode {
                 sceneDelegate?.changeScene(to: .Scene3, fromScene: .Scene2)
+            } else if currentFocused == scissorNode, let model = self.model {
+                model.collectItem(.scissor)
+                removeScissor()
+                self.currentFocused = coatNode
+                scissorNode?.buttonDidLoseFocus()
+                coatNode?.buttonDidGetFocus()
+                self.inventoryNode?.updateItems(model.inventory)
+                return
             }
         }
         currentFocused?.didTap()
@@ -133,5 +149,13 @@ class Scene2: BaseGameScene {
         
         self.currentFocused = buttons[nextFocusIndex]
         self.currentFocused?.buttonDidGetFocus()
+    }
+    
+    func removeScissor() {
+        if let scissorNode = self.scissorNode,
+            let scissorIndex = buttons.firstIndex(of: scissorNode) {
+            buttons.remove(at: scissorIndex)
+            scissorNode.removeFromParent()
+        }
     }
 }
