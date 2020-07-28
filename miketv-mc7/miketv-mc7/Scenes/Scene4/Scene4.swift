@@ -104,9 +104,9 @@ class Scene4: BaseGameScene {
             courtainNode?.texture = SKTexture(imageNamed: "CortinaQuebradaReal")
         }
         
-        if model.hasItem(.photoFragment4) || model.haveUsedItem(.photoFragment4) {
-            dresserNode?.texture = SKTexture(imageNamed: "ComodaAbertaReal")
-        }
+//        if model.hasItem(.photoFragment4) || model.haveUsedItem(.photoFragment4) {
+//            dresserNode?.texture = SKTexture(imageNamed: "ComodaAbertaReal")
+//        }
     }
     
     override func setupFocus(commingFrom scene: SceneName) {

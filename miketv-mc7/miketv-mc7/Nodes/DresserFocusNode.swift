@@ -41,6 +41,10 @@ class DresserFocusNode: SelectionableNode {
         if let newTexture = model.scene4.dresserTextures[nextState] {
             texture = SKTexture(imageNamed: newTexture)
         }
+        
+        if nextState == .openedWithoutFragment {
+            model.scene4.dresserState = .openedDestroyed
+        }
     }
     
     private func getNextState(current: DresserState) -> DresserState {

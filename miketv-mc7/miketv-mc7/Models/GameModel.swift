@@ -29,6 +29,7 @@ enum DresserState {
     case closed
     case openedWithFragment
     case openedWithoutFragment
+    case openedDestroyed
 }
 
 enum BoxState {
@@ -174,7 +175,7 @@ class Scene4Model: SceneModel {
     var usedFragments: Int = 0
     
     // Only for focused
-    var dresserTextures: [DresserState: String] = [.closed: "Comoda",.openedWithFragment: "ComodaAbertaFragmento", .openedWithoutFragment: "ComodaAberta"]
+    var dresserTextures: [DresserState: String] = [.closed: "Comoda",.openedWithFragment: "ComodaAbertaFragmento", .openedWithoutFragment: "ComodaAberta", .openedDestroyed: "ComodaAbertaReal"]
     var dresserState: DresserState = .closed
     
     // Courtain
