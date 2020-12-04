@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
         
         setupGestures()
         setupMenu()
-        BackgroundSoundSetUp.shared.startBackgroundMusic()
+//        BackgroundSoundSetUp.shared.startBackgroundMusic()
     }
     
     let threshold: CGFloat = 192
